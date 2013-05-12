@@ -1,0 +1,7 @@
+###
+### sub-rule.desc -- 補助ルールの説明
+###
+
+period.rule     句点をピリオド(．)にする
+comma.rule      読点をカンマ(，)にする
+azik.rule       拡張ローマ字入力「AZIK」を使う

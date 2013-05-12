@@ -1,0 +1,644 @@
+###
+### テストデータ
+###
+### syntax      = { line }
+###             ;
+###
+### line        = [ empty | comment | rule ] { space } "\n"
+###             ;
+###
+### empty       = {}
+###             ;
+###
+### comment     = "#" { any_characters }
+###             ;
+###
+### rule        = key option space expectation
+###             ;
+###
+### space       = ( " " | "\t" ) { space }
+###             ;
+###
+### key         = { modifier } ascii_or_hex
+###             ;
+###
+### option      = selection | yank { "," option }
+###             ;
+###
+### selection   = "sel=" any_characters
+###             ;
+###
+### yank        = "yank=" any_characters
+###             ;
+###
+### expectation = attribute { "," expectation }
+###             ;
+###
+### modifier    = "ctrl::" | "shift::" | "alt::" | "meta::"
+###             ;
+###
+### attribute   = fixed | marked | mode | pos | ret
+###             ;
+###
+### fixed       = "fixed=" any_characters
+###             ;
+###
+### marked      = "marked=" any_characters
+###             ;
+###
+### mode        = "mode=" ( "J" | "K" | "Q" | "A" | "L" )
+###             ;
+###
+### pos         = "pos=" { "-" } any_numbers
+###             ;
+###
+### ret         = "ret=" ( "1" | "0" )
+###             ;
+###
+
+# ======================================================================
+# 直接入力モード
+# ======================================================================
+
+# ひらかな
+# ----------------------------------------------------------------------
+ctrl::j                 mode=J
+a                       mode=J,fixed=あ
+k                       mode=J,marked=k
+a                       mode=J,fixed=か
+
+# 円マーク
+# ----------------------------------------------------------------------
+z                       mode=J,marked=z
+\                       mode=J,fixed=￥
+
+# カタカナ
+# ----------------------------------------------------------------------
+q                       mode=K
+a                       mode=K,fixed=ア
+ctrl::j                 mode=J
+
+# 半角カナ
+# ----------------------------------------------------------------------
+ctrl::q                 mode=Q
+a                       mode=Q,fixed=ｱ
+ctrl::j                 mode=J
+
+# ASCII
+# ----------------------------------------------------------------------
+l                       mode=A
+a                       mode=A,ret=0
+ctrl::j                 mode=J
+
+# 全英
+# ----------------------------------------------------------------------
+L                       mode=L
+a                       mode=L,fixed=ａ
+ctrl::j                 mode=J
+
+# 促音
+# ----------------------------------------------------------------------
+t                       mode=J,marked=t
+t                       mode=J,fixed=っ,marked=t
+t                       mode=J,fixed=っ,marked=t
+ctrl::j                 mode=J
+
+# キャンセル
+# ----------------------------------------------------------------------
+k                       mode=J,marked=k
+ctrl::g                 mode=J
+k                       mode=J,marked=k
+ctrl::h                 mode=J
+k                       mode=J,marked=k
+l                       mode=A
+ctrl::j                 mode=J
+k                       mode=J,marked=k
+ctrl::m                 mode=J,ret=0
+k                       mode=J,marked=k
+ctrl::p                 mode=J,ret=0
+
+# 無視するキー
+# ----------------------------------------------------------------------
+ctrl::p                 mode=J,ret=0
+ctrl::a                 mode=J,ret=0
+ctrl::e                 mode=J,ret=0
+ctrl::i                 mode=J,ret=0
+shift::0x1c             mode=J,ret=0
+ctrl::g                 mode=J,ret=0
+
+# ペースト
+# ----------------------------------------------------------------------
+ctrl::y,yank=abc        mode=J,ret=0
+
+# Undo
+# ----------------------------------------------------------------------
+ctrl::/,sel=abc         mode=J,ret=0
+
+# 見出し語
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+ctrl::g                 mode=J
+K                       mode=J,marked=▽k
+a                       mode=J,marked=▽か
+ctrl::h                 mode=J,marked=▽
+ctrl::h                 mode=J
+K                       mode=J,marked=▽k
+a                       mode=J,marked=▽か
+ctrl::j                 mode=J,fixed=か
+
+# カーソル
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+a                       mode=J,marked=▽か
+n                       mode=J,marked=▽かn
+j                       mode=J,marked=▽かんj
+i                       mode=J,marked=▽かんじ
+ctrl::a                 mode=J,marked=▽かんじ,pos=-3
+ctrl::d                 mode=J,marked=▽んじ,pos=-2
+ctrl::f                 mode=J,marked=▽んじ,pos=-1
+ctrl::h                 mode=J,marked=▽じ,pos=-1
+ctrl::e                 mode=J,marked=▽じ,pos=0
+ctrl::b                 mode=J,marked=▽じ,pos=-1
+a                       mode=J,marked=▽あじ,pos=-1
+ctrl::g                 mode=J
+
+# 送りあり
+# ----------------------------------------------------------------------
+O                       mode=J,marked=▽お
+k                       mode=J,marked=▽おk
+u                       mode=J,marked=▽おく
+R                       mode=J,marked=▽おく*r
+i                       mode=J,marked=[登録：おく*り]
+ctrl::g                 mode=J,marked=▽おく
+ctrl::g                 mode=J
+A                       mode=J,marked=▽あ
+S                       mode=J,marked=▽あ*s
+ctrl::m                 mode=J,fixed=あ
+A                       mode=J,marked=▽あ
+K                       mode=J,marked=▽あ*k
+ctrl::g                 mode=J,marked=▽あ
+ctrl::g                 mode=J
+
+# 送りあり(SaTte 対応)
+# ----------------------------------------------------------------------
+S                       mode=J,marked=▽s
+a                       mode=J,marked=▽さ
+T                       mode=J,marked=▽さ*t
+t                       mode=J,marked=▽さ*っt
+e                       mode=J,marked=[登録：さ*って]
+ctrl::g                 mode=J,marked=▽さ
+ctrl::g                 mode=J
+
+# 送りあり(KesSi 対応)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+e                       mode=J,marked=▽け
+s                       mode=J,marked=▽けs
+S                       mode=J,marked=▽けっ*s
+i                       mode=J,marked=[登録：けっ*し]
+ctrl::g                 mode=J,marked=▽けっ
+ctrl::g                 mode=J
+
+# 送りあり(OWsa 対応)
+# ----------------------------------------------------------------------
+O                       mode=J,marked=▽お
+W                       mode=J,marked=▽お*w
+s                       mode=J,marked=▽お*s
+a                       mode=J,marked=[登録：お*さ]
+ctrl::g                 mode=J,marked=▽お
+ctrl::g                 mode=J
+
+# 送りあり(送りトリガー)
+# ----------------------------------------------------------------------
+O                       mode=J,marked=▽お
+l                       mode=J,marked=▽お*
+k                       mode=J,marked=▽お*k
+ctrl::g                 mode=J,marked=▽お
+ctrl::g                 mode=J
+
+# 送りあり(単語登録)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+I                       mode=J,marked=[登録：あ*い]
+ctrl::m                 mode=J,marked=▽あ
+ctrl::g                 mode=J
+
+# トグル変換 => カタカナ
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+a                       mode=J,marked=▽か
+q                       mode=J,fixed=カ
+N                       mode=J,marked=▽n
+q                       mode=J,fixed=ン
+
+# トグル変換 => カタカナ(バグ対応)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+x                       mode=J,marked=▽あx
+w                       mode=J,marked=▽あxw
+a                       mode=J,marked=▽あゎ
+q                       mode=J,fixed=アヮ
+
+# トグル変換 => 半角カナ
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+a                       mode=J,marked=▽か
+ctrl::q                 mode=J,fixed=ｶ
+N                       mode=J,marked=▽n
+ctrl::q                 mode=J,fixed=ﾝ
+
+# トグル変換 => 半角カナ(バグ対応)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+X                       mode=J,marked=▽あx
+w                       mode=J,marked=▽あxw
+a                       mode=J,marked=▽あゎ
+ctrl::q                 mode=J,fixed=ｱﾜ
+
+# トグル変換 => Latin
+# ----------------------------------------------------------------------
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+ctrl::q                 mode=J,fixed=ａ
+
+# 見出し語再入
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+Q                       mode=J,fixed=あ,marked=▽
+ctrl::g                 mode=J
+
+# ======================================================================
+# 単語登録モード
+# ======================================================================
+
+A                       mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# ひらかな
+# ----------------------------------------------------------------------
+ctrl::j                 mode=J,marked=[登録：あ]
+a                       mode=J,marked=[登録：あ]あ
+k                       mode=J,marked=[登録：あ]あk
+a                       mode=J,marked=[登録：あ]あか
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# カタカナ
+# ----------------------------------------------------------------------
+q                       mode=K,marked=[登録：あ]
+a                       mode=K,marked=[登録：あ]ア
+ctrl::j                 mode=J,marked=[登録：あ]ア
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# 半角カナ
+# ----------------------------------------------------------------------
+ctrl::q                 mode=Q,marked=[登録：あ]
+a                       mode=Q,marked=[登録：あ]ｱ
+ctrl::j                 mode=J,marked=[登録：あ]ｱ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# ASCII
+# ----------------------------------------------------------------------
+l                       mode=A,marked=[登録：あ]
+a                       mode=A,marked=[登録：あ]a
+ctrl::j                 mode=J,marked=[登録：あ]a
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# 全英
+# ----------------------------------------------------------------------
+L                       mode=L,marked=[登録：あ]
+a                       mode=L,marked=[登録：あ]ａ
+ctrl::j                 mode=J,marked=[登録：あ]ａ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# キャンセル
+# ----------------------------------------------------------------------
+k                       mode=J,marked=[登録：あ]k
+ctrl::g                 mode=J,marked=[登録：あ]
+k                       mode=J,marked=[登録：あ]k
+ctrl::h                 mode=J,marked=[登録：あ]
+ctrl::h                 mode=J,marked=[登録：あ]
+k                       mode=J,marked=[登録：あ]k
+l                       mode=A,marked=[登録：あ]
+ctrl::j                 mode=J,marked=[登録：あ]
+k                       mode=J,marked=[登録：あ]k
+ctrl::m                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+k                       mode=J,marked=[登録：あ]k
+ctrl::p                 mode=J,marked=[登録：あ]
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# ペースト
+# ----------------------------------------------------------------------
+ctrl::y,yank=abc        mode=J,marked=[登録：あ]abc
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# 見出し語
+# ----------------------------------------------------------------------
+A                       mode=J,marked=[登録：あ]▽あ
+ctrl::g                 mode=J,marked=[登録：あ]
+K                       mode=J,marked=[登録：あ]▽k
+a                       mode=J,marked=[登録：あ]▽か
+ctrl::h                 mode=J,marked=[登録：あ]▽
+ctrl::h                 mode=J,marked=[登録：あ]
+K                       mode=J,marked=[登録：あ]▽k
+a                       mode=J,marked=[登録：あ]▽か
+ctrl::j                 mode=J,marked=[登録：あ]か
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# カーソル
+# ----------------------------------------------------------------------
+K                       mode=J,marked=[登録：あ]▽k
+a                       mode=J,marked=[登録：あ]▽か
+n                       mode=J,marked=[登録：あ]▽かn
+j                       mode=J,marked=[登録：あ]▽かんj
+i                       mode=J,marked=[登録：あ]▽かんじ
+ctrl::a                 mode=J,marked=[登録：あ]▽かんじ,pos=-3
+ctrl::d                 mode=J,marked=[登録：あ]▽んじ,pos=-2
+ctrl::f                 mode=J,marked=[登録：あ]▽んじ,pos=-1
+ctrl::h                 mode=J,marked=[登録：あ]▽じ,pos=-1
+ctrl::e                 mode=J,marked=[登録：あ]▽じ,pos=0
+ctrl::b                 mode=J,marked=[登録：あ]▽じ,pos=-1
+a                       mode=J,marked=[登録：あ]▽あじ,pos=-1
+ctrl::g                 mode=J,marked=[登録：あ]
+
+# 送りあり
+# ----------------------------------------------------------------------
+O                       mode=J,marked=[登録：あ]▽お
+k                       mode=J,marked=[登録：あ]▽おk
+u                       mode=J,marked=[登録：あ]▽おく
+R                       mode=J,marked=[登録：あ]▽おく*r
+i                       mode=J,marked=[登録：おく*り]
+ctrl::g                 mode=J,marked=[登録：あ]▽おく
+ctrl::g                 mode=J,marked=[登録：あ]
+A                       mode=J,marked=[登録：あ]▽あ
+S                       mode=J,marked=[登録：あ]▽あ*s
+ctrl::m                 mode=J,marked=[登録：あ]あ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# 送りあり(KesSi 対応)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=[登録：あ]▽k
+e                       mode=J,marked=[登録：あ]▽け
+s                       mode=J,marked=[登録：あ]▽けs
+S                       mode=J,marked=[登録：あ]▽けっ*s
+i                       mode=J,marked=[登録：けっ*し]
+ctrl::g                 mode=J,marked=[登録：あ]▽けっ
+ctrl::g                 mode=J,marked=[登録：あ]
+
+# 送りあり(OWsa 対応)
+# ----------------------------------------------------------------------
+O                       mode=J,marked=[登録：あ]▽お
+W                       mode=J,marked=[登録：あ]▽お*w
+s                       mode=J,marked=[登録：あ]▽お*s
+a                       mode=J,marked=[登録：お*さ]
+ctrl::g                 mode=J,marked=[登録：あ]▽お
+ctrl::g                 mode=J,marked=[登録：あ]
+
+# トグル変換 => カタカナ
+# ----------------------------------------------------------------------
+K                       mode=J,marked=[登録：あ]▽k
+a                       mode=J,marked=[登録：あ]▽か
+q                       mode=J,marked=[登録：あ]カ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+N                       mode=J,marked=[登録：あ]▽n
+q                       mode=J,marked=[登録：あ]ン
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# トグル変換 => 半角カナ
+# ----------------------------------------------------------------------
+K                       mode=J,marked=[登録：あ]▽k
+a                       mode=J,marked=[登録：あ]▽か
+ctrl::q                 mode=J,marked=[登録：あ]ｶ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+N                       mode=J,marked=[登録：あ]▽n
+ctrl::q                 mode=J,marked=[登録：あ]ﾝ
+ctrl::g                 mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+
+# トグル変換 => Latin
+# ----------------------------------------------------------------------
+/                       mode=A,marked=[登録：あ]▽
+a                       mode=A,marked=[登録：あ]▽a
+ctrl::q                 mode=J,marked=[登録：あ]ａ
+ctrl::g                 mode=J,marked=▽あ
+ctrl::g                 mode=J
+
+# ======================================================================
+# 辞書
+# ======================================================================
+
+# 送りなし1
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+u                       mode=J,marked=▽こう
+0x20                    mode=J,marked=[登録：こう]
+ctrl::y,yank=高         mode=J,marked=[登録：こう]高
+ctrl::m                 mode=J,fixed=高
+
+# 送りあり(登録)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+R                       mode=J,marked=▽あ*r
+i                       mode=J,marked=[登録：あ*り]
+ctrl::y,yank=有         mode=J,marked=[登録：あ*り]有
+ctrl::m                 mode=J,fixed=有り
+
+# 送りあり(変換)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+R                       mode=J,marked=▽あ*r
+i                       mode=J,marked=▼有り
+ctrl::g                 mode=J,marked=▽あ
+ctrl::g                 mode=J
+
+# 送りなし2
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+u                       mode=J,marked=▽こう
+0x20                    mode=J,marked=▼高
+0x20                    mode=J,marked=[登録：こう]
+ctrl::y,yank=幸         mode=J,marked=[登録：こう]幸
+ctrl::m                 mode=J,fixed=幸
+
+# 送りなし3
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+u                       mode=J,marked=▽こう
+m                       mode=J,marked=▽こうm
+o                       mode=J,marked=▽こうも
+r                       mode=J,marked=▽こうもr
+i                       mode=J,marked=▽こうもり
+0x20                    mode=J,marked=[登録：こうもり]
+ctrl::y,yank=蝙蝠       mode=J,marked=[登録：こうもり]蝙蝠
+ctrl::m                 mode=J,fixed=蝙蝠
+
+# 送りなし4
+# ----------------------------------------------------------------------
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+u                       mode=A,marked=▽au
+t                       mode=A,marked=▽aut
+o                       mode=A,marked=▽auto
+0x20                    mode=J,marked=[登録：auto]
+ctrl::y,yank=自動       mode=J,marked=[登録：auto]自動
+ctrl::m                 mode=J,fixed=自動
+
+# 補完
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+ctrl::i                 mode=J,marked=▽こうもり
+ctrl::i                 mode=J,marked=▽こう
+ctrl::i                 mode=J,marked=▽こうもり
+0x20                    mode=J,marked=▼蝙蝠
+ctrl::m                 mode=J,fixed=蝙蝠
+
+# 補完&変換
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼蝙蝠
+ctrl::m                 mode=J,fixed=蝙蝠
+
+# 暗黙の確定(かな => かな)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+u                       mode=J,marked=▽こう
+0x20                    mode=J,marked=▼幸
+a                       mode=J,fixed=幸あ
+
+# 暗黙の確定(かな => abbrev)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+u                       mode=J,marked=▽こう
+0x20                    mode=J,marked=▼幸
+/                       mode=A,fixed=幸,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=A,marked=▼自動
+ctrl::m                 mode=J,fixed=自動
+
+# 暗黙の確定(abbrev => abbrev)
+# ----------------------------------------------------------------------
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=A,marked=▼自動
+/                       mode=A,fixed=自動,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=A,marked=▼自動
+ctrl::m                 mode=J,fixed=自動
+
+# 暗黙の確定(abbrev => かな)
+# ----------------------------------------------------------------------
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=A,marked=▼自動
+K                       mode=J,fixed=自動,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼幸
+ctrl::m                 mode=J,fixed=幸
+
+# 暗黙の確定(ひらかな => カタカナ)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼幸
+q                       mode=K,fixed=幸
+
+# 暗黙の確定(カタカナ => 半角カナ)
+# ----------------------------------------------------------------------
+K                       mode=K,marked=▽k
+o                       mode=K,marked=▽コ
+shift::0x20             mode=K,marked=▼幸
+ctrl::q                 mode=Q,fixed=幸
+
+# 暗黙の確定(半角カナ => ひらかな)
+# ----------------------------------------------------------------------
+K                       mode=Q,marked=▽k
+o                       mode=Q,marked=▽ｺ
+shift::0x20             mode=Q,marked=▼幸
+ctrl::q                 mode=J,fixed=幸
+
+# 暗黙の確定(ひらかな => ASCII)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼幸
+l                       mode=A,fixed=幸
+ctrl::j                 mode=J
+
+# 暗黙の確定(ひらかな => ASCII)
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼幸
+L                       mode=L,fixed=幸
+ctrl::j                 mode=J
+
+# 削除
+# ----------------------------------------------------------------------
+K                       mode=J,marked=▽k
+o                       mode=J,marked=▽こ
+shift::0x20             mode=J,marked=▼幸
+X                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20
+ctrl::g                 mode=J,marked=▼幸
+X                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20
+ctrl::m                 mode=J,marked=▼幸
+X                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20
+y                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20y
+e                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20ye
+s                       mode=J,marked=こう%20/幸/%20を削除しますか？(yes/no)%20yes
+ctrl::m                 mode=J
+
+# 削除(abbrev)
+# ----------------------------------------------------------------------
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=A,marked=▼自動
+X                       mode=A,marked=auto%20/自動/%20を削除しますか？(yes/no)%20
+y                       mode=A,marked=auto%20/自動/%20を削除しますか？(yes/no)%20y
+e                       mode=A,marked=auto%20/自動/%20を削除しますか？(yes/no)%20ye
+s                       mode=A,marked=auto%20/自動/%20を削除しますか？(yes/no)%20yes
+ctrl::m                 mode=J
+/                       mode=A,marked=▽
+a                       mode=A,marked=▽a
+shift::0x20             mode=J,marked=[登録：a]
+ctrl::g                 mode=A,marked=▽a
+ctrl::g                 mode=J
+
+# 削除(単語登録中)
+# ----------------------------------------------------------------------
+A                       mode=J,marked=▽あ
+0x20                    mode=J,marked=[登録：あ]
+K                       mode=J,marked=[登録：あ]▽k
+o                       mode=J,marked=[登録：あ]▽こ
+shift::0x20             mode=J,marked=[登録：あ]▼高
+X                       mode=J,marked=こう%20/高/%20を削除しますか？(yes/no)%20
+ctrl::g                 mode=J,marked=[登録：あ]▼高
+ctrl::g                 mode=J,marked=[登録：あ]▽こう
+ctrl::g                 mode=J,marked=[登録：あ]
+ctrl::m                 mode=J,marked=▽あ
+ctrl::g                 mode=J
+
+# Undo
+# ----------------------------------------------------------------------
+ctrl::/,sel=蝙蝠        mode=J,marked=▽こうもり
+ctrl::g                 mode=J,fixed=蝙蝠
+ctrl::/,sel=蝙蝠        mode=J,marked=▽こうもり
+ctrl::m                 mode=J,fixed=こうもり

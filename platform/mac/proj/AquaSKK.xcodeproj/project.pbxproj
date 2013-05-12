@@ -1,0 +1,1262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
+		D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */; };
+		D30996690E4C80EA00B2F24E /* SKKRecursiveEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */; };
+		D309967B0E4C83B800B2F24E /* SKKInputEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30996790E4C83B800B2F24E /* SKKInputEngine.cpp */; };
+		D31B18100EA76F120083CD50 /* CompletionView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D31B180F0EA76F120083CD50 /* CompletionView.mm */; };
+		D31C99D00E9E4A3D00CBE4D1 /* Mini-Ascii.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D31C99CB0E9E4A3D00CBE4D1 /* Mini-Ascii.tiff */; };
+		D31C99D10E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D31C99CC0E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff */; };
+		D31C99D20E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D31C99CD0E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff */; };
+		D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D31C99CE0E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff */; };
+		D31C99D40E9E4A3D00CBE4D1 /* Mini-Katakana.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D31C99CF0E9E4A3D00CBE4D1 /* Mini-Katakana.tiff */; };
+		D322B8D10DDC8174002C33F9 /* AquaSKK.xib in Resources */ = {isa = PBXBuildFile; fileRef = D322B8D00DDC8174002C33F9 /* AquaSKK.xib */; };
+		D32ABEDE11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D32ABEDC11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp */; };
+		D32F15C70EA0817700CADBD7 /* MacInputModeMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = D32F15C60EA0817700CADBD7 /* MacInputModeMenu.mm */; };
+		D35343B4100F6645007C7B13 /* MacKotoeriDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D35343B2100F6645007C7B13 /* MacKotoeriDictionary.cpp */; };
+		D353BCFB0E175501004C68A6 /* SKKBackEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBE50E175500004C68A6 /* SKKBackEnd.cpp */; };
+		D353BCFC0E175501004C68A6 /* SKKDictionaryCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBE70E175500004C68A6 /* SKKDictionaryCache.cpp */; };
+		D353BCFD0E175501004C68A6 /* SKKDictionaryFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBE90E175500004C68A6 /* SKKDictionaryFactory.cpp */; };
+		D353BCFE0E175501004C68A6 /* SKKNumericConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBEC0E175500004C68A6 /* SKKNumericConverter.cpp */; };
+		D353BCFF0E175501004C68A6 /* SKKCompleter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBEF0E175500004C68A6 /* SKKCompleter.cpp */; };
+		D353BD020E175501004C68A6 /* SKKDictionaryFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBF70E175500004C68A6 /* SKKDictionaryFile.cpp */; };
+		D353BD030E175501004C68A6 /* SKKDictionaryKeeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBF90E175500004C68A6 /* SKKDictionaryKeeper.cpp */; };
+		D353BD050E175501004C68A6 /* SKKProxyDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BBFD0E175500004C68A6 /* SKKProxyDictionary.cpp */; };
+		D353BD070E175501004C68A6 /* SKKCandidateEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC030E175500004C68A6 /* SKKCandidateEditor.cpp */; };
+		D353BD080E175501004C68A6 /* SKKComposingEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC050E175500004C68A6 /* SKKComposingEditor.cpp */; };
+		D353BD0B0E175501004C68A6 /* SKKEntryRemoveEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC0C0E175500004C68A6 /* SKKEntryRemoveEditor.cpp */; };
+		D353BD0C0E175501004C68A6 /* SKKOkuriEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC0E0E175500004C68A6 /* SKKOkuriEditor.cpp */; };
+		D353BD0D0E175501004C68A6 /* SKKPrimaryEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC100E175500004C68A6 /* SKKPrimaryEditor.cpp */; };
+		D353BD0E0E175501004C68A6 /* SKKRegisterEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC120E175500004C68A6 /* SKKRegisterEditor.cpp */; };
+		D353BD0F0E175501004C68A6 /* SKKTextBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC140E175500004C68A6 /* SKKTextBuffer.cpp */; };
+		D353BD100E175501004C68A6 /* SKKCandidate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC170E175500004C68A6 /* SKKCandidate.cpp */; };
+		D353BD110E175501004C68A6 /* SKKEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC1B0E175500004C68A6 /* SKKEntry.cpp */; };
+		D353BD120E175501004C68A6 /* SKKKeymap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC200E175500004C68A6 /* SKKKeymap.cpp */; };
+		D353BD130E175501004C68A6 /* SKKKeymapEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC220E175500004C68A6 /* SKKKeymapEntry.cpp */; };
+		D353BD140E175501004C68A6 /* SKKInlineSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC260E175500004C68A6 /* SKKInlineSelector.cpp */; };
+		D353BD150E175501004C68A6 /* SKKSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC280E175500004C68A6 /* SKKSelector.cpp */; };
+		D353BD160E175501004C68A6 /* SKKWindowSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC2A0E175500004C68A6 /* SKKWindowSelector.cpp */; };
+		D353BD190E175501004C68A6 /* SKKInputSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC310E175500004C68A6 /* SKKInputSession.cpp */; };
+		D353BD1A0E175501004C68A6 /* skkserv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC340E175500004C68A6 /* skkserv.cpp */; };
+		D353BD1B0E175501004C68A6 /* SKKState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BC390E175500004C68A6 /* SKKState.cpp */; };
+		D353BDC80E175502004C68A6 /* SKKRomanKanaConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BCED0E175501004C68A6 /* SKKRomanKanaConverter.cpp */; };
+		D353BDC90E175502004C68A6 /* SKKTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BCEF0E175501004C68A6 /* SKKTrie.cpp */; };
+		D353BDCA0E175502004C68A6 /* jconv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D353BCF20E175501004C68A6 /* jconv.cpp */; };
+		D353BDE80E175513004C68A6 /* MacCandidateWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDD00E175513004C68A6 /* MacCandidateWindow.mm */; };
+		D353BDE90E175513004C68A6 /* MacClipboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDD20E175513004C68A6 /* MacClipboard.mm */; };
+		D353BDEA0E175513004C68A6 /* MacFrontEnd.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDD40E175513004C68A6 /* MacFrontEnd.mm */; };
+		D353BDEB0E175513004C68A6 /* MacInputModeWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */; };
+		D353BDEC0E175513004C68A6 /* MacInputSessionParameter.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */; };
+		D353BDEE0E175513004C68A6 /* SKKConstVars.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDDD0E175513004C68A6 /* SKKConstVars.mm */; };
+		D353BDEF0E175513004C68A6 /* SKKInputController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDDF0E175513004C68A6 /* SKKInputController.mm */; };
+		D353BDF00E175513004C68A6 /* SKKPreProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDE10E175513004C68A6 /* SKKPreProcessor.mm */; };
+		D353BDF10E175513004C68A6 /* SKKServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDE30E175513004C68A6 /* SKKServer.mm */; };
+		D353BDF20E175513004C68A6 /* SKKServerProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDE50E175513004C68A6 /* SKKServerProxy.mm */; };
+		D353BDF30E175513004C68A6 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDE70E175513004C68A6 /* main.mm */; };
+		D353BE030E175523004C68A6 /* CandidateCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDF60E175523004C68A6 /* CandidateCell.mm */; };
+		D353BE040E175523004C68A6 /* CandidatePageIndicator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDF80E175523004C68A6 /* CandidatePageIndicator.mm */; };
+		D353BE050E175523004C68A6 /* CandidateView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDFA0E175523004C68A6 /* CandidateView.mm */; };
+		D353BE0D0E17552F004C68A6 /* DictionarySet.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353BE0B0E17552F004C68A6 /* DictionarySet.plist */; };
+		D353BE0E0E17552F004C68A6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353BE0C0E17552F004C68A6 /* UserDefaults.plist */; };
+		D353BE120E175540004C68A6 /* kana-rule.conf in Resources */ = {isa = PBXBuildFile; fileRef = D353BE100E175540004C68A6 /* kana-rule.conf */; };
+		D353BE130E175540004C68A6 /* keymap.conf in Resources */ = {isa = PBXBuildFile; fileRef = D353BE110E175540004C68A6 /* keymap.conf */; };
+		D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */ = {isa = PBXBuildFile; fileRef = D353BE150E175552004C68A6 /* AquaSKK-Ascii.png */; };
+		D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */ = {isa = PBXBuildFile; fileRef = D353BE160E175552004C68A6 /* AquaSKK-Hirakana.png */; };
+		D353BE1E0E175552004C68A6 /* AquaSKK-InputMethod.tif in Resources */ = {isa = PBXBuildFile; fileRef = D353BE170E175552004C68A6 /* AquaSKK-InputMethod.tif */; };
+		D353BE1F0E175552004C68A6 /* AquaSKK-Jisx0201Kana.png in Resources */ = {isa = PBXBuildFile; fileRef = D353BE180E175552004C68A6 /* AquaSKK-Jisx0201Kana.png */; };
+		D353BE200E175552004C68A6 /* AquaSKK-Jisx0208Latin.png in Resources */ = {isa = PBXBuildFile; fileRef = D353BE190E175552004C68A6 /* AquaSKK-Jisx0208Latin.png */; };
+		D353BE210E175552004C68A6 /* AquaSKK-Katakana.png in Resources */ = {isa = PBXBuildFile; fileRef = D353BE1A0E175552004C68A6 /* AquaSKK-Katakana.png */; };
+		D353BE280E175578004C68A6 /* DictionarySet.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BE240E175578004C68A6 /* DictionarySet.mm */; };
+		D353BE290E175578004C68A6 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BE250E175578004C68A6 /* main.mm */; };
+		D353BE2A0E175578004C68A6 /* PreferenceController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BE270E175578004C68A6 /* PreferenceController.mm */; };
+		D353BE2B0E1756D8004C68A6 /* SKKConstVars.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDDD0E175513004C68A6 /* SKKConstVars.mm */; };
+		D353BE5C0E1756EE004C68A6 /* SKKServerProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D353BDE50E175513004C68A6 /* SKKServerProxy.mm */; };
+		D357591A10BD72E00066692B /* azik.rule in Resources */ = {isa = PBXBuildFile; fileRef = D357591910BD72E00066692B /* azik.rule */; };
+		D3665A2B0EA8BDA90065CFD2 /* MessengerWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3665A2A0EA8BDA90065CFD2 /* MessengerWindow.mm */; };
+		D376C0FD0EC728D8001B2CE9 /* MacDynamicCompletor.mm in Sources */ = {isa = PBXBuildFile; fileRef = D376C0FC0EC728D8001B2CE9 /* MacDynamicCompletor.mm */; };
+		D3790F431031B2F1007798E0 /* SKKOutputBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3790F3F1031B2F1007798E0 /* SKKOutputBuffer.cpp */; };
+		D3790F441031B2F1007798E0 /* SKKUndoContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3790F411031B2F1007798E0 /* SKKUndoContext.cpp */; };
+		D37ADC76111F0EF3000B8988 /* DictionaryTypeTransformer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D37ADC61111F0B07000B8988 /* DictionaryTypeTransformer.mm */; };
+		D38D61BE0EA792CB0095AAC8 /* MessengerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D38D61BD0EA792CB0095AAC8 /* MessengerView.mm */; };
+		D38FA9D20EA78A0800C07575 /* CompletionWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D38FA9D10EA78A0800C07575 /* CompletionWindow.mm */; };
+		D38FB82C1032F33100048A30 /* MacConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = D38FB82B1032F33100048A30 /* MacConfig.mm */; };
+		D3949A810EB4857900D46500 /* AnnotationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3949A7E0EB4857900D46500 /* AnnotationView.mm */; };
+		D3949A820EB4857900D46500 /* AnnotationWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3949A800EB4857900D46500 /* AnnotationWindow.mm */; };
+		D396A0710EA0C8C600B6B9D5 /* MacMessenger.mm in Sources */ = {isa = PBXBuildFile; fileRef = D396A0700EA0C8C600B6B9D5 /* MacMessenger.mm */; };
+		D398F2CC0E45FA940007F4B9 /* SKKInputQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D398F2CA0E45FA940007F4B9 /* SKKInputQueue.cpp */; };
+		D39ACE7B0E8E4B2F00A33FF4 /* PathFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = D39ACE7A0E8E4B2F00A33FF4 /* PathFormatter.mm */; };
+		D39E444F0EAB4FB300FB584C /* InputModeWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D39E444E0EAB4FB300FB584C /* InputModeWindow.mm */; };
+		D3AD8DA81119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3AD8DA51119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp */; };
+		D3CB86780EB47E970069107D /* MacAnnotator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3CB86770EB47E970069107D /* MacAnnotator.mm */; };
+		D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */ = {isa = PBXBuildFile; fileRef = D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */; };
+		D3D549BF1024904000622CB2 /* SKKInputModeSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */; };
+		D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */; };
+		D3E29EBC12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */; };
+		D3E61C4F0EAB544F000C1536 /* CandidateWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3E61C4E0EAB544F000C1536 /* CandidateWindow.mm */; };
+		D3F0575710BAD0C500F3233E /* SubRuleDescriptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3F0575510BAD0C500F3233E /* SubRuleDescriptions.cpp */; };
+		D3F0576210BAD10F00F3233E /* sub-rule.desc in Resources */ = {isa = PBXBuildFile; fileRef = D3F0576110BAD10F00F3233E /* sub-rule.desc */; };
+		D3F0576510BAD12600F3233E /* comma.rule in Resources */ = {isa = PBXBuildFile; fileRef = D3F0576310BAD12600F3233E /* comma.rule */; };
+		D3F0576610BAD12600F3233E /* period.rule in Resources */ = {isa = PBXBuildFile; fileRef = D3F0576410BAD12600F3233E /* period.rule */; };
+		D3F467B90E9E5FAC000A8C6A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FC339A0DD1B550006A3F5A /* Carbon.framework */; };
+		D3FC32430DD1B297006A3F5A /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FC32420DD1B297006A3F5A /* Preferences.xib */; };
+		D3FC33930DD1B52D006A3F5A /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FC33920DD1B52D006A3F5A /* InputMethodKit.framework */; };
+		D3FC33970DD1B53A006A3F5A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FC33960DD1B53A006A3F5A /* QuartzCore.framework */; };
+		D3FC339B0DD1B550006A3F5A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FC339A0DD1B550006A3F5A /* Carbon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D3FC33B30DD1D454006A3F5A /* AquaSKKPreferences.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */; };
+		D3FE45FE0E9FA98E009B64E7 /* SKKInputMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3FE45FD0E9FA98E009B64E7 /* SKKInputMenu.mm */; };
+		D3FF02C9100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3FC33B00DD1D438006A3F5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3FC322F0DD1B102006A3F5A;
+			remoteInfo = AquaSKKPreferences;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3FC33B70DD1D463006A3F5A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 12;
+			files = (
+				D3FC33B30DD1D454006A3F5A /* AquaSKKPreferences.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
+		D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEnvironment.cpp; sourceTree = "<group>"; };
+		D3045879102D3E590055E32F /* SKKInputEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputEnvironment.h; sourceTree = "<group>"; };
+		D3046C2A101F3228008A6F47 /* SKKLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKLayoutManager.h; sourceTree = "<group>"; };
+		D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKLayoutManager.mm; sourceTree = "<group>"; };
+		D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKRecursiveEditor.cpp; sourceTree = "<group>"; };
+		D30996680E4C80EA00B2F24E /* SKKRecursiveEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKRecursiveEditor.h; sourceTree = "<group>"; };
+		D30996790E4C83B800B2F24E /* SKKInputEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEngine.cpp; sourceTree = "<group>"; };
+		D309967A0E4C83B800B2F24E /* SKKInputEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputEngine.h; sourceTree = "<group>"; };
+		D31B180E0EA76F120083CD50 /* CompletionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionView.h; sourceTree = "<group>"; };
+		D31B180F0EA76F120083CD50 /* CompletionView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CompletionView.mm; sourceTree = "<group>"; };
+		D31C99CB0E9E4A3D00CBE4D1 /* Mini-Ascii.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Ascii.tiff"; sourceTree = "<group>"; };
+		D31C99CC0E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Hirakana.tiff"; sourceTree = "<group>"; };
+		D31C99CD0E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0201Kana.tiff"; sourceTree = "<group>"; };
+		D31C99CE0E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0208Latin.tiff"; sourceTree = "<group>"; };
+		D31C99CF0E9E4A3D00CBE4D1 /* Mini-Katakana.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Katakana.tiff"; sourceTree = "<group>"; };
+		D322B8D00DDC8174002C33F9 /* AquaSKK.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AquaSKK.xib; sourceTree = "<group>"; };
+		D32ABEDC11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKLocalUserDictionary.cpp; sourceTree = "<group>"; };
+		D32ABEDD11BB5BFD00F86B42 /* SKKLocalUserDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKLocalUserDictionary.h; sourceTree = "<group>"; };
+		D32F15C50EA0817700CADBD7 /* MacInputModeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacInputModeMenu.h; sourceTree = "<group>"; };
+		D32F15C60EA0817700CADBD7 /* MacInputModeMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacInputModeMenu.mm; sourceTree = "<group>"; };
+		D34531A510D14AF500D4EF49 /* SKKDictionaryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryLoader.h; sourceTree = "<group>"; };
+		D34903D5102E9CA7009CF165 /* SKKInputContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputContext.h; sourceTree = "<group>"; };
+		D35343B2100F6645007C7B13 /* MacKotoeriDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MacKotoeriDictionary.cpp; sourceTree = "<group>"; };
+		D35343B3100F6645007C7B13 /* MacKotoeriDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacKotoeriDictionary.h; sourceTree = "<group>"; };
+		D353BBDD0E1754E3004C68A6 /* SKKCandidateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidateWindow.h; sourceTree = "<group>"; };
+		D353BBDE0E1754E3004C68A6 /* SKKClipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKClipboard.h; sourceTree = "<group>"; };
+		D353BBDF0E1754E3004C68A6 /* SKKFrontEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKFrontEnd.h; sourceTree = "<group>"; };
+		D353BBE10E1754E3004C68A6 /* SKKInputSessionParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputSessionParameter.h; sourceTree = "<group>"; };
+		D353BBE50E175500004C68A6 /* SKKBackEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKBackEnd.cpp; sourceTree = "<group>"; };
+		D353BBE60E175500004C68A6 /* SKKBackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKBackEnd.h; sourceTree = "<group>"; };
+		D353BBE70E175500004C68A6 /* SKKDictionaryCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDictionaryCache.cpp; sourceTree = "<group>"; };
+		D353BBE80E175500004C68A6 /* SKKDictionaryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryCache.h; sourceTree = "<group>"; };
+		D353BBE90E175500004C68A6 /* SKKDictionaryFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDictionaryFactory.cpp; sourceTree = "<group>"; };
+		D353BBEA0E175500004C68A6 /* SKKDictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryFactory.h; sourceTree = "<group>"; };
+		D353BBEB0E175500004C68A6 /* SKKDictionaryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryKey.h; sourceTree = "<group>"; };
+		D353BBEC0E175500004C68A6 /* SKKNumericConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKNumericConverter.cpp; sourceTree = "<group>"; };
+		D353BBED0E175500004C68A6 /* SKKNumericConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKNumericConverter.h; sourceTree = "<group>"; };
+		D353BBEF0E175500004C68A6 /* SKKCompleter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKCompleter.cpp; sourceTree = "<group>"; };
+		D353BBF00E175500004C68A6 /* SKKCompleter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCompleter.h; sourceTree = "<group>"; };
+		D353BBF30E175500004C68A6 /* SKKAutoUpdateDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKAutoUpdateDictionary.h; sourceTree = "<group>"; };
+		D353BBF40E175500004C68A6 /* SKKBaseDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKBaseDictionary.h; sourceTree = "<group>"; };
+		D353BBF60E175500004C68A6 /* SKKCommonDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCommonDictionary.h; sourceTree = "<group>"; };
+		D353BBF70E175500004C68A6 /* SKKDictionaryFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDictionaryFile.cpp; sourceTree = "<group>"; };
+		D353BBF80E175500004C68A6 /* SKKDictionaryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryFile.h; sourceTree = "<group>"; };
+		D353BBF90E175500004C68A6 /* SKKDictionaryKeeper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDictionaryKeeper.cpp; sourceTree = "<group>"; };
+		D353BBFA0E175500004C68A6 /* SKKDictionaryKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryKeeper.h; sourceTree = "<group>"; };
+		D353BBFD0E175500004C68A6 /* SKKProxyDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKProxyDictionary.cpp; sourceTree = "<group>"; };
+		D353BBFE0E175500004C68A6 /* SKKProxyDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKProxyDictionary.h; sourceTree = "<group>"; };
+		D353BC000E175500004C68A6 /* SKKUserDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKUserDictionary.h; sourceTree = "<group>"; };
+		D353BC020E175500004C68A6 /* SKKBaseEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKBaseEditor.h; sourceTree = "<group>"; };
+		D353BC030E175500004C68A6 /* SKKCandidateEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKCandidateEditor.cpp; sourceTree = "<group>"; };
+		D353BC040E175500004C68A6 /* SKKCandidateEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidateEditor.h; sourceTree = "<group>"; };
+		D353BC050E175500004C68A6 /* SKKComposingEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKComposingEditor.cpp; sourceTree = "<group>"; };
+		D353BC060E175500004C68A6 /* SKKComposingEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKComposingEditor.h; sourceTree = "<group>"; };
+		D353BC0C0E175500004C68A6 /* SKKEntryRemoveEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKEntryRemoveEditor.cpp; sourceTree = "<group>"; };
+		D353BC0D0E175500004C68A6 /* SKKEntryRemoveEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKEntryRemoveEditor.h; sourceTree = "<group>"; };
+		D353BC0E0E175500004C68A6 /* SKKOkuriEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKOkuriEditor.cpp; sourceTree = "<group>"; };
+		D353BC0F0E175500004C68A6 /* SKKOkuriEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKOkuriEditor.h; sourceTree = "<group>"; };
+		D353BC100E175500004C68A6 /* SKKPrimaryEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKPrimaryEditor.cpp; sourceTree = "<group>"; };
+		D353BC110E175500004C68A6 /* SKKPrimaryEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKPrimaryEditor.h; sourceTree = "<group>"; };
+		D353BC120E175500004C68A6 /* SKKRegisterEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKRegisterEditor.cpp; sourceTree = "<group>"; };
+		D353BC130E175500004C68A6 /* SKKRegisterEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKRegisterEditor.h; sourceTree = "<group>"; };
+		D353BC140E175500004C68A6 /* SKKTextBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKTextBuffer.cpp; sourceTree = "<group>"; };
+		D353BC150E175500004C68A6 /* SKKTextBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKTextBuffer.h; sourceTree = "<group>"; };
+		D353BC170E175500004C68A6 /* SKKCandidate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKCandidate.cpp; sourceTree = "<group>"; };
+		D353BC180E175500004C68A6 /* SKKCandidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidate.h; sourceTree = "<group>"; };
+		D353BC190E175500004C68A6 /* SKKCandidateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidateParser.h; sourceTree = "<group>"; };
+		D353BC1A0E175500004C68A6 /* SKKCandidateSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidateSuite.h; sourceTree = "<group>"; };
+		D353BC1B0E175500004C68A6 /* SKKEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKEntry.cpp; sourceTree = "<group>"; };
+		D353BC1C0E175500004C68A6 /* SKKEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKEntry.h; sourceTree = "<group>"; };
+		D353BC1D0E175500004C68A6 /* SKKOkuriHint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKOkuriHint.h; sourceTree = "<group>"; };
+		D353BC1F0E175500004C68A6 /* SKKKeyState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKKeyState.h; sourceTree = "<group>"; };
+		D353BC200E175500004C68A6 /* SKKKeymap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKKeymap.cpp; sourceTree = "<group>"; };
+		D353BC210E175500004C68A6 /* SKKKeymap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKKeymap.h; sourceTree = "<group>"; };
+		D353BC220E175500004C68A6 /* SKKKeymapEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKKeymapEntry.cpp; sourceTree = "<group>"; };
+		D353BC230E175500004C68A6 /* SKKKeymapEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKKeymapEntry.h; sourceTree = "<group>"; };
+		D353BC250E175500004C68A6 /* SKKBaseSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKBaseSelector.h; sourceTree = "<group>"; };
+		D353BC260E175500004C68A6 /* SKKInlineSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInlineSelector.cpp; sourceTree = "<group>"; };
+		D353BC270E175500004C68A6 /* SKKInlineSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInlineSelector.h; sourceTree = "<group>"; };
+		D353BC280E175500004C68A6 /* SKKSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKSelector.cpp; sourceTree = "<group>"; };
+		D353BC290E175500004C68A6 /* SKKSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKSelector.h; sourceTree = "<group>"; };
+		D353BC2A0E175500004C68A6 /* SKKWindowSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKWindowSelector.cpp; sourceTree = "<group>"; };
+		D353BC2B0E175500004C68A6 /* SKKWindowSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKWindowSelector.h; sourceTree = "<group>"; };
+		D353BC300E175500004C68A6 /* SKKInputMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputMode.h; sourceTree = "<group>"; };
+		D353BC310E175500004C68A6 /* SKKInputSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputSession.cpp; sourceTree = "<group>"; };
+		D353BC320E175500004C68A6 /* SKKInputSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputSession.h; sourceTree = "<group>"; };
+		D353BC340E175500004C68A6 /* skkserv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skkserv.cpp; sourceTree = "<group>"; };
+		D353BC350E175500004C68A6 /* skkserv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skkserv.h; sourceTree = "<group>"; };
+		D353BC370E175500004C68A6 /* GenericStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericStateMachine.h; sourceTree = "<group>"; };
+		D353BC380E175500004C68A6 /* SKKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKEvent.h; sourceTree = "<group>"; };
+		D353BC390E175500004C68A6 /* SKKState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKState.cpp; sourceTree = "<group>"; };
+		D353BC3A0E175500004C68A6 /* SKKState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKState.h; sourceTree = "<group>"; };
+		D353BC3D0E175500004C68A6 /* SKKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKStateMachine.h; sourceTree = "<group>"; };
+		D353BCED0E175501004C68A6 /* SKKRomanKanaConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKRomanKanaConverter.cpp; sourceTree = "<group>"; };
+		D353BCEE0E175501004C68A6 /* SKKRomanKanaConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKRomanKanaConverter.h; sourceTree = "<group>"; };
+		D353BCEF0E175501004C68A6 /* SKKTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKTrie.cpp; sourceTree = "<group>"; };
+		D353BCF00E175501004C68A6 /* SKKTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKTrie.h; sourceTree = "<group>"; };
+		D353BCF20E175501004C68A6 /* jconv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jconv.cpp; sourceTree = "<group>"; };
+		D353BCF30E175501004C68A6 /* jconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconv.h; sourceTree = "<group>"; };
+		D353BCF70E175501004C68A6 /* pthreadutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pthreadutil.h; sourceTree = "<group>"; };
+		D353BCF80E175501004C68A6 /* socketutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socketutil.h; sourceTree = "<group>"; };
+		D353BCF90E175501004C68A6 /* subrange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subrange.h; sourceTree = "<group>"; };
+		D353BCFA0E175501004C68A6 /* utf8util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8util.h; sourceTree = "<group>"; };
+		D353BDCF0E175513004C68A6 /* MacCandidateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacCandidateWindow.h; sourceTree = "<group>"; };
+		D353BDD00E175513004C68A6 /* MacCandidateWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacCandidateWindow.mm; sourceTree = "<group>"; };
+		D353BDD10E175513004C68A6 /* MacClipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacClipboard.h; sourceTree = "<group>"; };
+		D353BDD20E175513004C68A6 /* MacClipboard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacClipboard.mm; sourceTree = "<group>"; };
+		D353BDD30E175513004C68A6 /* MacFrontEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacFrontEnd.h; sourceTree = "<group>"; };
+		D353BDD40E175513004C68A6 /* MacFrontEnd.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacFrontEnd.mm; sourceTree = "<group>"; };
+		D353BDD50E175513004C68A6 /* MacInputModeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacInputModeWindow.h; sourceTree = "<group>"; };
+		D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacInputModeWindow.mm; sourceTree = "<group>"; };
+		D353BDD70E175513004C68A6 /* MacInputSessionParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacInputSessionParameter.h; sourceTree = "<group>"; };
+		D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacInputSessionParameter.mm; sourceTree = "<group>"; };
+		D353BDDB0E175513004C68A6 /* ObjCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCUtil.h; sourceTree = "<group>"; };
+		D353BDDC0E175513004C68A6 /* SKKConstVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKConstVars.h; sourceTree = "<group>"; };
+		D353BDDD0E175513004C68A6 /* SKKConstVars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKConstVars.mm; sourceTree = "<group>"; };
+		D353BDDE0E175513004C68A6 /* SKKInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputController.h; sourceTree = "<group>"; };
+		D353BDDF0E175513004C68A6 /* SKKInputController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKInputController.mm; sourceTree = "<group>"; };
+		D353BDE00E175513004C68A6 /* SKKPreProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKPreProcessor.h; sourceTree = "<group>"; };
+		D353BDE10E175513004C68A6 /* SKKPreProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKPreProcessor.mm; sourceTree = "<group>"; };
+		D353BDE20E175513004C68A6 /* SKKServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKServer.h; sourceTree = "<group>"; };
+		D353BDE30E175513004C68A6 /* SKKServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKServer.mm; sourceTree = "<group>"; };
+		D353BDE40E175513004C68A6 /* SKKServerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKServerProxy.h; sourceTree = "<group>"; };
+		D353BDE50E175513004C68A6 /* SKKServerProxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKServerProxy.mm; sourceTree = "<group>"; };
+		D353BDE60E175513004C68A6 /* SKKSupervisor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKSupervisor.h; sourceTree = "<group>"; };
+		D353BDE70E175513004C68A6 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		D353BDF50E175523004C68A6 /* CandidateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidateCell.h; sourceTree = "<group>"; };
+		D353BDF60E175523004C68A6 /* CandidateCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CandidateCell.mm; sourceTree = "<group>"; };
+		D353BDF70E175523004C68A6 /* CandidatePageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidatePageIndicator.h; sourceTree = "<group>"; };
+		D353BDF80E175523004C68A6 /* CandidatePageIndicator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CandidatePageIndicator.mm; sourceTree = "<group>"; };
+		D353BDF90E175523004C68A6 /* CandidateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidateView.h; sourceTree = "<group>"; };
+		D353BDFA0E175523004C68A6 /* CandidateView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CandidateView.mm; sourceTree = "<group>"; };
+		D353BE0B0E17552F004C68A6 /* DictionarySet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DictionarySet.plist; sourceTree = "<group>"; };
+		D353BE0C0E17552F004C68A6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		D353BE100E175540004C68A6 /* kana-rule.conf */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = "kana-rule.conf"; sourceTree = "<group>"; };
+		D353BE110E175540004C68A6 /* keymap.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = keymap.conf; sourceTree = "<group>"; };
+		D353BE150E175552004C68A6 /* AquaSKK-Ascii.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Ascii.png"; sourceTree = "<group>"; };
+		D353BE160E175552004C68A6 /* AquaSKK-Hirakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Hirakana.png"; sourceTree = "<group>"; };
+		D353BE170E175552004C68A6 /* AquaSKK-InputMethod.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "AquaSKK-InputMethod.tif"; sourceTree = "<group>"; };
+		D353BE180E175552004C68A6 /* AquaSKK-Jisx0201Kana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0201Kana.png"; sourceTree = "<group>"; };
+		D353BE190E175552004C68A6 /* AquaSKK-Jisx0208Latin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0208Latin.png"; sourceTree = "<group>"; };
+		D353BE1A0E175552004C68A6 /* AquaSKK-Katakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Katakana.png"; sourceTree = "<group>"; };
+		D353BE230E175578004C68A6 /* DictionarySet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionarySet.h; path = ../src/preferences/DictionarySet.h; sourceTree = SOURCE_ROOT; };
+		D353BE240E175578004C68A6 /* DictionarySet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DictionarySet.mm; path = ../src/preferences/DictionarySet.mm; sourceTree = SOURCE_ROOT; };
+		D353BE250E175578004C68A6 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = ../src/preferences/main.mm; sourceTree = SOURCE_ROOT; };
+		D353BE260E175578004C68A6 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferenceController.h; path = ../src/preferences/PreferenceController.h; sourceTree = SOURCE_ROOT; };
+		D353BE270E175578004C68A6 /* PreferenceController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PreferenceController.mm; path = ../src/preferences/PreferenceController.mm; sourceTree = SOURCE_ROOT; };
+		D353BE610E1778E7004C68A6 /* jconv_body-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "jconv_body-inl.h"; sourceTree = "<group>"; };
+		D353BE620E1778E7004C68A6 /* jconv_eucj2ucs-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "jconv_eucj2ucs-inl.h"; sourceTree = "<group>"; };
+		D353BE700E177B85004C68A6 /* jconv_ucs2eucj-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "jconv_ucs2eucj-inl.h"; sourceTree = "<group>"; };
+		D353BE750E177BAB004C68A6 /* SKKStateComposing-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKKStateComposing-inl.h"; sourceTree = "<group>"; };
+		D353BE760E177BAB004C68A6 /* SKKStateEntryRemove-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKKStateEntryRemove-inl.h"; sourceTree = "<group>"; };
+		D353BE770E177BAB004C68A6 /* SKKStatePrimary-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKKStatePrimary-inl.h"; sourceTree = "<group>"; };
+		D353BE780E177BAB004C68A6 /* SKKStateRecursiveRegister-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKKStateRecursiveRegister-inl.h"; sourceTree = "<group>"; };
+		D357591910BD72E00066692B /* azik.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = azik.rule; sourceTree = "<group>"; };
+		D3665A290EA8BDA90065CFD2 /* MessengerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerWindow.h; sourceTree = "<group>"; };
+		D3665A2A0EA8BDA90065CFD2 /* MessengerWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessengerWindow.mm; sourceTree = "<group>"; };
+		D368A06B0EC68CC100145C40 /* SKKWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKWidget.h; sourceTree = "<group>"; };
+		D376C0FA0EC728C7001B2CE9 /* SKKDynamicCompletor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDynamicCompletor.h; sourceTree = "<group>"; };
+		D376C0FB0EC728D8001B2CE9 /* MacDynamicCompletor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDynamicCompletor.h; sourceTree = "<group>"; };
+		D376C0FC0EC728D8001B2CE9 /* MacDynamicCompletor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacDynamicCompletor.mm; sourceTree = "<group>"; };
+		D3790F3F1031B2F1007798E0 /* SKKOutputBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKOutputBuffer.cpp; sourceTree = "<group>"; };
+		D3790F401031B2F1007798E0 /* SKKOutputBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKOutputBuffer.h; sourceTree = "<group>"; };
+		D3790F411031B2F1007798E0 /* SKKUndoContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKUndoContext.cpp; sourceTree = "<group>"; };
+		D3790F421031B2F1007798E0 /* SKKUndoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKUndoContext.h; sourceTree = "<group>"; };
+		D37ADC60111F0B07000B8988 /* DictionaryTypeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryTypeTransformer.h; path = ../src/preferences/DictionaryTypeTransformer.h; sourceTree = SOURCE_ROOT; };
+		D37ADC61111F0B07000B8988 /* DictionaryTypeTransformer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DictionaryTypeTransformer.mm; path = ../src/preferences/DictionaryTypeTransformer.mm; sourceTree = SOURCE_ROOT; };
+		D38D61BC0EA792CB0095AAC8 /* MessengerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerView.h; sourceTree = "<group>"; };
+		D38D61BD0EA792CB0095AAC8 /* MessengerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessengerView.mm; sourceTree = "<group>"; };
+		D38D7B6D1034473A0047E2C9 /* SKKRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKRegistration.h; sourceTree = "<group>"; };
+		D38FA9D00EA78A0800C07575 /* CompletionWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionWindow.h; sourceTree = "<group>"; };
+		D38FA9D10EA78A0800C07575 /* CompletionWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CompletionWindow.mm; sourceTree = "<group>"; };
+		D38FB8291032F31200048A30 /* SKKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKConfig.h; sourceTree = "<group>"; };
+		D38FB82A1032F33100048A30 /* MacConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacConfig.h; sourceTree = "<group>"; };
+		D38FB82B1032F33100048A30 /* MacConfig.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacConfig.mm; sourceTree = "<group>"; };
+		D3949A7D0EB4857900D46500 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		D3949A7E0EB4857900D46500 /* AnnotationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnnotationView.mm; sourceTree = "<group>"; };
+		D3949A7F0EB4857900D46500 /* AnnotationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationWindow.h; sourceTree = "<group>"; };
+		D3949A800EB4857900D46500 /* AnnotationWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnnotationWindow.mm; sourceTree = "<group>"; };
+		D396A06E0EA0C8B700B6B9D5 /* SKKMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKMessenger.h; sourceTree = "<group>"; };
+		D396A06F0EA0C8C600B6B9D5 /* MacMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacMessenger.h; sourceTree = "<group>"; };
+		D396A0700EA0C8C600B6B9D5 /* MacMessenger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacMessenger.mm; sourceTree = "<group>"; };
+		D398F2CA0E45FA940007F4B9 /* SKKInputQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputQueue.cpp; sourceTree = "<group>"; };
+		D398F2CB0E45FA940007F4B9 /* SKKInputQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputQueue.h; sourceTree = "<group>"; };
+		D39ACE790E8E4B2F00A33FF4 /* PathFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathFormatter.h; path = ../src/preferences/PathFormatter.h; sourceTree = SOURCE_ROOT; };
+		D39ACE7A0E8E4B2F00A33FF4 /* PathFormatter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PathFormatter.mm; path = ../src/preferences/PathFormatter.mm; sourceTree = SOURCE_ROOT; };
+		D39E444D0EAB4FB300FB584C /* InputModeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputModeWindow.h; sourceTree = "<group>"; };
+		D39E444E0EAB4FB300FB584C /* InputModeWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InputModeWindow.mm; sourceTree = "<group>"; };
+		D3AD8DA31119C6A800809EA2 /* SKKCompletionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCompletionHelper.h; sourceTree = "<group>"; };
+		D3AD8DA41119C6A800809EA2 /* SKKDictionaryTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryTemplate.h; sourceTree = "<group>"; };
+		D3AD8DA51119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKHttpDictionaryLoader.cpp; sourceTree = "<group>"; };
+		D3AD8DA61119C6A800809EA2 /* SKKHttpDictionaryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKHttpDictionaryLoader.h; sourceTree = "<group>"; };
+		D3AD8DA71119C6A800809EA2 /* SKKLocalDictionaryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKLocalDictionaryLoader.h; sourceTree = "<group>"; };
+		D3CB86750EB47E790069107D /* SKKAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKAnnotator.h; sourceTree = "<group>"; };
+		D3CB86760EB47E970069107D /* MacAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacAnnotator.h; sourceTree = "<group>"; };
+		D3CB86770EB47E970069107D /* MacAnnotator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacAnnotator.mm; sourceTree = "<group>"; };
+		D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "azik-kana-rule.conf"; sourceTree = "<group>"; };
+		D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputModeSelector.cpp; sourceTree = "<group>"; };
+		D3D549BE1024904000622CB2 /* SKKInputModeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeSelector.h; sourceTree = "<group>"; };
+		D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDistributedUserDictionary.cpp; sourceTree = "<group>"; };
+		D3E29EBB12D359FE00C055F9 /* SKKDistributedUserDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKDistributedUserDictionary.h; sourceTree = "<group>"; };
+		D3E61C4D0EAB544F000C1536 /* CandidateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidateWindow.h; sourceTree = "<group>"; };
+		D3E61C4E0EAB544F000C1536 /* CandidateWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CandidateWindow.mm; sourceTree = "<group>"; };
+		D3F0575510BAD0C500F3233E /* SubRuleDescriptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SubRuleDescriptions.cpp; path = ../src/preferences/SubRuleDescriptions.cpp; sourceTree = SOURCE_ROOT; };
+		D3F0575610BAD0C500F3233E /* SubRuleDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubRuleDescriptions.h; path = ../src/preferences/SubRuleDescriptions.h; sourceTree = SOURCE_ROOT; };
+		D3F0576110BAD10F00F3233E /* sub-rule.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sub-rule.desc"; sourceTree = "<group>"; };
+		D3F0576310BAD12600F3233E /* comma.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = comma.rule; sourceTree = "<group>"; };
+		D3F0576410BAD12600F3233E /* period.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = period.rule; sourceTree = "<group>"; };
+		D3F0576710BAD18600F3233E /* SKKCandidateFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCandidateFilter.h; sourceTree = "<group>"; };
+		D3F0576E10BAD1D700F3233E /* stringutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringutil.h; sourceTree = "<group>"; };
+		D3FC32210DD1B09C006A3F5A /* AquaSKK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSKK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FC32230DD1B09C006A3F5A /* AquaSKK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AquaSKK-Info.plist"; sourceTree = "<group>"; };
+		D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSKKPreferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FC32320DD1B102006A3F5A /* AquaSKKPreferences-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AquaSKKPreferences-Info.plist"; sourceTree = "<group>"; };
+		D3FC32420DD1B297006A3F5A /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		D3FC33920DD1B52D006A3F5A /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/InputMethodKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3FC33960DD1B53A006A3F5A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		D3FC339A0DD1B550006A3F5A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		D3FE45FC0E9FA98E009B64E7 /* SKKInputMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputMenu.h; sourceTree = "<group>"; };
+		D3FE45FD0E9FA98E009B64E7 /* SKKInputMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKInputMenu.mm; sourceTree = "<group>"; };
+		D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKGadgetDictionary.cpp; sourceTree = "<group>"; };
+		D3FF02C8100A2C9D0028EDE6 /* SKKGadgetDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKGadgetDictionary.h; sourceTree = "<group>"; };
+		D3FF02CB100A2CB60028EDE6 /* calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3FC321F0DD1B09C006A3F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FC33930DD1B52D006A3F5A /* InputMethodKit.framework in Frameworks */,
+				D3FC33970DD1B53A006A3F5A /* QuartzCore.framework in Frameworks */,
+				D3F467B90E9E5FAC000A8C6A /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FC322E0DD1B102006A3F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FC339B0DD1B550006A3F5A /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29B97314FDCFA39411CA2CEA /* aquaskk */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC32270DD1B0D2006A3F5A /* Input Method */,
+				D3FC32360DD1B121006A3F5A /* Preferences */,
+				D3FC322B0DD1B0ED006A3F5A /* Product */,
+			);
+			name = aquaskk;
+			sourceTree = "<group>";
+		};
+		D353BBDC0E1754E3004C68A6 /* bridge */ = {
+			isa = PBXGroup;
+			children = (
+				D368A06B0EC68CC100145C40 /* SKKWidget.h */,
+				D353BBE10E1754E3004C68A6 /* SKKInputSessionParameter.h */,
+				D38FB8291032F31200048A30 /* SKKConfig.h */,
+				D353BBDF0E1754E3004C68A6 /* SKKFrontEnd.h */,
+				D353BBDD0E1754E3004C68A6 /* SKKCandidateWindow.h */,
+				D396A06E0EA0C8B700B6B9D5 /* SKKMessenger.h */,
+				D353BBDE0E1754E3004C68A6 /* SKKClipboard.h */,
+				D3CB86750EB47E790069107D /* SKKAnnotator.h */,
+				D376C0FA0EC728C7001B2CE9 /* SKKDynamicCompletor.h */,
+				D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */,
+			);
+			name = bridge;
+			path = ../../../src/bridge;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BBE30E175500004C68A6 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				D353BBE40E175500004C68A6 /* backend */,
+				D353BBEE0E175500004C68A6 /* completer */,
+				D353BBF10E175500004C68A6 /* dictionary */,
+				D353BC010E175500004C68A6 /* editor */,
+				D353BC160E175500004C68A6 /* entry */,
+				D353BC1E0E175500004C68A6 /* keymap */,
+				D353BC240E175500004C68A6 /* selector */,
+				D353BC2C0E175500004C68A6 /* session */,
+				D353BC330E175500004C68A6 /* skkserv */,
+				D353BC360E175500004C68A6 /* state */,
+				D353BCEC0E175501004C68A6 /* trie */,
+				D353BCF10E175501004C68A6 /* utility */,
+			);
+			name = engine;
+			path = ../../../src/engine;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BBE40E175500004C68A6 /* backend */ = {
+			isa = PBXGroup;
+			children = (
+				D353BBE60E175500004C68A6 /* SKKBackEnd.h */,
+				D353BBE50E175500004C68A6 /* SKKBackEnd.cpp */,
+				D353BBEB0E175500004C68A6 /* SKKDictionaryKey.h */,
+				D353BBE80E175500004C68A6 /* SKKDictionaryCache.h */,
+				D353BBE70E175500004C68A6 /* SKKDictionaryCache.cpp */,
+				D353BBEA0E175500004C68A6 /* SKKDictionaryFactory.h */,
+				D353BBE90E175500004C68A6 /* SKKDictionaryFactory.cpp */,
+				D353BBED0E175500004C68A6 /* SKKNumericConverter.h */,
+				D353BBEC0E175500004C68A6 /* SKKNumericConverter.cpp */,
+				D3F0576710BAD18600F3233E /* SKKCandidateFilter.h */,
+			);
+			path = backend;
+			sourceTree = "<group>";
+		};
+		D353BBEE0E175500004C68A6 /* completer */ = {
+			isa = PBXGroup;
+			children = (
+				D353BBF00E175500004C68A6 /* SKKCompleter.h */,
+				D353BBEF0E175500004C68A6 /* SKKCompleter.cpp */,
+			);
+			path = completer;
+			sourceTree = "<group>";
+		};
+		D353BBF10E175500004C68A6 /* dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				D353BBF40E175500004C68A6 /* SKKBaseDictionary.h */,
+				D353BBF30E175500004C68A6 /* SKKAutoUpdateDictionary.h */,
+				D353BBF60E175500004C68A6 /* SKKCommonDictionary.h */,
+				D353BBFE0E175500004C68A6 /* SKKProxyDictionary.h */,
+				D353BBFD0E175500004C68A6 /* SKKProxyDictionary.cpp */,
+				D353BC000E175500004C68A6 /* SKKUserDictionary.h */,
+				D32ABEDD11BB5BFD00F86B42 /* SKKLocalUserDictionary.h */,
+				D32ABEDC11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp */,
+				D3E29EBB12D359FE00C055F9 /* SKKDistributedUserDictionary.h */,
+				D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */,
+				D3FF02C8100A2C9D0028EDE6 /* SKKGadgetDictionary.h */,
+				D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */,
+				D3AD8DA31119C6A800809EA2 /* SKKCompletionHelper.h */,
+				D3AD8DA41119C6A800809EA2 /* SKKDictionaryTemplate.h */,
+				D353BBF80E175500004C68A6 /* SKKDictionaryFile.h */,
+				D353BBF70E175500004C68A6 /* SKKDictionaryFile.cpp */,
+				D34531A510D14AF500D4EF49 /* SKKDictionaryLoader.h */,
+				D353BBFA0E175500004C68A6 /* SKKDictionaryKeeper.h */,
+				D353BBF90E175500004C68A6 /* SKKDictionaryKeeper.cpp */,
+				D3AD8DA71119C6A800809EA2 /* SKKLocalDictionaryLoader.h */,
+				D3AD8DA51119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp */,
+				D3AD8DA61119C6A800809EA2 /* SKKHttpDictionaryLoader.h */,
+			);
+			path = dictionary;
+			sourceTree = "<group>";
+		};
+		D353BC010E175500004C68A6 /* editor */ = {
+			isa = PBXGroup;
+			children = (
+				D309967A0E4C83B800B2F24E /* SKKInputEngine.h */,
+				D30996790E4C83B800B2F24E /* SKKInputEngine.cpp */,
+				D398F2CB0E45FA940007F4B9 /* SKKInputQueue.h */,
+				D398F2CA0E45FA940007F4B9 /* SKKInputQueue.cpp */,
+				D353BC020E175500004C68A6 /* SKKBaseEditor.h */,
+				D353BC110E175500004C68A6 /* SKKPrimaryEditor.h */,
+				D353BC100E175500004C68A6 /* SKKPrimaryEditor.cpp */,
+				D353BC130E175500004C68A6 /* SKKRegisterEditor.h */,
+				D353BC120E175500004C68A6 /* SKKRegisterEditor.cpp */,
+				D353BC060E175500004C68A6 /* SKKComposingEditor.h */,
+				D353BC050E175500004C68A6 /* SKKComposingEditor.cpp */,
+				D353BC0F0E175500004C68A6 /* SKKOkuriEditor.h */,
+				D353BC0E0E175500004C68A6 /* SKKOkuriEditor.cpp */,
+				D353BC040E175500004C68A6 /* SKKCandidateEditor.h */,
+				D353BC030E175500004C68A6 /* SKKCandidateEditor.cpp */,
+				D353BC0D0E175500004C68A6 /* SKKEntryRemoveEditor.h */,
+				D353BC0C0E175500004C68A6 /* SKKEntryRemoveEditor.cpp */,
+				D353BC150E175500004C68A6 /* SKKTextBuffer.h */,
+				D353BC140E175500004C68A6 /* SKKTextBuffer.cpp */,
+			);
+			path = editor;
+			sourceTree = "<group>";
+		};
+		D353BC160E175500004C68A6 /* entry */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC170E175500004C68A6 /* SKKCandidate.cpp */,
+				D353BC180E175500004C68A6 /* SKKCandidate.h */,
+				D353BC190E175500004C68A6 /* SKKCandidateParser.h */,
+				D353BC1A0E175500004C68A6 /* SKKCandidateSuite.h */,
+				D353BC1B0E175500004C68A6 /* SKKEntry.cpp */,
+				D353BC1C0E175500004C68A6 /* SKKEntry.h */,
+				D353BC1D0E175500004C68A6 /* SKKOkuriHint.h */,
+			);
+			path = entry;
+			sourceTree = "<group>";
+		};
+		D353BC1E0E175500004C68A6 /* keymap */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC1F0E175500004C68A6 /* SKKKeyState.h */,
+				D353BC200E175500004C68A6 /* SKKKeymap.cpp */,
+				D353BC210E175500004C68A6 /* SKKKeymap.h */,
+				D353BC220E175500004C68A6 /* SKKKeymapEntry.cpp */,
+				D353BC230E175500004C68A6 /* SKKKeymapEntry.h */,
+			);
+			path = keymap;
+			sourceTree = "<group>";
+		};
+		D353BC240E175500004C68A6 /* selector */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC250E175500004C68A6 /* SKKBaseSelector.h */,
+				D353BC260E175500004C68A6 /* SKKInlineSelector.cpp */,
+				D353BC270E175500004C68A6 /* SKKInlineSelector.h */,
+				D353BC280E175500004C68A6 /* SKKSelector.cpp */,
+				D353BC290E175500004C68A6 /* SKKSelector.h */,
+				D353BC2A0E175500004C68A6 /* SKKWindowSelector.cpp */,
+				D353BC2B0E175500004C68A6 /* SKKWindowSelector.h */,
+			);
+			path = selector;
+			sourceTree = "<group>";
+		};
+		D353BC2C0E175500004C68A6 /* session */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC320E175500004C68A6 /* SKKInputSession.h */,
+				D353BC310E175500004C68A6 /* SKKInputSession.cpp */,
+				D34903D5102E9CA7009CF165 /* SKKInputContext.h */,
+				D3045879102D3E590055E32F /* SKKInputEnvironment.h */,
+				D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */,
+				D30996680E4C80EA00B2F24E /* SKKRecursiveEditor.h */,
+				D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */,
+				D353BC300E175500004C68A6 /* SKKInputMode.h */,
+				D3D549BE1024904000622CB2 /* SKKInputModeSelector.h */,
+				D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */,
+				D3790F401031B2F1007798E0 /* SKKOutputBuffer.h */,
+				D3790F3F1031B2F1007798E0 /* SKKOutputBuffer.cpp */,
+				D3790F421031B2F1007798E0 /* SKKUndoContext.h */,
+				D3790F411031B2F1007798E0 /* SKKUndoContext.cpp */,
+				D38D7B6D1034473A0047E2C9 /* SKKRegistration.h */,
+			);
+			path = session;
+			sourceTree = "<group>";
+		};
+		D353BC330E175500004C68A6 /* skkserv */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC340E175500004C68A6 /* skkserv.cpp */,
+				D353BC350E175500004C68A6 /* skkserv.h */,
+			);
+			path = skkserv;
+			sourceTree = "<group>";
+		};
+		D353BC360E175500004C68A6 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC370E175500004C68A6 /* GenericStateMachine.h */,
+				D353BC3D0E175500004C68A6 /* SKKStateMachine.h */,
+				D353BC380E175500004C68A6 /* SKKEvent.h */,
+				D353BC3A0E175500004C68A6 /* SKKState.h */,
+				D353BC390E175500004C68A6 /* SKKState.cpp */,
+				D353BE770E177BAB004C68A6 /* SKKStatePrimary-inl.h */,
+				D353BE750E177BAB004C68A6 /* SKKStateComposing-inl.h */,
+				D353BE780E177BAB004C68A6 /* SKKStateRecursiveRegister-inl.h */,
+				D353BE760E177BAB004C68A6 /* SKKStateEntryRemove-inl.h */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
+		D353BCEC0E175501004C68A6 /* trie */ = {
+			isa = PBXGroup;
+			children = (
+				D353BCED0E175501004C68A6 /* SKKRomanKanaConverter.cpp */,
+				D353BCEE0E175501004C68A6 /* SKKRomanKanaConverter.h */,
+				D353BCEF0E175501004C68A6 /* SKKTrie.cpp */,
+				D353BCF00E175501004C68A6 /* SKKTrie.h */,
+			);
+			path = trie;
+			sourceTree = "<group>";
+		};
+		D353BCF10E175501004C68A6 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				D3FF02CB100A2CB60028EDE6 /* calculator.h */,
+				D353BCF30E175501004C68A6 /* jconv.h */,
+				D353BCF20E175501004C68A6 /* jconv.cpp */,
+				D353BE620E1778E7004C68A6 /* jconv_eucj2ucs-inl.h */,
+				D353BE700E177B85004C68A6 /* jconv_ucs2eucj-inl.h */,
+				D353BE610E1778E7004C68A6 /* jconv_body-inl.h */,
+				D353BCF70E175501004C68A6 /* pthreadutil.h */,
+				D353BCF80E175501004C68A6 /* socketutil.h */,
+				D353BCF90E175501004C68A6 /* subrange.h */,
+				D353BCFA0E175501004C68A6 /* utf8util.h */,
+				D3F0576E10BAD1D700F3233E /* stringutil.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		D353BDCE0E175513004C68A6 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				D38FB82A1032F33100048A30 /* MacConfig.h */,
+				D38FB82B1032F33100048A30 /* MacConfig.mm */,
+				D3CB86760EB47E970069107D /* MacAnnotator.h */,
+				D3CB86770EB47E970069107D /* MacAnnotator.mm */,
+				D353BDCF0E175513004C68A6 /* MacCandidateWindow.h */,
+				D353BDD00E175513004C68A6 /* MacCandidateWindow.mm */,
+				D376C0FB0EC728D8001B2CE9 /* MacDynamicCompletor.h */,
+				D376C0FC0EC728D8001B2CE9 /* MacDynamicCompletor.mm */,
+				D35343B3100F6645007C7B13 /* MacKotoeriDictionary.h */,
+				D35343B2100F6645007C7B13 /* MacKotoeriDictionary.cpp */,
+				D396A06F0EA0C8C600B6B9D5 /* MacMessenger.h */,
+				D396A0700EA0C8C600B6B9D5 /* MacMessenger.mm */,
+				D353BDD10E175513004C68A6 /* MacClipboard.h */,
+				D353BDD20E175513004C68A6 /* MacClipboard.mm */,
+				D353BDD30E175513004C68A6 /* MacFrontEnd.h */,
+				D353BDD40E175513004C68A6 /* MacFrontEnd.mm */,
+				D32F15C50EA0817700CADBD7 /* MacInputModeMenu.h */,
+				D32F15C60EA0817700CADBD7 /* MacInputModeMenu.mm */,
+				D353BDD50E175513004C68A6 /* MacInputModeWindow.h */,
+				D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */,
+				D353BDD70E175513004C68A6 /* MacInputSessionParameter.h */,
+				D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */,
+				D353BDDB0E175513004C68A6 /* ObjCUtil.h */,
+				D353BDDC0E175513004C68A6 /* SKKConstVars.h */,
+				D353BDDD0E175513004C68A6 /* SKKConstVars.mm */,
+				D353BDDE0E175513004C68A6 /* SKKInputController.h */,
+				D353BDDF0E175513004C68A6 /* SKKInputController.mm */,
+				D3FE45FC0E9FA98E009B64E7 /* SKKInputMenu.h */,
+				D3FE45FD0E9FA98E009B64E7 /* SKKInputMenu.mm */,
+				D3046C2A101F3228008A6F47 /* SKKLayoutManager.h */,
+				D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */,
+				D353BDE00E175513004C68A6 /* SKKPreProcessor.h */,
+				D353BDE10E175513004C68A6 /* SKKPreProcessor.mm */,
+				D353BDE20E175513004C68A6 /* SKKServer.h */,
+				D353BDE30E175513004C68A6 /* SKKServer.mm */,
+				D353BDE40E175513004C68A6 /* SKKServerProxy.h */,
+				D353BDE50E175513004C68A6 /* SKKServerProxy.mm */,
+				D353BDE60E175513004C68A6 /* SKKSupervisor.h */,
+				D353BDE70E175513004C68A6 /* main.mm */,
+			);
+			name = server;
+			path = ../src/server;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BDF40E175523004C68A6 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				D3949A7D0EB4857900D46500 /* AnnotationView.h */,
+				D3949A7E0EB4857900D46500 /* AnnotationView.mm */,
+				D3949A7F0EB4857900D46500 /* AnnotationWindow.h */,
+				D3949A800EB4857900D46500 /* AnnotationWindow.mm */,
+				D31B180E0EA76F120083CD50 /* CompletionView.h */,
+				D31B180F0EA76F120083CD50 /* CompletionView.mm */,
+				D38FA9D00EA78A0800C07575 /* CompletionWindow.h */,
+				D38FA9D10EA78A0800C07575 /* CompletionWindow.mm */,
+				D353BDF50E175523004C68A6 /* CandidateCell.h */,
+				D353BDF60E175523004C68A6 /* CandidateCell.mm */,
+				D353BDF70E175523004C68A6 /* CandidatePageIndicator.h */,
+				D353BDF80E175523004C68A6 /* CandidatePageIndicator.mm */,
+				D353BDF90E175523004C68A6 /* CandidateView.h */,
+				D353BDFA0E175523004C68A6 /* CandidateView.mm */,
+				D3E61C4D0EAB544F000C1536 /* CandidateWindow.h */,
+				D3E61C4E0EAB544F000C1536 /* CandidateWindow.mm */,
+				D38D61BC0EA792CB0095AAC8 /* MessengerView.h */,
+				D38D61BD0EA792CB0095AAC8 /* MessengerView.mm */,
+				D3665A290EA8BDA90065CFD2 /* MessengerWindow.h */,
+				D3665A2A0EA8BDA90065CFD2 /* MessengerWindow.mm */,
+				D39E444D0EAB4FB300FB584C /* InputModeWindow.h */,
+				D39E444E0EAB4FB300FB584C /* InputModeWindow.mm */,
+			);
+			name = gui;
+			path = ../src/gui;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BE0A0E17552F004C68A6 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				D353BE0C0E17552F004C68A6 /* UserDefaults.plist */,
+				D353BE0B0E17552F004C68A6 /* DictionarySet.plist */,
+			);
+			name = plist;
+			path = ../plist;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BE0F0E175540004C68A6 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				D353BE110E175540004C68A6 /* keymap.conf */,
+				D353BE100E175540004C68A6 /* kana-rule.conf */,
+				D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */,
+				D3F0576110BAD10F00F3233E /* sub-rule.desc */,
+				D357591910BD72E00066692B /* azik.rule */,
+				D3F0576410BAD12600F3233E /* period.rule */,
+				D3F0576310BAD12600F3233E /* comma.rule */,
+			);
+			name = config;
+			path = ../../../data/config;
+			sourceTree = SOURCE_ROOT;
+		};
+		D353BE140E175552004C68A6 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				D31C99CB0E9E4A3D00CBE4D1 /* Mini-Ascii.tiff */,
+				D31C99CC0E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff */,
+				D31C99CD0E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff */,
+				D31C99CE0E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff */,
+				D31C99CF0E9E4A3D00CBE4D1 /* Mini-Katakana.tiff */,
+				D353BE170E175552004C68A6 /* AquaSKK-InputMethod.tif */,
+				D353BE150E175552004C68A6 /* AquaSKK-Ascii.png */,
+				D353BE160E175552004C68A6 /* AquaSKK-Hirakana.png */,
+				D353BE1A0E175552004C68A6 /* AquaSKK-Katakana.png */,
+				D353BE180E175552004C68A6 /* AquaSKK-Jisx0201Kana.png */,
+				D353BE190E175552004C68A6 /* AquaSKK-Jisx0208Latin.png */,
+			);
+			name = icons;
+			path = ../../../data/icons;
+			sourceTree = SOURCE_ROOT;
+		};
+		D3FC32270DD1B0D2006A3F5A /* Input Method */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC32230DD1B09C006A3F5A /* AquaSKK-Info.plist */,
+				D3FC322A0DD1B0E7006A3F5A /* Sources */,
+				D3FC32290DD1B0DF006A3F5A /* Resources */,
+				D3FC32280DD1B0D8006A3F5A /* Frameworks */,
+			);
+			name = "Input Method";
+			sourceTree = "<group>";
+		};
+		D3FC32280DD1B0D8006A3F5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC33960DD1B53A006A3F5A /* QuartzCore.framework */,
+				D3FC33920DD1B52D006A3F5A /* InputMethodKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3FC32290DD1B0DF006A3F5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D353BE140E175552004C68A6 /* icons */,
+				D353BE0F0E175540004C68A6 /* config */,
+				D353BE0A0E17552F004C68A6 /* plist */,
+				D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */,
+				D322B8D00DDC8174002C33F9 /* AquaSKK.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D3FC322A0DD1B0E7006A3F5A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D353BBE30E175500004C68A6 /* engine */,
+				D353BBDC0E1754E3004C68A6 /* bridge */,
+				D353BDCE0E175513004C68A6 /* server */,
+				D353BDF40E175523004C68A6 /* gui */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		D3FC322B0DD1B0ED006A3F5A /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC32210DD1B09C006A3F5A /* AquaSKK.app */,
+				D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		D3FC32360DD1B121006A3F5A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC32320DD1B102006A3F5A /* AquaSKKPreferences-Info.plist */,
+				D3FC32390DD1B142006A3F5A /* Sources */,
+				D3FC32380DD1B13C006A3F5A /* Resources */,
+				D3FC32370DD1B134006A3F5A /* Frameworks */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		D3FC32370DD1B134006A3F5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC339A0DD1B550006A3F5A /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3FC32380DD1B13C006A3F5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC32420DD1B297006A3F5A /* Preferences.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D3FC32390DD1B142006A3F5A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D353BE250E175578004C68A6 /* main.mm */,
+				D353BE260E175578004C68A6 /* PreferenceController.h */,
+				D353BE270E175578004C68A6 /* PreferenceController.mm */,
+				D353BE230E175578004C68A6 /* DictionarySet.h */,
+				D353BE240E175578004C68A6 /* DictionarySet.mm */,
+				D37ADC60111F0B07000B8988 /* DictionaryTypeTransformer.h */,
+				D37ADC61111F0B07000B8988 /* DictionaryTypeTransformer.mm */,
+				D39ACE790E8E4B2F00A33FF4 /* PathFormatter.h */,
+				D39ACE7A0E8E4B2F00A33FF4 /* PathFormatter.mm */,
+				D3F0575610BAD0C500F3233E /* SubRuleDescriptions.h */,
+				D3F0575510BAD0C500F3233E /* SubRuleDescriptions.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3FC32200DD1B09C006A3F5A /* AquaSKK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FC32260DD1B09C006A3F5A /* Build configuration list for PBXNativeTarget "AquaSKK" */;
+			buildPhases = (
+				D3FC321D0DD1B09C006A3F5A /* Resources */,
+				D3FC321E0DD1B09C006A3F5A /* Sources */,
+				D3FC321F0DD1B09C006A3F5A /* Frameworks */,
+				D3FC33B70DD1D463006A3F5A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3FC33B10DD1D438006A3F5A /* PBXTargetDependency */,
+			);
+			name = AquaSKK;
+			productName = AquaSKK;
+			productReference = D3FC32210DD1B09C006A3F5A /* AquaSKK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3FC322F0DD1B102006A3F5A /* AquaSKKPreferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FC32350DD1B102006A3F5A /* Build configuration list for PBXNativeTarget "AquaSKKPreferences" */;
+			buildPhases = (
+				D3FC322C0DD1B102006A3F5A /* Resources */,
+				D3FC322D0DD1B102006A3F5A /* Sources */,
+				D3FC322E0DD1B102006A3F5A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AquaSKKPreferences;
+			productName = AquaSKKPreferences;
+			productReference = D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AquaSKK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* aquaskk */;
+			productRefGroup = 29B97314FDCFA39411CA2CEA /* aquaskk */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3FC32200DD1B09C006A3F5A /* AquaSKK */,
+				D3FC322F0DD1B102006A3F5A /* AquaSKKPreferences */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3FC321D0DD1B09C006A3F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D322B8D10DDC8174002C33F9 /* AquaSKK.xib in Resources */,
+				D353BE0D0E17552F004C68A6 /* DictionarySet.plist in Resources */,
+				D353BE0E0E17552F004C68A6 /* UserDefaults.plist in Resources */,
+				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
+				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
+				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
+				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
+				D353BE1E0E175552004C68A6 /* AquaSKK-InputMethod.tif in Resources */,
+				D353BE1F0E175552004C68A6 /* AquaSKK-Jisx0201Kana.png in Resources */,
+				D353BE200E175552004C68A6 /* AquaSKK-Jisx0208Latin.png in Resources */,
+				D353BE210E175552004C68A6 /* AquaSKK-Katakana.png in Resources */,
+				D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */,
+				D31C99D00E9E4A3D00CBE4D1 /* Mini-Ascii.tiff in Resources */,
+				D31C99D10E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff in Resources */,
+				D31C99D20E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff in Resources */,
+				D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */,
+				D31C99D40E9E4A3D00CBE4D1 /* Mini-Katakana.tiff in Resources */,
+				D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */,
+				D3F0576210BAD10F00F3233E /* sub-rule.desc in Resources */,
+				D3F0576510BAD12600F3233E /* comma.rule in Resources */,
+				D3F0576610BAD12600F3233E /* period.rule in Resources */,
+				D357591A10BD72E00066692B /* azik.rule in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FC322C0DD1B102006A3F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FC32430DD1B297006A3F5A /* Preferences.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3FC321E0DD1B09C006A3F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D353BCFB0E175501004C68A6 /* SKKBackEnd.cpp in Sources */,
+				D353BCFC0E175501004C68A6 /* SKKDictionaryCache.cpp in Sources */,
+				D353BCFD0E175501004C68A6 /* SKKDictionaryFactory.cpp in Sources */,
+				D353BCFE0E175501004C68A6 /* SKKNumericConverter.cpp in Sources */,
+				D353BCFF0E175501004C68A6 /* SKKCompleter.cpp in Sources */,
+				D353BD020E175501004C68A6 /* SKKDictionaryFile.cpp in Sources */,
+				D353BD030E175501004C68A6 /* SKKDictionaryKeeper.cpp in Sources */,
+				D353BD050E175501004C68A6 /* SKKProxyDictionary.cpp in Sources */,
+				D353BD070E175501004C68A6 /* SKKCandidateEditor.cpp in Sources */,
+				D353BD080E175501004C68A6 /* SKKComposingEditor.cpp in Sources */,
+				D353BD0B0E175501004C68A6 /* SKKEntryRemoveEditor.cpp in Sources */,
+				D353BD0C0E175501004C68A6 /* SKKOkuriEditor.cpp in Sources */,
+				D353BD0D0E175501004C68A6 /* SKKPrimaryEditor.cpp in Sources */,
+				D353BD0E0E175501004C68A6 /* SKKRegisterEditor.cpp in Sources */,
+				D353BD0F0E175501004C68A6 /* SKKTextBuffer.cpp in Sources */,
+				D353BD100E175501004C68A6 /* SKKCandidate.cpp in Sources */,
+				D353BD110E175501004C68A6 /* SKKEntry.cpp in Sources */,
+				D353BD120E175501004C68A6 /* SKKKeymap.cpp in Sources */,
+				D353BD130E175501004C68A6 /* SKKKeymapEntry.cpp in Sources */,
+				D353BD140E175501004C68A6 /* SKKInlineSelector.cpp in Sources */,
+				D353BD150E175501004C68A6 /* SKKSelector.cpp in Sources */,
+				D353BD160E175501004C68A6 /* SKKWindowSelector.cpp in Sources */,
+				D353BD190E175501004C68A6 /* SKKInputSession.cpp in Sources */,
+				D353BD1A0E175501004C68A6 /* skkserv.cpp in Sources */,
+				D353BD1B0E175501004C68A6 /* SKKState.cpp in Sources */,
+				D353BDC80E175502004C68A6 /* SKKRomanKanaConverter.cpp in Sources */,
+				D353BDC90E175502004C68A6 /* SKKTrie.cpp in Sources */,
+				D353BDCA0E175502004C68A6 /* jconv.cpp in Sources */,
+				D353BDE80E175513004C68A6 /* MacCandidateWindow.mm in Sources */,
+				D353BDE90E175513004C68A6 /* MacClipboard.mm in Sources */,
+				D353BDEA0E175513004C68A6 /* MacFrontEnd.mm in Sources */,
+				D353BDEB0E175513004C68A6 /* MacInputModeWindow.mm in Sources */,
+				D353BDEC0E175513004C68A6 /* MacInputSessionParameter.mm in Sources */,
+				D353BDEE0E175513004C68A6 /* SKKConstVars.mm in Sources */,
+				D353BDEF0E175513004C68A6 /* SKKInputController.mm in Sources */,
+				D353BDF00E175513004C68A6 /* SKKPreProcessor.mm in Sources */,
+				D353BDF10E175513004C68A6 /* SKKServer.mm in Sources */,
+				D353BDF20E175513004C68A6 /* SKKServerProxy.mm in Sources */,
+				D353BDF30E175513004C68A6 /* main.mm in Sources */,
+				D353BE030E175523004C68A6 /* CandidateCell.mm in Sources */,
+				D353BE040E175523004C68A6 /* CandidatePageIndicator.mm in Sources */,
+				D353BE050E175523004C68A6 /* CandidateView.mm in Sources */,
+				D398F2CC0E45FA940007F4B9 /* SKKInputQueue.cpp in Sources */,
+				D30996690E4C80EA00B2F24E /* SKKRecursiveEditor.cpp in Sources */,
+				D309967B0E4C83B800B2F24E /* SKKInputEngine.cpp in Sources */,
+				D3FE45FE0E9FA98E009B64E7 /* SKKInputMenu.mm in Sources */,
+				D32F15C70EA0817700CADBD7 /* MacInputModeMenu.mm in Sources */,
+				D396A0710EA0C8C600B6B9D5 /* MacMessenger.mm in Sources */,
+				D31B18100EA76F120083CD50 /* CompletionView.mm in Sources */,
+				D38FA9D20EA78A0800C07575 /* CompletionWindow.mm in Sources */,
+				D38D61BE0EA792CB0095AAC8 /* MessengerView.mm in Sources */,
+				D3665A2B0EA8BDA90065CFD2 /* MessengerWindow.mm in Sources */,
+				D39E444F0EAB4FB300FB584C /* InputModeWindow.mm in Sources */,
+				D3E61C4F0EAB544F000C1536 /* CandidateWindow.mm in Sources */,
+				D3CB86780EB47E970069107D /* MacAnnotator.mm in Sources */,
+				D3949A810EB4857900D46500 /* AnnotationView.mm in Sources */,
+				D3949A820EB4857900D46500 /* AnnotationWindow.mm in Sources */,
+				D376C0FD0EC728D8001B2CE9 /* MacDynamicCompletor.mm in Sources */,
+				D3FF02C9100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp in Sources */,
+				D35343B4100F6645007C7B13 /* MacKotoeriDictionary.cpp in Sources */,
+				D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */,
+				D3D549BF1024904000622CB2 /* SKKInputModeSelector.cpp in Sources */,
+				D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */,
+				D3790F431031B2F1007798E0 /* SKKOutputBuffer.cpp in Sources */,
+				D3790F441031B2F1007798E0 /* SKKUndoContext.cpp in Sources */,
+				D38FB82C1032F33100048A30 /* MacConfig.mm in Sources */,
+				D3AD8DA81119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp in Sources */,
+				D32ABEDE11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp in Sources */,
+				D3E29EBC12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FC322D0DD1B102006A3F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D353BE280E175578004C68A6 /* DictionarySet.mm in Sources */,
+				D353BE290E175578004C68A6 /* main.mm in Sources */,
+				D353BE2A0E175578004C68A6 /* PreferenceController.mm in Sources */,
+				D353BE2B0E1756D8004C68A6 /* SKKConstVars.mm in Sources */,
+				D353BE5C0E1756EE004C68A6 /* SKKServerProxy.mm in Sources */,
+				D39ACE7B0E8E4B2F00A33FF4 /* PathFormatter.mm in Sources */,
+				D3F0575710BAD0C500F3233E /* SubRuleDescriptions.cpp in Sources */,
+				D37ADC76111F0EF3000B8988 /* DictionaryTypeTransformer.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3FC33B10DD1D438006A3F5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3FC322F0DD1B102006A3F5A /* AquaSKKPreferences */;
+			targetProxy = D3FC33B00DD1D438006A3F5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D3FC32240DD1B09C006A3F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = aquaskk_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = SKK_DEBUG;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "AquaSKK-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../src/engine/tests\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = AquaSKK;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		D3FC32250DD1B09C006A3F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = aquaskk_Prefix.pch;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "AquaSKK-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../src/engine/tests\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = AquaSKK;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D3FC32330DD1B102006A3F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = aquaskk_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = AquaSKKPreferences;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D3FC32340DD1B102006A3F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = aquaskk_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = AquaSKKPreferences;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AquaSKK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FC32260DD1B09C006A3F5A /* Build configuration list for PBXNativeTarget "AquaSKK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FC32240DD1B09C006A3F5A /* Debug */,
+				D3FC32250DD1B09C006A3F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FC32350DD1B102006A3F5A /* Build configuration list for PBXNativeTarget "AquaSKKPreferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FC32330DD1B102006A3F5A /* Debug */,
+				D3FC32340DD1B102006A3F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

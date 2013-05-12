@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>suppress_newline_on_commit</key>
+	<true/>
+	<key>use_numeric_conversion</key>
+	<true/>
+        <key>show_input_mode_icon</key>
+        <true/>
+        <key>use_individual_input_mode</key>
+        <false/>
+        <key>beep_on_registration</key>
+        <false/>
+        <key>inline_backspace_implies_commit</key>
+        <false/>
+        <key>delete_okuri_when_quit</key>
+        <true/>
+
+	<key>keyboard_layout</key>
+	<string>com.apple.keylayout.US</string>
+
+        <key>enable_extended_completion</key>
+        <true/>
+        <key>enable_dynamic_completion</key>
+        <false/>
+        <key>dynamic_completion_range</key>
+        <integer>1</integer>
+        <key>minimum_completion_length</key>
+        <integer>0</integer>
+
+	<key>max_count_of_inline_candidates</key>
+	<integer>4</integer>
+	<key>candidate_window_labels</key>
+	<string>ASDFJKL</string>
+	<key>candidate_window_font_name</key>
+	<string>Trebuchet MS</string>
+	<key>candidate_window_font_size</key>
+	<integer>18</integer>
+        <key>put_candidate_window_upward</key>
+        <false/>
+        <key>enable_annotation</key>
+        <false/>
+
+        <key>user_dictionary_path</key>
+        <string>~/Library/Application Support/AquaSKK/skk-jisyo.utf8</string>
+
+	<key>enable_skkserv</key>
+	<false/>
+	<key>skkserv_localonly</key>
+	<true/>
+	<key>skkserv_port</key>
+	<integer>1178</integer>
+
+        <key>enable_private_mode</key>
+        <false/>
+
+        <key>fix_intermediate_conversion</key>
+        <true/>
+        <key>display_shortest_match_of_kana_conversions</key>
+        <false/>
+        <key>handle_recursive_entry_as_okuri</key>
+        <false/>
+
+        <key>openlab_host</key>
+        <string>openlab.ring.gr.jp</string>
+        <key>openlab_path</key>
+        <string>/skk/skk/dic</string>
+
+        <key>enable_skkdap</key>
+        <false/>
+        <key>skkdap_folder</key>
+        <string>~/Library/Application Support/AquaSKK</string>
+        <key>skkdap_port</key>
+        <integer>2178</integer>
+</dict>
+</plist>

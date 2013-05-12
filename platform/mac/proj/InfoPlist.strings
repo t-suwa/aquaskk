@@ -1,0 +1,7 @@
+CFBundleName = "AquaSKK";
+com.apple.inputmethod.Japanese = "AquaSKK 統合";
+com.apple.inputmethod.Japanese.Hiragana = "ひらかな";
+com.apple.inputmethod.Japanese.Katakana = "カタカナ";
+com.apple.inputmethod.Japanese.HalfWidthKana = "半角カナ";
+com.apple.inputmethod.Japanese.FullWidthRoman = "全角英数";
+com.apple.inputmethod.Roman = "ASCII";
