@@ -14,7 +14,7 @@ $ make pkg
 $ make dmg
 ```
 
-### Instal debug build
+### Install debug build
 After install AquaSKK package, you could replace `AquaSKK.app` with debug build.
 
 ```
