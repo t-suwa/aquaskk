@@ -108,7 +108,7 @@ int SKKHttpDictionaryLoader::file_size(const std::string& path) const {
     struct stat st;
 
     if(stat(path.c_str(), &st) == 0) {
-        return st.st_size;
+        return (int)st.st_size;
     }
 
     return 0;

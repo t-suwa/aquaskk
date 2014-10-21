@@ -121,7 +121,7 @@ static std::string ConvertType3(const std::string& src) {
 	return "〇";
     }
 
-    for(unsigned i = src.find_first_not_of("0"); i < src.size(); ++ i) {
+    for(unsigned long i = src.find_first_not_of("0"); i < src.size(); ++ i) {
 	switch(src[i]) {
 	case '2':
 	    result += "二";
@@ -149,7 +149,7 @@ static std::string ConvertType3(const std::string& src) {
 	    break;
 	}
 
-	int distance = src.size() - i;
+	int distance = (int)(src.size() - i);
 
 	// 「十、百、千」以外の位
 	if(distance > 4 && (distance - 1) % 4 == 0) {
@@ -194,7 +194,7 @@ static std::string ConvertType5(const std::string& src) {
 	return "零";
     }
 
-    for(unsigned i = src.find_first_not_of("0"); i < src.size(); ++ i) {
+    for(unsigned i = (unsigned)src.find_first_not_of("0"); i < src.size(); ++ i) {
 	switch(src[i]) {
 	case '1':
 	    result += "壱";
@@ -225,7 +225,7 @@ static std::string ConvertType5(const std::string& src) {
 	    break;
 	}
 
-	int distance = src.size() - i;
+	int distance = (int)(src.size() - i);
 
 	// 「十、百、千」以外の位
 	if(distance > 4 && (distance - 1) % 4 == 0) {

@@ -330,7 +330,7 @@ namespace pthread {
                 }
             }
 
-            idle_threads_ = pool_.size();
+            idle_threads_ = (unsigned)pool_.size();
         }
 
         ~pool() {

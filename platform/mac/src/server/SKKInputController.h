@@ -33,7 +33,7 @@ class SKKInputSession;
 class MacInputModeWindow;
 
 @interface SKKInputController : IMKInputController {
-    id <IMKTextInput> client_;
+    id <IMKTextInput, NSObject> client_;
     BOOL activated_;
 
     SKKServerProxy* proxy_;

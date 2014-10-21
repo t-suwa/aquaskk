@@ -50,7 +50,7 @@
 - (id)initWithServer:(id)server delegate:(id)delegate client:(id)client {
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
-        client_ = client;
+        client_ = [client retain];
         activated_ = NO;
         proxy_ = [[SKKServerProxy alloc] init];
         menu_ = [[SKKInputMenu alloc] initWithClient:client];
@@ -70,6 +70,7 @@
     delete session_;
     delete layout_;
 
+    [client_ release];
     [menu_ release];
     [proxy_ release];
     [super dealloc];

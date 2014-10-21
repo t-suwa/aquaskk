@@ -43,7 +43,7 @@ class subrange {
     Iter end_;
 
     void adjust(Container& container, size_type pos, size_type length) {
-	unsigned size = container.size();
+	unsigned size = (unsigned)container.size();
 
 	if(pos < size) {
 	    begin_ = container.begin() + pos;
@@ -78,7 +78,7 @@ public:
 	adjust(container, pos, length);
     }
 
-    size_type size() const { return end() - begin(); }
+    size_type size() const { return (size_type)(end() - begin()); }
     bool empty() const { return begin() == end(); }
 
     Iter begin() { return begin_; }
