@@ -32,7 +32,7 @@
     return YES;
 }
 
-- (id)initWithDictionaryTypes:(NSArray*)dictionaryTypes {
+- (instancetype)initWithDictionaryTypes:(NSArray*)dictionaryTypes {
     if(self = [super init]) {
         dictionaryTypes_ = [dictionaryTypes retain];
     }

@@ -33,13 +33,13 @@
     return NSMakeSize(size.width + margin, size.height + margin);
 }
 
-- (id)initWithFont:(NSFont*)font {
+- (instancetype)initWithFont:(NSFont*)font {
     if(self = [super init]) {
 	entry_ = [[NSMutableAttributedString alloc] init];
-	attributes_ = [[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName] retain];
+	attributes_ = [@{NSFontAttributeName: font} retain];
 
 	NSAttributedString* tmpstr = [[NSAttributedString alloc]
-					 initWithString:[NSString stringWithUTF8String:" A  漢字 "]
+					 initWithString:@" A  漢字 "
 					 attributes:attributes_];
 	size_ = [CandidateCell focusSize:[tmpstr size]];
 	[tmpstr release];

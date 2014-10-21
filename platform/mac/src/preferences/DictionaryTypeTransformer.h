@@ -28,7 +28,7 @@
     NSArray* dictionaryTypes_;
 }
 
-- (id)initWithDictionaryTypes:(NSArray*)dictionaryTypes;
+- (instancetype)initWithDictionaryTypes:(NSArray*)dictionaryTypes;
 
 @end
 

@@ -30,7 +30,7 @@
     return 4;
 }
 
-- (id)initWithFrame:(NSRect)frameRect {
+- (instancetype)initWithFrame:(NSRect)frameRect {
     if(self = [super initWithFrame:frameRect]) {
 	candidateCells_ = [[NSMutableArray alloc] initWithCapacity:0];
 	indicator_ = [[CandidatePageIndicator alloc] init];
@@ -56,7 +56,7 @@
     int cellCount = (int)[labels_ length];
 
     for(unsigned index = 0; index < [candidateCells_ count]; ++ index) {
-        CandidateCell* cell = [candidateCells_ objectAtIndex:index];
+        CandidateCell* cell = candidateCells_[index];
         NSSize maxSize = [cell size];
 
         maxSize.width = [cell defaultSize].width * cellCount + [CandidateView cellSpacing] * (cellCount - 1);
@@ -108,7 +108,7 @@
     for(unsigned index = 0; index < [candidates count]; ++ index) {
 	CandidateCell* tmp = [self newCandidateCell];
 
-	[tmp setString:[candidates objectAtIndex:index] withLabel:[labels_ characterAtIndex:index]];
+	[tmp setString:candidates[index] withLabel:[labels_ characterAtIndex:index]];
 	[candidateCells_ addObject:tmp];
 	[tmp release];
     }

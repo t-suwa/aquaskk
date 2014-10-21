@@ -37,7 +37,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     if(self = [super init]) {
         window_ = [[NSWindow alloc] initWithContentRect:NSZeroRect
                                     styleMask:NSBorderlessWindowMask
@@ -80,7 +80,7 @@
 
     [self updateFrame];
 
-    NSImage* image = [modeIcons_ objectForKey:[NSNumber numberWithInt:mode]];
+    NSImage* image = modeIcons_[[NSNumber numberWithInt:mode]];
     NSBitmapImageRep* rep = [NSBitmapImageRep imageRepWithData:[image TIFFRepresentation]]; 
 
     [self setImage:(id)[rep CGImage]];
@@ -122,20 +122,20 @@
     animation_ = [[CABasicAnimation animationWithKeyPath:@"opacity"] retain];
 
     animation_.duration = 2.0;
-    animation_.fromValue = [NSNumber numberWithFloat:1.0];
-    animation_.toValue = [NSNumber numberWithFloat:0];
+    animation_.fromValue = @1.0f;
+    animation_.toValue = @0.0f;
     animation_.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.5 :0.0 :0.5 :0.0];
 }
 
 - (void)updateFrame {
     NSRect rect = [window_ frame];
     NSSize iconSize = rect.size;
-    NSImage* icon = [modeIcons_ objectForKey:[NSNumber numberWithInt:inputMode_]];
+    NSImage* icon = modeIcons_[[NSNumber numberWithInt:inputMode_]];
     NSArray* reps = [icon representations];
 
     if([reps count]) {
         // NSImage の - (NSSize)size ではなく、ピクセルサイズを取得する
-        NSImageRep* image = [reps objectAtIndex:0];
+        NSImageRep* image = reps[0];
         iconSize = NSMakeSize(image.pixelsWide, image.pixelsHigh);
     }
 
@@ -156,7 +156,7 @@
 
 - (void)setImage:(id)image {
     [CATransaction begin];
-    [CATransaction setValue:[NSNumber numberWithFloat:0.0]
+    [CATransaction setValue:@0.0f
                    forKey:kCATransactionAnimationDuration];
 
     rootLayer_.contents = image;

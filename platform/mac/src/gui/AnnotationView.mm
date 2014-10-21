@@ -38,7 +38,7 @@
 
 @implementation AnnotationView
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithFrame:NSMakeRect(0, 0, 256, 128)];
 
     if(self) {
@@ -114,7 +114,7 @@
     listStyle_ = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [listStyle_ setFirstLineHeadIndent:leftMargin];
     [listStyle_ setHeadIndent:tabStop];
-    [listStyle_ setTabStops:[NSArray array]];
+    [listStyle_ setTabStops:@[]];
     [listStyle_ setDefaultTabInterval:tabStop];
 }
 
@@ -167,7 +167,7 @@
     NSArray* array = [string componentsSeparatedByString:@"\n"];
 
     for(int i = 0; array && i < [array count]; ++ i) {
-        NSString* line = [array objectAtIndex:i];
+        NSString* line = array[i];
 
         if([line length] == 0) continue;
 
@@ -175,8 +175,8 @@
 
         if([line length] == 1 && i + 1 < [array count]) {
             NSString* item = [NSString stringWithFormat:@"%@\t%@",
-                                       [array objectAtIndex:i],
-                                       [array objectAtIndex:i + 1]];
+                                       array[i],
+                                       array[i + 1]];
 
             NSAttributedString* attr = [self getParagraph:[self normalizeString:item]
                                              withStyle:listStyle_];

@@ -250,12 +250,10 @@ static void terminate(int) {
     NSMutableArray* types = [[NSMutableArray alloc] init];
 
     for(int index = 0; order[index] != 0xff; ++ index) {
-        NSNumber* type = [NSNumber numberWithInt:order[index]];
+        NSNumber* type = @(order[index]);
         NSString* name = DictionaryNames[order[index]];
-        NSDictionary* entity = [NSDictionary dictionaryWithObjectsAndKeys:
-                                             type, SKKDictionaryTypeKeys::type,
-                                             name, SKKDictionaryTypeKeys::name,
-                                             nil];
+        NSDictionary* entity = @{SKKDictionaryTypeKeys::type: type,
+                                             SKKDictionaryTypeKeys::name: name};
         [types addObject:entity];
     }
 
@@ -321,7 +319,7 @@ static void terminate(int) {
 
 - (id)newIMKServer {
     NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-    NSString* connection = [info objectForKey:@"InputMethodConnectionName"];
+    NSString* connection = info[@"InputMethodConnectionName"];
     NSString* identifier = [[NSBundle mainBundle] bundleIdentifier];
 
     return [[IMKServer alloc] initWithName:connection bundleIdentifier:identifier];
@@ -333,7 +331,7 @@ static void terminate(int) {
     for(int i = 0; InputModeIcons[i].name != 0; ++ i) {
         NSString* path = [self pathForResource:InputModeIcons[i].name];
         NSImage* image = [[NSImage alloc] initWithContentsOfFile:path];
-        [icons setObject:image forKey:[NSNumber numberWithInt:InputModeIcons[i].mode]];
+        icons[@(InputModeIcons[i].mode)] = image;
         [image release];
     }
 

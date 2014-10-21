@@ -33,7 +33,7 @@ void MacMessenger::SendMessage(const std::string& msg) {
 
     MessengerWindow* window = [MessengerWindow sharedWindow];
 
-    NSString* str = [NSString stringWithUTF8String:msg.c_str()];
+    NSString* str = @(msg.c_str());
     NSPoint topleft = layout_->InputOrigin();
 
     topleft.y -= 2;

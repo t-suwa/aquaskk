@@ -56,7 +56,7 @@ void MacCandidateWindow::Setup(SKKCandidateIterator begin, SKKCandidateIterator 
         if(utf8::length(candidate) < 3) {
             width = [cell defaultSize].width;
         } else {
-            NSString* string = [NSString stringWithUTF8String:candidate.c_str()];
+            NSString* string = @(candidate.c_str());
 
             [cell setString:string withLabel:'A'];
 
@@ -101,7 +101,7 @@ void MacCandidateWindow::Update(SKKCandidateIterator begin, SKKCandidateIterator
 
     for(SKKCandidateIterator curr = begin; curr != end; ++ curr) {
         std::string candidate(curr->Variant());
-	[candidates_ addObject:[NSString stringWithUTF8String:candidate.c_str()]];
+	[candidates_ addObject:@(candidate.c_str())];
     }
 
     page_ = NSMakeRange(page_pos, page_max);
