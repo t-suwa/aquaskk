@@ -31,7 +31,7 @@
     NSSize size_;
 }
 
-- (id)initWithFont:(NSFont*)font;
+- (instancetype)initWithFont:(NSFont*)font;
 - (void)setString:(NSString*)string withLabel:(char)label;
 - (void)drawAtPoint:(NSPoint)point withFocus:(BOOL)focus;
 - (void)drawAtPoint:(NSPoint)point withSize:(NSSize)size;

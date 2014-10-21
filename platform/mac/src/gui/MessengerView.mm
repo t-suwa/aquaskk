@@ -30,14 +30,13 @@
 
 @implementation MessengerView
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithFrame:NSMakeRect(0, 0, 0, 0)];
     if(self) {
         message_ = nil;
         icon_ = [[NSImage imageNamed:NSImageNameInfo] retain];
         [icon_ setSize:NSMakeSize(16, 16)];
-        attributes_ = [NSDictionary dictionaryWithObject:[NSFont systemFontOfSize:0.0]
-                                    forKey:NSFontAttributeName];
+        attributes_ = @{NSFontAttributeName: [NSFont systemFontOfSize:0.0]};
         [attributes_ retain];
     }
     return self;

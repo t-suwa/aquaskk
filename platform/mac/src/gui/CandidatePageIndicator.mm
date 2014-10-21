@@ -27,8 +27,8 @@
 - (void)prepareAttributes {
     attributes_ = [[NSMutableDictionary alloc] initWithCapacity:32];
 
-    [attributes_ setObject:[NSFont boldSystemFontOfSize:[NSFont smallSystemFontSize]] forKey:NSFontAttributeName];
-    [attributes_ setObject:[NSColor whiteColor] forKey:NSForegroundColorAttributeName];
+    attributes_[NSFontAttributeName] = [NSFont boldSystemFontOfSize:[NSFont smallSystemFontSize]];
+    attributes_[NSForegroundColorAttributeName] = [NSColor whiteColor];
 }
 
 - (void)preparePlate {
@@ -57,7 +57,7 @@
     
 }
 
-- (id)init {
+- (instancetype)init {
     if(self = [super init]) {
 	[self prepareAttributes];
 	[self preparePlate];

@@ -47,7 +47,7 @@
 
 @implementation SKKInputController
 
-- (id)initWithServer:(id)server delegate:(id)delegate client:(id)client {
+- (instancetype)initWithServer:(id)server delegate:(id)delegate client:(id)client {
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
         client_ = [client retain];
@@ -195,7 +195,7 @@
     NSMenu* inputMenu = [[[NSMenu alloc] initWithTitle:@"AquaSKK"] autorelease];
 
     for(int i = 0; items[i].title != 0; ++ i) {
-        NSString* title = [NSString stringWithUTF8String:items[i].title];
+        NSString* title = @(items[i].title);
         SEL handler = items[i].handler;
         NSMenuItem* item;
 
@@ -276,7 +276,7 @@
 
     NSPasteboard* pb = [NSPasteboard generalPasteboard];
 
-    [pb declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:self];
+    [pb declareTypes:@[NSStringPboardType] owner:self];
     [pb setString:info forType:NSStringPboardType];
 
     [info release];

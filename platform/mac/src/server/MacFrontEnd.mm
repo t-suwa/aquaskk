@@ -30,7 +30,7 @@ void MacFrontEnd::InsertString(const std::string& str) {
     NSString* string = @"";
 
     if(!str.empty()) {
-        string = [NSString stringWithUTF8String:str.c_str()];
+        string = @(str.c_str());
 
         workaroundForMicrosoftPowerPoint(string);
     }
@@ -60,7 +60,7 @@ void MacFrontEnd::ComposeString(const std::string& str, int candidateStart, int 
     NSRange segment = NSMakeRange(candidateStart, candidateLength);
     
     [marked addAttribute:NSMarkedClauseSegmentAttributeName
-                   value:[NSNumber numberWithInt:0] range:segment];
+                   value:@0 range:segment];
 
     [marked addAttribute:NSUnderlineStyleAttributeName
                    value:[NSNumber numberWithInt:NSUnderlineStyleThick] range:segment];
@@ -88,7 +88,7 @@ NSRange MacFrontEnd::notFound() const {
 }
 
 NSMutableAttributedString* MacFrontEnd::createMarkedText(const std::string& str, int cursorOffset) {
-    NSString* source = [NSString stringWithUTF8String:str.c_str()];
+    NSString* source = @(str.c_str());
     NSMutableAttributedString* marked = [[NSMutableAttributedString alloc] initWithString:source];
 
     [marked addAttribute:NSCursorAttributeName

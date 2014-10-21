@@ -42,7 +42,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 	    insertIndex -= 1;
 	}
 
-	id object = [[objects objectAtIndex:removeIndex] retain];
+	id object = [objects[removeIndex] retain];
 	[self removeObjectAtArrangedObjectIndex:removeIndex];
 	[self insertObject:object atArrangedObjectIndex:insertIndex];
 	[object release];
@@ -66,7 +66,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 }
 
 - (void)awakeFromNib {
-    [tableView registerForDraggedTypes:[NSArray arrayWithObjects:DictionaryRowsType, nil]];
+    [tableView registerForDraggedTypes:@[DictionaryRowsType]];
 
     [super awakeFromNib];
 }
@@ -76,8 +76,8 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 
     // 新規のエントリを初期化する
     if(obj) {
-	[obj setValue:[NSNumber numberWithBool:YES] forKey:SKKDictionarySetKeys::active];
-	[obj setValue:[NSNumber numberWithInt:0] forKey:SKKDictionarySetKeys::type];
+	[obj setValue:@YES forKey:SKKDictionarySetKeys::active];
+	[obj setValue:@0 forKey:SKKDictionarySetKeys::type];
 	[obj setValue:@"" forKey:SKKDictionarySetKeys::location];
     }
 
@@ -101,7 +101,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 }
 
 - (BOOL)tableView:(NSTableView*)tv writeRowsWithIndexes:(NSIndexSet*)rowIndexes toPasteboard:(NSPasteboard*)pboard {
-    NSArray* typesArray = [NSArray arrayWithObjects:DictionaryRowsType, nil];
+    NSArray* typesArray = @[DictionaryRowsType];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
 
     [pboard declareTypes:typesArray owner:self];
@@ -158,7 +158,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 }
 
 - (id)tableView:(NSTableView*)tv objectValueForTableColumn:(NSTableColumn*)column row:(NSInteger)row {
-    id obj = [[self arrangedObjects] objectAtIndex:row];
+    id obj = [self arrangedObjects][row];
     return [obj valueForKey:[column identifier]];
 }
 

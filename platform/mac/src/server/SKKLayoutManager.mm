@@ -117,7 +117,7 @@ NSRect SKKLayoutManager::inputFrame(int index) const {
         NSDictionary* dict = [[client_ attributesForCharacterIndex:index
                                                lineHeightRectangle:&frame] retain];
         if(dict) {
-            NSFont* font = [dict objectForKey:NSFontAttributeName];
+            NSFont* font = dict[NSFontAttributeName];
 
             frame.size.height = font ? NSHeight([font boundingRectForFont]) : NSHeight(candidate);
 

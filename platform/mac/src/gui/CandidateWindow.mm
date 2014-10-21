@@ -31,7 +31,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         view_ = [[CandidateView alloc] initWithFrame:NSZeroRect];

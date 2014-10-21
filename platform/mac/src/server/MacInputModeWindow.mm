@@ -39,7 +39,7 @@ namespace {
 
     int ActiveProcessID() {
         NSDictionary* info = [[NSWorkspace sharedWorkspace] activeApplication];
-        NSNumber* pid = [info objectForKey:@"NSApplicationProcessIdentifier"];
+        NSNumber* pid = info[@"NSApplicationProcessIdentifier"];
 
         return [pid intValue];
     }
@@ -55,15 +55,15 @@ namespace {
 
         while(NSDictionary* window = [enumerator nextObject]) {
             // 引数のプロセス ID でフィルタ
-            NSNumber* owner = [window objectForKey:(NSString*)kCGWindowOwnerPID];
+            NSNumber* owner = window[(NSString*)kCGWindowOwnerPID];
             if([owner intValue] != pid) continue;
 
             // デスクトップ全面を覆う Finder のウィンドウは除外
-            NSNumber* level = [window objectForKey:(NSString*)kCGWindowLayer];
+            NSNumber* level = window[(NSString*)kCGWindowLayer];
             if([level intValue] == kCGMinimumWindowLevel) continue;
 
             CGRect rect;
-            NSDictionary* bounds = [window objectForKey:(NSString*)kCGWindowBounds];
+            NSDictionary* bounds = window[(NSString*)kCGWindowBounds];
             if(CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)bounds, &rect)) {
                 result.push_back(rect);
             }
@@ -85,7 +85,7 @@ namespace {
     BOOL active_;
 }
 
-- (id)initWithLayoutManager:(SKKLayoutManager*)layout;
+- (instancetype)initWithLayoutManager:(SKKLayoutManager*)layout;
 - (void)changeMode:(SKKInputMode)mode;
 - (void)show;
 - (void)hide;
@@ -112,7 +112,7 @@ namespace {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-- (id)initWithLayoutManager:(SKKLayoutManager*)layout {
+- (instancetype)initWithLayoutManager:(SKKLayoutManager*)layout {
     self = [super init];
     if(self) {
         window_ = [InputModeWindow sharedWindow];

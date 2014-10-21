@@ -31,7 +31,7 @@
 
 @implementation CompletionView
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithFrame:NSMakeRect(0, 0, 0, 0)];
     if(self) {
         completion_ = nil;
