@@ -36,7 +36,7 @@
 - (instancetype)initWithFont:(NSFont*)font {
     if(self = [super init]) {
 	entry_ = [[NSMutableAttributedString alloc] init];
-	attributes_ = [@{NSFontAttributeName: font} retain];
+	attributes_ = [@{NSFontAttributeName: font} mutableCopy];
 
 	NSAttributedString* tmpstr = [[NSAttributedString alloc]
 					 initWithString:@" A  漢字 "
