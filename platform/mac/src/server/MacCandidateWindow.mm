@@ -123,7 +123,7 @@ void MacCandidateWindow::reloadUserDefaults() {
     NSFont* font = [NSFont fontWithName:fontName size:fontSize];
 
     NSString* labels = [defaults stringForKey:SKKUserDefaultKeys::candidate_window_labels];
-    cellCount_ = [labels length];
+    cellCount_ = (int)[labels length];
 
     putUpward_ = [defaults boolForKey:SKKUserDefaultKeys::put_candidate_window_upward] == YES;
 

@@ -91,7 +91,7 @@
     if(result.location == NSNotFound) {
 	return -1;
     } else {
-	return result.location;
+	return (int)result.location;
     }
 }
 

@@ -100,8 +100,8 @@ namespace {
     CGRectContainer list = CreateWindowBoundsListOf(ActiveProcessID());
 
     // カーソル位置がウィンドウ矩形に含まれていなければ無視する
-    int count = std::count_if(list.begin(), list.end(),
-                              std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
+    int count = (int)std::count_if(list.begin(), list.end(),
+                                   std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
     if(!count) return;
 
     [window_ showAt:pt level:layout_->WindowLevel()];

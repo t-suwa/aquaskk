@@ -35,10 +35,10 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 
     while(NSNotFound != idx) {
 	if(idx >= insertIndex) {
-	    removeIndex = idx + aboveInsertIndexCount;
+	    removeIndex = (int)idx + aboveInsertIndexCount;
 	    aboveInsertIndexCount += 1;
 	} else {
-	    removeIndex = idx;
+	    removeIndex = (int)idx;
 	    insertIndex -= 1;
 	}
 
