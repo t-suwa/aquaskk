@@ -129,7 +129,7 @@ namespace {
 }
 
 - (void)keyboardLayoutDidChange:(id)sender {
-    int index = [layoutPopUp_ indexOfSelectedItem];
+    int index = (int)[layoutPopUp_ indexOfSelectedItem];
     NSString* selectedLayout = layoutNames_[index];
 
     if(selectedLayout) {

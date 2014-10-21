@@ -206,7 +206,7 @@ namespace jconv {
 
     void jisx0208_latin_to_ascii(const std::string& from, std::string& to) {
 	to = from;
-	unsigned remain = to.size();
+	unsigned remain = (unsigned)to.size();
 	for(latin* ptr = latin_table; remain && ptr->ascii; ++ ptr) {
 	    remain = translate(ptr->jisx0208_latin, ptr->ascii)(to, remain);
 	}
