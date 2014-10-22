@@ -55,15 +55,15 @@ namespace {
 
         while(NSDictionary* window = [enumerator nextObject]) {
             // 引数のプロセス ID でフィルタ
-            NSNumber* owner = window[(NSString*)kCGWindowOwnerPID];
+            NSNumber* owner = window[(__bridge NSString*)kCGWindowOwnerPID];
             if([owner intValue] != pid) continue;
 
             // デスクトップ全面を覆う Finder のウィンドウは除外
-            NSNumber* level = window[(NSString*)kCGWindowLayer];
+            NSNumber* level = window[(__bridge NSString*)kCGWindowLayer];
             if([level intValue] == kCGMinimumWindowLevel) continue;
 
             CGRect rect;
-            NSDictionary* bounds = window[(NSString*)kCGWindowBounds];
+            NSDictionary* bounds = window[(__bridge NSString*)kCGWindowBounds];
             if(CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)bounds, &rect)) {
                 result.push_back(rect);
             }

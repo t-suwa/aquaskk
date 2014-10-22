@@ -157,8 +157,8 @@ namespace {
 @implementation PreferenceController (Local)
 
 static NSInteger compareInputSource(id obj1, id obj2, void *context) {
-    NSString* lhs = (NSString*)TISGetInputSourceProperty((TISInputSourceRef)obj1, kTISPropertyLocalizedName);
-    NSString* rhs = (NSString*)TISGetInputSourceProperty((TISInputSourceRef)obj2, kTISPropertyLocalizedName);
+    NSString* lhs = (__bridge NSString*)TISGetInputSourceProperty((__bridge TISInputSourceRef)obj1, kTISPropertyLocalizedName);
+    NSString* rhs = (__bridge NSString*)TISGetInputSourceProperty((__bridge TISInputSourceRef)obj2, kTISPropertyLocalizedName);
 
     return [lhs compare:rhs];
 }
@@ -183,7 +183,7 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 }
 
 - (NSMenuItem*)menuItemWithInputSource:(TISInputSourceRef)inputSource imageSize:(NSSize)size {
-    NSString* title = (NSString*)TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName);
+    NSString* title = (__bridge NSString*)TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName);
     IconRef iconref = (IconRef)TISGetInputSourceProperty(inputSource, kTISPropertyIconRef);
     NSImage* image = [[NSImage alloc] initWithIconRef:iconref];
     [image setSize:size];
@@ -256,7 +256,7 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
         [menu addItem:[self menuItemWithInputSource:inputSource imageSize:size]];
 
         // "com.apple.keylayout.US" 等の ID 文字列を配列に追加しておく
-        [layoutNames_ addObject:(NSString*)TISGetInputSourceProperty(inputSource, kTISPropertyInputSourceID)];
+        [layoutNames_ addObject:(__bridge NSString*)TISGetInputSourceProperty(inputSource, kTISPropertyInputSourceID)];
     }
 
     // PopUpButton にメニューを貼り付ける

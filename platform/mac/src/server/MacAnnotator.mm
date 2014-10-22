@@ -44,7 +44,7 @@ void MacAnnotator::Update(const SKKCandidate& candidate, int cursorOffset) {
 
     NSString* str = @(candidate_.Variant().c_str());
     CFRange range = CFRangeMake(0, [str length]);
-    definition_ = (NSString*)DCSCopyTextDefinition(0, (CFStringRef)str, range);
+    definition_ = (__bridge NSString*)DCSCopyTextDefinition(0, (__bridge CFStringRef)str, range);
 
     if(!candidate_.Annotation().empty()) {
         optional_ = @(candidate_.Annotation().c_str());
