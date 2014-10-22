@@ -57,21 +57,7 @@
     return self;
 }
 
-- (void)dealloc {
-    [modeIcons_ release];
-    [animation_ release];
-    [window_ release];
-
-    [super dealloc];
-}
-
 - (void)setModeIcons:(NSDictionary*)icons {
-    [icons retain];
-
-    if(modeIcons_) {
-        [modeIcons_ release];
-    }
-
     modeIcons_ = icons;
 }
 
@@ -119,7 +105,7 @@
 }
 
 - (void)prepareAnimation {
-    animation_ = [[CABasicAnimation animationWithKeyPath:@"opacity"] retain];
+    animation_ = [CABasicAnimation animationWithKeyPath:@"opacity"];
 
     animation_.duration = 2.0;
     animation_.fromValue = @1.0f;

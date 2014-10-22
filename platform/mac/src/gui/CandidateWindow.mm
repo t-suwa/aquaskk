@@ -46,21 +46,12 @@
     return self;
 }
 
-- (void)dealloc {
-    [labels_ release];
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
-}
-
 - (NSWindow*)window {
     return window_;
 }
 
 - (void)prepareWithFont:(NSFont*)newFont labels:(NSString*)newLabels {
-    [labels_ release];
-    labels_ = [newLabels retain];
+    labels_ = newLabels;
 
     [view_ prepareWithFont:newFont labels:labels_];
     [window_ setContentSize:[view_ contentSize]];

@@ -46,13 +46,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
-}
-
 - (void)showCompletion:(NSAttributedString*)comp at:(NSPoint)topleft level:(int)level {
     [view_ setCompletion:comp];
 

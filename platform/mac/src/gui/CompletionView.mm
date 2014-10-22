@@ -36,8 +36,8 @@
     if(self) {
         completion_ = nil;
 
-        strokeColor_ = [[NSColor controlShadowColor] retain];
-        backgroundColor_ = [[NSColor colorWithDeviceRed:1.0 green:1.0 blue:0.94 alpha:1.0] retain];
+        strokeColor_ = [NSColor controlShadowColor];
+        backgroundColor_ = [NSColor colorWithDeviceRed:1.0 green:1.0 blue:0.94 alpha:1.0];
 
         guide_ = [self newGuideWithString:@"  TAB で補完  "];
         guideSize_ = [guide_ size];
@@ -46,24 +46,8 @@
     return self;
 }
 
-- (void)dealloc {
-    if(completion_) {
-        [completion_ release];
-    }
-
-    [strokeColor_ release];
-    [backgroundColor_ release];
-    [guide_ release];
-
-    [super dealloc];
-}
-
 - (void)setCompletion:(NSAttributedString*)completion {
-    if(completion_) {
-        [completion_ release];
-    }
-
-    completion_ = [completion retain];
+    completion_ = completion;
 
     [self setFrame:[self completionRect]];
     [self setNeedsDisplay:YES];

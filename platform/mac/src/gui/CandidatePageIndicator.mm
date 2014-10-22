@@ -45,7 +45,7 @@
     NSPoint topleft = NSMakePoint(NSMinX(rc), NSMaxY(rc));
     NSPoint bottomright = NSMakePoint(NSMaxX(rc), NSMinY(rc));
 
-    plate_ = [[NSBezierPath bezierPathWithRect:rc] retain];
+    plate_ = [NSBezierPath bezierPathWithRect:rc];
 
     [plate_ moveToPoint:bottomright];
     [plate_ appendBezierPathWithArcWithCenter:NSMakePoint(bottomright.x, bottomright.y + radius)
@@ -66,19 +66,7 @@
     return self;
 }
 
-- (void)dealloc {
-    if(indicator_) {
-	[indicator_ release];
-    }
-    [plate_ release];
-    [attributes_ release];
-
-    [super dealloc];
-}
-
 - (void)setPage:(NSRange)page {
-    if(indicator_) [indicator_ release];
-
     indicator_ = [[NSAttributedString alloc]
 		     initWithString:[NSString stringWithFormat:@"%3ld / %-3ld", page.location, page.length]
 		     attributes:attributes_];

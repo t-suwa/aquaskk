@@ -114,14 +114,12 @@ NSRect SKKLayoutManager::inputFrame(int index) const {
     // 例外を補足する(例外発生時は、左下原点が使用される)
     @try {
         NSRect candidate = [[[CandidateWindow sharedWindow] window] frame];
-        NSDictionary* dict = [[client_ attributesForCharacterIndex:index
-                                               lineHeightRectangle:&frame] retain];
+        NSDictionary* dict = [client_ attributesForCharacterIndex:index
+                                               lineHeightRectangle:&frame];
         if(dict) {
             NSFont* font = dict[NSFontAttributeName];
 
             frame.size.height = font ? NSHeight([font boundingRectForFont]) : NSHeight(candidate);
-
-            [dict release];
         }
     }
 

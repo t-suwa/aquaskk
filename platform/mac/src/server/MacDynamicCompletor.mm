@@ -54,7 +54,7 @@ void MacDynamicCompletor::SKKWidgetHide() {
 }
 
 NSAttributedString* MacDynamicCompletor::makeAttributedString() {
-    NSDictionary* bold = [@{NSFontAttributeName: [NSFont boldSystemFontOfSize:0.0]} retain];
+    NSDictionary* bold = @{NSFontAttributeName: [NSFont boldSystemFontOfSize:0.0]};
     NSMutableAttributedString* result = [[NSMutableAttributedString alloc]
                                             initWithString:@(completion_.c_str())];
 
@@ -75,7 +75,5 @@ NSAttributedString* MacDynamicCompletor::makeAttributedString() {
                             range:NSMakeRange(diff.location, [str length] - diff.location)];
     } while(diff.location != NSNotFound);
 
-    [bold release];
-
-    return [result autorelease];
+    return result;
 }

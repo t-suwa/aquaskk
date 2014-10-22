@@ -49,7 +49,7 @@ namespace {
     // プロセス ID に関連したウィンドウ矩形群の取得
     CGRectContainer CreateWindowBoundsListOf(int pid) {
         CGRectContainer result;
-        NSArray* array = (NSArray*)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly,
+        NSArray* array = (__bridge_transfer NSArray*)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly,
                                                               kCGNullWindowID);
         NSEnumerator* enumerator = [array objectEnumerator];
 
@@ -68,8 +68,6 @@ namespace {
                 result.push_back(rect);
             }
         }
-
-        [array release];
 
         return result;
     }
@@ -126,7 +124,6 @@ namespace {
 
 - (void)dealloc {
     [self cancel];
-    [super dealloc];
 }
 
 - (void)changeMode:(SKKInputMode)mode {
@@ -157,7 +154,6 @@ MacInputModeWindow::MacInputModeWindow(SKKLayoutManager* layout) {
 }
 
 MacInputModeWindow::~MacInputModeWindow() {
-    [tips_ release];
 }
 
 void MacInputModeWindow::SelectInputMode(SKKInputMode mode) {

@@ -37,7 +37,6 @@ MacCandidateWindow::MacCandidateWindow(SKKLayoutManager* layout)
 }
 
 MacCandidateWindow::~MacCandidateWindow() {
-    [candidates_ release];
 }
 
 void MacCandidateWindow::Setup(SKKCandidateIterator begin, SKKCandidateIterator end, std::vector<int>& pages) {
@@ -91,8 +90,6 @@ void MacCandidateWindow::Setup(SKKCandidateIterator begin, SKKCandidateIterator 
 
         pages.push_back(count);
     } while(offset < cell_width.size());
-
-    [cell release];
 }
 
 void MacCandidateWindow::Update(SKKCandidateIterator begin, SKKCandidateIterator end,

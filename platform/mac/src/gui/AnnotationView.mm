@@ -45,24 +45,13 @@
         [self initializeStyle];
         [self initializeView];
 
-        strokeColor_ = [[NSColor windowFrameColor] retain];
+        strokeColor_ = [NSColor windowFrameColor];
 
         definitiveHeader_ = [self newHeader:@"意味・語源"];
         annotationHeader_ = [self newHeader:@"SKK 辞書の註釈"];
     }
 
     return self;
-}
-
-- (void)dealloc {
-    [textView_ release];
-    [blockStyle_ release];
-    [listStyle_ release];
-    [strokeColor_ release];
-    [definitiveHeader_ release];
-    [annotationHeader_ release];
-
-    [super dealloc];
 }
 
 - (void)setAnnotation:(NSString*)definition optional:(NSString*)annotation {
@@ -137,8 +126,6 @@
     [scrollView setDocumentView:textView_];
 
     [self addSubview:scrollView];
-
-    [scrollView release];
 }
 
 - (NSAttributedString*)newHeader:(NSString*)string {
@@ -156,8 +143,6 @@
 
     [header addAttribute:NSParagraphStyleAttributeName
                    value:style range:range];
-
-    [style release];
 
     return header;
 }
@@ -244,7 +229,7 @@
 
     [attr addAttribute:NSParagraphStyleAttributeName value:style range:range];
 
-    return [attr autorelease];
+    return attr;
 }
 
 @end

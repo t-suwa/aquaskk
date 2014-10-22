@@ -42,18 +42,11 @@
 					 initWithString:@" A  漢字 "
 					 attributes:attributes_];
 	size_ = [CandidateCell focusSize:[tmpstr size]];
-	[tmpstr release];
     }
 
     return self;
 }
 
-- (void)dealloc {
-    [attributes_ release];
-    [entry_ release];
-
-    [super dealloc];
-}
 
 - (void)setString:(NSString*)string withLabel:(char)label {
     // 属性付き文字列
@@ -61,7 +54,6 @@
 				     initWithString:[NSString stringWithFormat:@" %c  %@", label, string]
 				     attributes:attributes_];
     [entry_ setAttributedString:tmpstr];
-    [tmpstr release];
 
     // ラベルの背景色
     [entry_ addAttribute:NSBackgroundColorAttributeName
@@ -75,7 +67,6 @@
     NSMutableParagraphStyle* style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setLineBreakMode:NSLineBreakByTruncatingTail];
     [entry_ addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, [entry_ length])];
-    [style release];
 }
 
 - (NSSize)size {

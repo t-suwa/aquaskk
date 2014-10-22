@@ -47,13 +47,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
-}
-
 - (void)showMessage:(NSString*)msg at:(NSPoint)topleft level:(int)level {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 
@@ -79,7 +72,6 @@
 
     [animation setDuration:0.5];
     [animation startAnimation];
-    [animation release];
 }
 
 - (void)hideNotify:(id)sender {

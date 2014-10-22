@@ -95,8 +95,8 @@ namespace SKKFilePaths {
     
     static NSString* pathForApplicationSupport() {
         @autoreleasepool {
-            static NSString* path = [[NSString stringWithFormat:@"%@/Library/Application Support/AquaSKK",
-                                      NSHomeDirectory()] retain];
+            static NSString* path = [NSString stringWithFormat:@"%@/Library/Application Support/AquaSKK",
+                                      NSHomeDirectory()];
 
             return path;
         }
@@ -104,8 +104,8 @@ namespace SKKFilePaths {
 
     static NSString* pathForDictionarySet() {
         @autoreleasepool {
-            static NSString* path = [[NSString stringWithFormat:@"%@/DictionarySet.plist",
-                                      pathForApplicationSupport()] retain];
+            static NSString* path = [NSString stringWithFormat:@"%@/DictionarySet.plist",
+                                      pathForApplicationSupport()];
 
             return path;
         }
@@ -114,8 +114,8 @@ namespace SKKFilePaths {
     static NSString* pathForUserDefaults() {
         @autoreleasepool {
             const char* plist = "Library/Preferences/jp.sourceforge.inputmethod.aquaskk.plist";
-            static NSString* path = [[NSString stringWithFormat:@"%@/%s",
-                                      NSHomeDirectory(), plist] retain];
+            static NSString* path = [NSString stringWithFormat:@"%@/%s",
+                                      NSHomeDirectory(), plist];
 
             return path;
         }

@@ -34,31 +34,15 @@
     self = [super initWithFrame:NSMakeRect(0, 0, 0, 0)];
     if(self) {
         message_ = nil;
-        icon_ = [[NSImage imageNamed:NSImageNameInfo] retain];
+        icon_ = [NSImage imageNamed:NSImageNameInfo];
         [icon_ setSize:NSMakeSize(16, 16)];
         attributes_ = @{NSFontAttributeName: [NSFont systemFontOfSize:0.0]};
-        [attributes_ retain];
     }
     return self;
 }
 
-- (void)dealloc {
-    if(message_) {
-        [message_ release];
-    }
-
-    [icon_ release];
-    [attributes_ release];
-
-    [super dealloc];
-}
-
 - (void)setMessage:(NSString*)message {
-    if(message_) {
-        [message_ release];
-    }
-
-    message_ = [message retain];
+    message_ = message;
 
     [self setFrame:[self messageRect]];
     [self setNeedsDisplay:YES];

@@ -42,10 +42,9 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 	    insertIndex -= 1;
 	}
 
-	id object = [objects[removeIndex] retain];
+	id object = objects[removeIndex];
 	[self removeObjectAtArrangedObjectIndex:removeIndex];
 	[self insertObject:object atArrangedObjectIndex:insertIndex];
-	[object release];
 
 	idx = [indexSet indexLessThanIndex:idx];
     }

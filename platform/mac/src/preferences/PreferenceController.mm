@@ -52,14 +52,14 @@ namespace {
 - (instancetype)init {
     if(self = [super init]) {
         layoutNames_ = [[NSMutableArray alloc] init];
-        preferences_ = [[NSMutableDictionary
-                            dictionaryWithContentsOfFile:SKKFilePaths::UserDefaults] retain];
-        dictionarySet_ = [[NSMutableArray
-                              arrayWithContentsOfFile:SKKFilePaths::DictionarySet] retain];
+        preferences_ = [NSMutableDictionary
+                            dictionaryWithContentsOfFile:SKKFilePaths::UserDefaults];
+        dictionarySet_ = [NSMutableArray
+                              arrayWithContentsOfFile:SKKFilePaths::DictionarySet];
 
         NSString* fontName = preferences_[SKKUserDefaultKeys::candidate_window_font_name];
         NSNumber* fontSize =  preferences_[SKKUserDefaultKeys::candidate_window_font_size];
-        candidateWindowFont_ = [[NSFont fontWithName:fontName size:[fontSize floatValue]] retain];
+        candidateWindowFont_ = [NSFont fontWithName:fontName size:[fontSize floatValue]];
         proxy_ = [[SKKServerProxy alloc] init];
 
         NSValueTransformer* transformer
@@ -67,20 +67,9 @@ namespace {
 
         [NSValueTransformer setValueTransformer:transformer forName:@"DictionaryTypeTransformer"];
 
-        [transformer release];
     }
 
     return self;
-}
-
-- (void)dealloc {
-    [proxy_ release];
-    [candidateWindowFont_ release];
-    [dictionarySet_ release];
-    [preferences_ release];
-    [layoutNames_ release];
-
-    [super dealloc];
 }
 
 - (void)awakeFromNib {
@@ -111,8 +100,7 @@ namespace {
 }
 
 - (void)changeFont:(id)sender {
-    [candidateWindowFont_ release];
-    candidateWindowFont_ = [[sender convertFont:[NSFont systemFontOfSize:14]] retain];
+    candidateWindowFont_ = [sender convertFont:[NSFont systemFontOfSize:14]];
 
     // Cocoa Bindings により、ボタンのフォント属性も連動して変更される
     preferences_[SKKUserDefaultKeys::candidate_window_font_name] = [candidateWindowFont_ fontName];
@@ -172,9 +160,8 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
     CFDictionaryAddValue(conditions, kTISPropertyInputSourceIsASCIICapable, kCFBooleanTrue);
 
     // リストして名前でソートする
-    if(NSArray* array = (NSArray*)TISCreateInputSourceList(conditions, true)) {
+    if(NSArray* array = (__bridge_transfer NSArray*)TISCreateInputSourceList(conditions, true)) {
         result = [array sortedArrayUsingFunction:compareInputSource context:0];
-        [array release];
     }
 
     CFRelease(conditions);
@@ -191,9 +178,8 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
     NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:title
                                            action:@selector(keyboardLayoutDidChange:) keyEquivalent:@""];
     [item setImage:image];
-    [image release];
 
-    return [item autorelease];
+    return item;
 }
 
 - (void)initializeVersion {
@@ -230,8 +216,6 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
             rule[SUB_RULE_TYPE] = type;
 
             [subRuleController_ addObject:rule];
-
-            [rule release];
         }
     }
 
@@ -252,7 +236,7 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
     NSMenu* menu = [[NSMenu alloc] initWithTitle:@""];
 
     NSEnumerator* enumerator = [array objectEnumerator];
-    while(TISInputSourceRef inputSource = (TISInputSourceRef)[enumerator nextObject]) {
+    while(TISInputSourceRef inputSource = (__bridge TISInputSourceRef)[enumerator nextObject]) {
         [menu addItem:[self menuItemWithInputSource:inputSource imageSize:size]];
 
         // "com.apple.keylayout.US" 等の ID 文字列を配列に追加しておく
@@ -261,7 +245,6 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 
     // PopUpButton にメニューを貼り付ける
     [layoutPopUp_ setMenu:menu];
-    [menu release];
 }
 
 - (void)updatePopUpButton {
@@ -303,8 +286,6 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
     
     [preferences_ writeToFile:SKKFilePaths::UserDefaults atomically:YES];
     [dictionarySet_ writeToFile:SKKFilePaths::DictionarySet atomically:YES];
-
-    [active_rules release];
 }
 
 - (void)reloadServer {

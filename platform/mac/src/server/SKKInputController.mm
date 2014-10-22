@@ -50,7 +50,7 @@
 - (instancetype)initWithServer:(id)server delegate:(id)delegate client:(id)client {
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
-        client_ = [client retain];
+        client_ = client;
         activated_ = NO;
         proxy_ = [[SKKServerProxy alloc] init];
         menu_ = [[SKKInputMenu alloc] initWithClient:client];
@@ -69,11 +69,6 @@
 - (void)dealloc {
     delete session_;
     delete layout_;
-
-    [client_ release];
-    [menu_ release];
-    [proxy_ release];
-    [super dealloc];
 }
 
 // IMKServerInput
@@ -197,7 +192,7 @@
         { 0,                          0,                             0 }
     };
 
-    NSMenu* inputMenu = [[[NSMenu alloc] initWithTitle:@"AquaSKK"] autorelease];
+    NSMenu* inputMenu = [[NSMenu alloc] initWithTitle:@"AquaSKK"];
 
     for(int i = 0; items[i].title != 0; ++ i) {
         NSString* title = @(items[i].title);
@@ -208,7 +203,6 @@
             item = [[NSMenuItem alloc] initWithTitle:title
                                               action:handler
                                        keyEquivalent:@""];
-            [item autorelease];
         } else {
             item = [NSMenuItem separatorItem];
         }
@@ -283,8 +277,6 @@
 
     [pb declareTypes:@[NSStringPboardType] owner:self];
     [pb setString:info forType:NSStringPboardType];
-
-    [info release];
 }
 
 - (void)openURL:(NSString*)url {
