@@ -39,8 +39,15 @@ void MacAnnotator::Update(const SKKCandidate& candidate, int cursorOffset) {
     candidate_ = candidate;
     cursor_ = cursorOffset;
 
-    release(definition_);
-    release(optional_);
+    if (definition_) {
+        [definition_ release];
+    }
+    definition_ = nil;
+
+    if (optional_) {
+        [optional_ release];
+    }
+    optional_ = nil;
 
     NSString* str = @(candidate_.Variant().c_str());
     CFRange range = CFRangeMake(0, [str length]);
@@ -53,14 +60,6 @@ void MacAnnotator::Update(const SKKCandidate& candidate, int cursorOffset) {
 }
 
 // ------------------------------------------------------------
-
-void MacAnnotator::release(NSString*& str) {
-    if(str) {
-        [str release];
-    }
-
-    str = nil;
-}
 
 void MacAnnotator::SKKWidgetShow() {
     [window_ setAnnotation:definition_ optional:optional_];
