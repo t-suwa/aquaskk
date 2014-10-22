@@ -394,8 +394,10 @@
 				D3FC32360DD1B121006A3F5A /* Preferences */,
 				D3FC322B0DD1B0ED006A3F5A /* Product */,
 			);
+			indentWidth = 4;
 			name = aquaskk;
 			sourceTree = "<group>";
+			tabWidth = 8;
 		};
 		D353BBDC0E1754E3004C68A6 /* bridge */ = {
 			isa = PBXGroup;
