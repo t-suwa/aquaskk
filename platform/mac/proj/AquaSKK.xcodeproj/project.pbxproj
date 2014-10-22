@@ -252,7 +252,6 @@
 		D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacInputModeWindow.mm; sourceTree = "<group>"; };
 		D353BDD70E175513004C68A6 /* MacInputSessionParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacInputSessionParameter.h; sourceTree = "<group>"; };
 		D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacInputSessionParameter.mm; sourceTree = "<group>"; };
-		D353BDDB0E175513004C68A6 /* ObjCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCUtil.h; sourceTree = "<group>"; };
 		D353BDDC0E175513004C68A6 /* SKKConstVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKConstVars.h; sourceTree = "<group>"; };
 		D353BDDD0E175513004C68A6 /* SKKConstVars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKKConstVars.mm; sourceTree = "<group>"; };
 		D353BDDE0E175513004C68A6 /* SKKInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputController.h; sourceTree = "<group>"; };
@@ -659,7 +658,6 @@
 				D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */,
 				D353BDD70E175513004C68A6 /* MacInputSessionParameter.h */,
 				D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */,
-				D353BDDB0E175513004C68A6 /* ObjCUtil.h */,
 				D353BDDC0E175513004C68A6 /* SKKConstVars.h */,
 				D353BDDD0E175513004C68A6 /* SKKConstVars.mm */,
 				D353BDDE0E175513004C68A6 /* SKKInputController.h */,

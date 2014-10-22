@@ -24,21 +24,20 @@
 #include "MessengerWindow.h"
 #include "SKKConstVars.h"
 #include "SKKFrontEnd.h"
-#include "ObjCUtil.h"
 
 MacMessenger::MacMessenger(SKKLayoutManager* layout) : layout_(layout) {}
 
 void MacMessenger::SendMessage(const std::string& msg) {
-    ObjC::RAIIPool pool;
+    @autoreleasepool {
+        MessengerWindow* window = [MessengerWindow sharedWindow];
 
-    MessengerWindow* window = [MessengerWindow sharedWindow];
+        NSString* str = @(msg.c_str());
+        NSPoint topleft = layout_->InputOrigin();
 
-    NSString* str = @(msg.c_str());
-    NSPoint topleft = layout_->InputOrigin();
+        topleft.y -= 2;
 
-    topleft.y -= 2;
-
-    [window showMessage:str at:topleft level:layout_->WindowLevel()];
+        [window showMessage:str at:topleft level:layout_->WindowLevel()];
+    }
 }
 
 void MacMessenger::Beep() {
