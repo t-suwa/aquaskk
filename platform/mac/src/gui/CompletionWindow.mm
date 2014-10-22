@@ -30,7 +30,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         view_ = [[CompletionView alloc] init];
@@ -44,13 +44,6 @@
         [window_ setContentView:view_];
     }
     return self;
-}
-
-- (void)dealloc {
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
 }
 
 - (void)showCompletion:(NSAttributedString*)comp at:(NSPoint)topleft level:(int)level {

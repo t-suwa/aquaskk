@@ -30,7 +30,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         view_ = [[AnnotationView alloc] init];
@@ -41,13 +41,6 @@
         [window_ setContentView:view_];
     }
     return self;
-}
-
-- (void)dealloc {
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
 }
 
 - (NSWindow*)window {

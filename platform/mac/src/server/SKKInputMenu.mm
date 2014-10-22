@@ -60,7 +60,7 @@ namespace {
     static SKKInputMode unifiedInputMode__ = HirakanaInputMode;
 };
 
-- (id)initWithClient:(id)client {
+- (instancetype)initWithClient:(id)client {
     if(self = [super init]) {
         client_ = client;
         currentInputMode_ = HirakanaInputMode;

@@ -116,12 +116,12 @@ namespace jconv {
 
 	    str.replace(pos, from_.size(), to_);
 
-	    return this->operator()(str, remain - from_.size(), pos + to_.size());
+	    return this->operator()(str, (unsigned)(remain - from_.size()), (unsigned)(pos + to_.size()));
 	}
     };
 
     static void kana_convert(kana_member target, kana_member replacement, std::string& str) {
-	unsigned remain = str.size();
+	unsigned remain = (int)str.size();
 
 	for(kana** tbl = kana_tables; *tbl != 0; ++ tbl) {
 	    for(kana* ptr = *tbl; remain && ptr->hirakana; ++ ptr) {
@@ -206,7 +206,7 @@ namespace jconv {
 
     void jisx0208_latin_to_ascii(const std::string& from, std::string& to) {
 	to = from;
-	unsigned remain = to.size();
+	unsigned remain = (unsigned)to.size();
 	for(latin* ptr = latin_table; remain && ptr->ascii; ++ ptr) {
 	    remain = translate(ptr->jisx0208_latin, ptr->ascii)(to, remain);
 	}

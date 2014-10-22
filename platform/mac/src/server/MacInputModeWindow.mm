@@ -39,7 +39,7 @@ namespace {
 
     int ActiveProcessID() {
         NSDictionary* info = [[NSWorkspace sharedWorkspace] activeApplication];
-        NSNumber* pid = [info objectForKey:@"NSApplicationProcessIdentifier"];
+        NSNumber* pid = info[@"NSApplicationProcessIdentifier"];
 
         return [pid intValue];
     }
@@ -49,27 +49,25 @@ namespace {
     // プロセス ID に関連したウィンドウ矩形群の取得
     CGRectContainer CreateWindowBoundsListOf(int pid) {
         CGRectContainer result;
-        NSArray* array = (NSArray*)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly,
+        NSArray* array = (__bridge_transfer NSArray*)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly,
                                                               kCGNullWindowID);
         NSEnumerator* enumerator = [array objectEnumerator];
 
         while(NSDictionary* window = [enumerator nextObject]) {
             // 引数のプロセス ID でフィルタ
-            NSNumber* owner = [window objectForKey:(NSString*)kCGWindowOwnerPID];
+            NSNumber* owner = window[(__bridge NSString*)kCGWindowOwnerPID];
             if([owner intValue] != pid) continue;
 
             // デスクトップ全面を覆う Finder のウィンドウは除外
-            NSNumber* level = [window objectForKey:(NSString*)kCGWindowLayer];
+            NSNumber* level = window[(__bridge NSString*)kCGWindowLayer];
             if([level intValue] == kCGMinimumWindowLevel) continue;
 
             CGRect rect;
-            NSDictionary* bounds = [window objectForKey:(NSString*)kCGWindowBounds];
+            NSDictionary* bounds = window[(__bridge NSString*)kCGWindowBounds];
             if(CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)bounds, &rect)) {
                 result.push_back(rect);
             }
         }
-
-        [array release];
 
         return result;
     }
@@ -85,7 +83,7 @@ namespace {
     BOOL active_;
 }
 
-- (id)initWithLayoutManager:(SKKLayoutManager*)layout;
+- (instancetype)initWithLayoutManager:(SKKLayoutManager*)layout;
 - (void)changeMode:(SKKInputMode)mode;
 - (void)show;
 - (void)hide;
@@ -100,8 +98,8 @@ namespace {
     CGRectContainer list = CreateWindowBoundsListOf(ActiveProcessID());
 
     // カーソル位置がウィンドウ矩形に含まれていなければ無視する
-    int count = std::count_if(list.begin(), list.end(),
-                              std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
+    int count = (int)std::count_if(list.begin(), list.end(),
+                                   std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
     if(!count) return;
 
     [window_ showAt:pt level:layout_->WindowLevel()];
@@ -112,7 +110,7 @@ namespace {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-- (id)initWithLayoutManager:(SKKLayoutManager*)layout {
+- (instancetype)initWithLayoutManager:(SKKLayoutManager*)layout {
     self = [super init];
     if(self) {
         window_ = [InputModeWindow sharedWindow];
@@ -126,7 +124,6 @@ namespace {
 
 - (void)dealloc {
     [self cancel];
-    [super dealloc];
 }
 
 - (void)changeMode:(SKKInputMode)mode {
@@ -157,7 +154,6 @@ MacInputModeWindow::MacInputModeWindow(SKKLayoutManager* layout) {
 }
 
 MacInputModeWindow::~MacInputModeWindow() {
-    [tips_ release];
 }
 
 void MacInputModeWindow::SelectInputMode(SKKInputMode mode) {

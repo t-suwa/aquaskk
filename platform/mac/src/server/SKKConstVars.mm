@@ -21,7 +21,6 @@
 */
 
 #include "SKKConstVars.h"
-#include "ObjCUtil.h"
 
 #define DECLARE_NSStringKey(key) NSString* key = @ #key
 
@@ -87,35 +86,39 @@ namespace SKKDictionaryTypeKeys {
 
 namespace SKKFilePaths {
     static NSString* pathForSystemResource() {
-        ObjC::RAIIPool pool;
-        static NSString* path = @"/Library/Input Methods/AquaSKK.app/Contents/Resources";
+        @autoreleasepool {
+            static NSString* path = @"/Library/Input Methods/AquaSKK.app/Contents/Resources";
 
-        return path;
+            return path;
+        }
     }
     
     static NSString* pathForApplicationSupport() {
-        ObjC::RAIIPool pool;
-        static NSString* path = [[NSString stringWithFormat:@"%@/Library/Application Support/AquaSKK",
-                                           NSHomeDirectory()] retain];
+        @autoreleasepool {
+            static NSString* path = [NSString stringWithFormat:@"%@/Library/Application Support/AquaSKK",
+                                      NSHomeDirectory()];
 
-        return path;
+            return path;
+        }
     }
 
     static NSString* pathForDictionarySet() {
-        ObjC::RAIIPool pool;
-        static NSString* path = [[NSString stringWithFormat:@"%@/DictionarySet.plist",
-                                           pathForApplicationSupport()] retain];
+        @autoreleasepool {
+            static NSString* path = [NSString stringWithFormat:@"%@/DictionarySet.plist",
+                                      pathForApplicationSupport()];
 
-        return path;
+            return path;
+        }
     }
 
     static NSString* pathForUserDefaults() {
-        ObjC::RAIIPool pool;
-        const char* plist = "Library/Preferences/jp.sourceforge.inputmethod.aquaskk.plist";
-        static NSString* path = [[NSString stringWithFormat:@"%@/%s",
-                                           NSHomeDirectory(), plist] retain];
+        @autoreleasepool {
+            const char* plist = "Library/Preferences/jp.sourceforge.inputmethod.aquaskk.plist";
+            static NSString* path = [NSString stringWithFormat:@"%@/%s",
+                                      NSHomeDirectory(), plist];
 
-        return path;
+            return path;
+        }
     }
 
     NSString* SystemResourceFolder = pathForSystemResource();

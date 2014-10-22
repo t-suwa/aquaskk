@@ -31,7 +31,7 @@
     SKKInputMode currentInputMode_;
 }
 
-- (id)initWithClient:(id)client;
+- (instancetype)initWithClient:(id)client;
 - (void)updateMenu:(SKKInputMode)mode;
 - (NSString*)convertInputModeToId:(SKKInputMode)mode;
 - (int)convertIdToEventId:(NSString*)identifier;

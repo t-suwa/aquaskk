@@ -31,7 +31,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         view_ = [[MessengerView alloc] init];
@@ -45,13 +45,6 @@
         [window_ setContentView:view_];
     }
     return self;
-}
-
-- (void)dealloc {
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
 }
 
 - (void)showMessage:(NSString*)msg at:(NSPoint)topleft level:(int)level {
@@ -71,15 +64,14 @@
 - (void)hide {
     NSMutableDictionary* dictionary = [NSMutableDictionary dictionaryWithCapacity:2];
 
-    [dictionary setObject:window_ forKey:NSViewAnimationTargetKey];
-    [dictionary setObject:NSViewAnimationFadeOutEffect forKey:NSViewAnimationEffectKey];
+    dictionary[NSViewAnimationTargetKey] = window_;
+    dictionary[NSViewAnimationEffectKey] = NSViewAnimationFadeOutEffect;
     
     NSViewAnimation* animation = [[NSViewAnimation alloc]
-                                     initWithViewAnimations:[NSArray arrayWithObjects:dictionary, nil]];
+                                     initWithViewAnimations:@[dictionary]];
 
     [animation setDuration:0.5];
     [animation startAnimation];
-    [animation release];
 }
 
 - (void)hideNotify:(id)sender {

@@ -31,7 +31,7 @@
     return obj;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         view_ = [[CandidateView alloc] initWithFrame:NSZeroRect];
@@ -46,21 +46,12 @@
     return self;
 }
 
-- (void)dealloc {
-    [labels_ release];
-    [window_ release];
-    [view_ release];
-
-    [super dealloc];
-}
-
 - (NSWindow*)window {
     return window_;
 }
 
 - (void)prepareWithFont:(NSFont*)newFont labels:(NSString*)newLabels {
-    [labels_ release];
-    labels_ = [newLabels retain];
+    labels_ = newLabels;
 
     [view_ prepareWithFont:newFont labels:labels_];
     [window_ setContentSize:[view_ contentSize]];
@@ -91,7 +82,7 @@
     if(result.location == NSNotFound) {
 	return -1;
     } else {
-	return result.location;
+	return (int)result.location;
     }
 }
 

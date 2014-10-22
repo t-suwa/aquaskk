@@ -47,7 +47,7 @@
 
 @implementation SKKInputController
 
-- (id)initWithServer:(id)server delegate:(id)delegate client:(id)client {
+- (instancetype)initWithServer:(id)server delegate:(id)delegate client:(id)client {
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
         client_ = client;
@@ -69,10 +69,6 @@
 - (void)dealloc {
     delete session_;
     delete layout_;
-
-    [menu_ release];
-    [proxy_ release];
-    [super dealloc];
 }
 
 // IMKServerInput
@@ -157,6 +153,10 @@
         }
     } else {
         // 個々の入力モードを選択している場合
+
+      if (activated_) {
+        activated_ = NO;
+
         SKKEvent param;
 
         // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
@@ -167,6 +167,7 @@
 
             modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)value]);
         }
+      }
     }
 }
 
@@ -191,10 +192,10 @@
         { 0,                          0,                             0 }
     };
 
-    NSMenu* inputMenu = [[[NSMenu alloc] initWithTitle:@"AquaSKK"] autorelease];
+    NSMenu* inputMenu = [[NSMenu alloc] initWithTitle:@"AquaSKK"];
 
     for(int i = 0; items[i].title != 0; ++ i) {
-        NSString* title = [NSString stringWithUTF8String:items[i].title];
+        NSString* title = @(items[i].title);
         SEL handler = items[i].handler;
         NSMenuItem* item;
 
@@ -202,13 +203,15 @@
             item = [[NSMenuItem alloc] initWithTitle:title
                                               action:handler
                                        keyEquivalent:@""];
-            [item autorelease];
         } else {
             item = [NSMenuItem separatorItem];
         }
         
         if(items[i].state != 0) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [item setState:(NSInteger)[self performSelector:items[i].state]];
+#pragma clang pop
 
             if(items[i].state == @selector(directMode)) {
                 NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
@@ -275,10 +278,8 @@
 
     NSPasteboard* pb = [NSPasteboard generalPasteboard];
 
-    [pb declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:self];
+    [pb declareTypes:@[NSStringPboardType] owner:self];
     [pb setString:info forType:NSStringPboardType];
-
-    [info release];
 }
 
 - (void)openURL:(NSString*)url {

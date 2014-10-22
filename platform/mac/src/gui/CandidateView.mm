@@ -30,7 +30,7 @@
     return 4;
 }
 
-- (id)initWithFrame:(NSRect)frameRect {
+- (instancetype)initWithFrame:(NSRect)frameRect {
     if(self = [super initWithFrame:frameRect]) {
 	candidateCells_ = [[NSMutableArray alloc] initWithCapacity:0];
 	indicator_ = [[CandidatePageIndicator alloc] init];
@@ -41,22 +41,14 @@
     return self;
 }
 
-- (void)dealloc {
-    [candidateCells_ release];
-    [indicator_ release];
-    if(cellFont_) [cellFont_ release];
-
-    [super dealloc];
-}
-
 - (void)drawRect:(NSRect)rect {
     int margin = [CandidateView cellSpacing];
 
     NSPoint offset = NSMakePoint(margin, margin);
-    int cellCount = [labels_ length];
+    int cellCount = (int)[labels_ length];
 
     for(unsigned index = 0; index < [candidateCells_ count]; ++ index) {
-        CandidateCell* cell = [candidateCells_ objectAtIndex:index];
+        CandidateCell* cell = candidateCells_[index];
         NSSize maxSize = [cell size];
 
         maxSize.width = [cell defaultSize].width * cellCount + [CandidateView cellSpacing] * (cellCount - 1);
@@ -77,11 +69,7 @@
 }
 
 - (void)prepareWithFont:(NSFont*)newFont labels:(NSString*)newLabels {
-    [newFont retain];
-
-    if(cellFont_) [cellFont_ release];
     cellFont_ = newFont;
-
     labels_ = newLabels;
 }
 
@@ -97,8 +85,6 @@
     result.width += [CandidateView cellSpacing] * 2;
     result.height += [CandidateView cellSpacing] * 2;
 
-    [cell release];
-
     return result;
 }
 
@@ -108,9 +94,8 @@
     for(unsigned index = 0; index < [candidates count]; ++ index) {
 	CandidateCell* tmp = [self newCandidateCell];
 
-	[tmp setString:[candidates objectAtIndex:index] withLabel:[labels_ characterAtIndex:index]];
+	[tmp setString:candidates[index] withLabel:[labels_ characterAtIndex:index]];
 	[candidateCells_ addObject:tmp];
-	[tmp release];
     }
 
     selected_ = cursor;

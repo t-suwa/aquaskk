@@ -117,7 +117,7 @@ void SKKDictionaryKeeper::Complete(SKKCompletionHelper& helper) {
     SKKDictionaryEntryContainer& container = file_.OkuriNasi();
     std::string query = eucj_from_utf8(helper.Entry());
     EntryRange range = std::equal_range(container.begin(), container.end(),
-                                        query, CompareFunctor(query.size()));
+                                        query, CompareFunctor((unsigned)query.size()));
 
     for(SKKDictionaryEntryIterator iter = range.first; iter != range.second; ++ iter) {
         std::string completion = utf8_from_eucj(iter->first);

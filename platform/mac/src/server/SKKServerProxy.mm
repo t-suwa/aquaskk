@@ -24,20 +24,15 @@
 
 @implementation SKKServerProxy
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
 
-    proxy_ = [[NSConnection
+    proxy_ = [NSConnection
                   rootProxyForConnectionWithRegisteredName:SKKSupervisorConnectionName
-                  host:nil] retain];
+                  host:nil];
     [proxy_ setProtocolForProxy:@protocol(SKKSupervisor)];
 
     return self;
-}
-
-- (void)dealloc {
-    [proxy_ release];
-    [super dealloc];
 }
 
 - (void)reloadUserDefaults {
