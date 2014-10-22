@@ -208,7 +208,10 @@
         }
         
         if(items[i].state != 0) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [item setState:(NSInteger)[self performSelector:items[i].state]];
+#pragma clang pop
 
             if(items[i].state == @selector(directMode)) {
                 NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
