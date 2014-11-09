@@ -158,10 +158,6 @@
         }
     } else {
         // 個々の入力モードを選択している場合
-
-      if (activated_) {
-        activated_ = NO;
-
         SKKEvent param;
 
         // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
@@ -172,7 +168,6 @@
 
             modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)value]);
         }
-      }
     }
 }
 
