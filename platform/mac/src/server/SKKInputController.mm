@@ -163,11 +163,15 @@
         // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
         param.id = [menu_ convertIdToEventId:(NSString*)value];
 
+        // setValue内でメニューの更新があると、 selectInputMode -> setValueの無限ループが発生するため、
+        // 更新を停止する
+        [menu_ deactive];
         if(param.id != InvalidInputMode) {
             session_->HandleEvent(param);
 
             modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)value]);
         }
+        [menu_ active];
     }
 }
 
