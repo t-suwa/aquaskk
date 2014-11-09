@@ -193,6 +193,7 @@
         { "Web::日本語を快適に",      @selector(webHome:),           0 },
         { "Web::SourceForge.JP",      @selector(webSourceForge:),    0 },
         { "Web::Wiki",                @selector(webWiki:),           0 },
+        { "Web::Github[forked]",      @selector(github:),            0 },
         { 0,                          0,                             0 }
     };
 
@@ -300,6 +301,10 @@
 
 - (void)webWiki:(id)sender {
     [self openURL:@"http://sourceforge.jp/projects/aquaskk/wiki/FrontPage"];
+}
+
+- (void)github:(id)sender {
+    [self openURL:@"https://github.com/codefirst/aquaskk"];
 }
 
 @end
