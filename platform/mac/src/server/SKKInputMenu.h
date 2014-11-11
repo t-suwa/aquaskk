@@ -28,7 +28,7 @@
 
 @interface SKKInputMenu : NSObject {
     id client_;
-    BOOL active_;
+    BOOL activation_;
     SKKInputMode currentInputMode_;
 }
 
@@ -36,8 +36,8 @@
 - (void)updateMenu:(SKKInputMode)mode;
 - (NSString*)convertInputModeToId:(SKKInputMode)mode;
 - (int)convertIdToEventId:(NSString*)identifier;
-- (void)active;
-- (void)deactive;
+- (void)activation;
+- (void)deactivation;
 - (SKKInputMode)convertIdToInputMode:(NSString*)identifier;
 - (SKKInputMode)currentInputMode;
 - (SKKInputMode)unifiedInputMode;
