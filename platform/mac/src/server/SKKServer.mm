@@ -331,10 +331,8 @@ static void terminate(int) {
     NSMutableDictionary* icons = [[NSMutableDictionary alloc] initWithCapacity:0];
 
     for(int i = 0; InputModeIcons[i].name != 0; ++ i) {
-        NSString* path = [self pathForResource:InputModeIcons[i].name];
         NSImage* image = [NSImage imageNamed:InputModeIcons[i].name];
         [icons setObject:image forKey:[NSNumber numberWithInt:InputModeIcons[i].mode]];
-        [image release];
     }
 
     [[InputModeWindow sharedWindow] setModeIcons:icons];
