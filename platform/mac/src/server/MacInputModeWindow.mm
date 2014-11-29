@@ -102,7 +102,10 @@ namespace {
     // カーソル位置がウィンドウ矩形に含まれていなければ無視する
     int count = std::count_if(list.begin(), list.end(),
                               std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
-    if(!count) return;
+    if(!count) {
+        active_ = NO;
+        return;
+    }
 
     [window_ showAt:pt level:layout_->WindowLevel()];
     active_ = NO;
