@@ -112,6 +112,17 @@
 		D3FC33B30DD1D454006A3F5A /* AquaSKKPreferences.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */; };
 		D3FE45FE0E9FA98E009B64E7 /* SKKInputMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3FE45FD0E9FA98E009B64E7 /* SKKInputMenu.mm */; };
 		D3FF02C9100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */; };
+		EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */; };
+		EA56B04A1A22C62400954B5F /* AquaSKK-Hirakana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */; };
+		EA56B04B1A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */; };
+		EA56B04C1A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */; };
+		EA56B04D1A22C62400954B5F /* AquaSKK-Katakana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */; };
+		EA56B0531A22CBA400954B5F /* Mini-Ascii@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */; };
+		EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */; };
+		EA56B0551A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */; };
+		EA56B0561A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */; };
+		EA56B0571A22CBA400954B5F /* Mini-Katakana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */; };
+		EA56B0591A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,6 +374,17 @@
 		D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKGadgetDictionary.cpp; sourceTree = "<group>"; };
 		D3FF02C8100A2C9D0028EDE6 /* SKKGadgetDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKGadgetDictionary.h; sourceTree = "<group>"; };
 		D3FF02CB100A2CB60028EDE6 /* calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
+		EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Ascii@2x.png"; sourceTree = "<group>"; };
+		EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Hirakana@2x.png"; sourceTree = "<group>"; };
+		EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0201Kana@2x.png"; sourceTree = "<group>"; };
+		EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0208Latin@2x.png"; sourceTree = "<group>"; };
+		EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Katakana@2x.png"; sourceTree = "<group>"; };
+		EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Ascii@2x.tiff"; sourceTree = "<group>"; };
+		EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Hirakana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0201Kana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0208Latin@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Katakana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "AquaSKK-InputMethod@2x.tiff"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,16 +760,27 @@
 			isa = PBXGroup;
 			children = (
 				D31C99CB0E9E4A3D00CBE4D1 /* Mini-Ascii.tiff */,
+				EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */,
 				D31C99CC0E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff */,
+				EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */,
 				D31C99CD0E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff */,
+				EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */,
 				D31C99CE0E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff */,
+				EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */,
 				D31C99CF0E9E4A3D00CBE4D1 /* Mini-Katakana.tiff */,
+				EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */,
 				D353BE170E175552004C68A6 /* AquaSKK-InputMethod.tif */,
+				EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */,
 				D353BE150E175552004C68A6 /* AquaSKK-Ascii.png */,
+				EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */,
 				D353BE160E175552004C68A6 /* AquaSKK-Hirakana.png */,
+				EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */,
 				D353BE1A0E175552004C68A6 /* AquaSKK-Katakana.png */,
+				EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */,
 				D353BE180E175552004C68A6 /* AquaSKK-Jisx0201Kana.png */,
+				EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */,
 				D353BE190E175552004C68A6 /* AquaSKK-Jisx0208Latin.png */,
+				EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */,
 			);
 			name = icons;
 			path = ../../../data/icons;
@@ -925,24 +958,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				D322B8D10DDC8174002C33F9 /* AquaSKK.xib in Resources */,
+				EA56B04A1A22C62400954B5F /* AquaSKK-Hirakana@2x.png in Resources */,
+				EA56B0551A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff in Resources */,
 				D353BE0D0E17552F004C68A6 /* DictionarySet.plist in Resources */,
 				D353BE0E0E17552F004C68A6 /* UserDefaults.plist in Resources */,
 				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
 				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
+				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
+				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
 				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
+				EA56B04C1A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png in Resources */,
+				EA56B0571A22CBA400954B5F /* Mini-Katakana@2x.tiff in Resources */,
+				EA56B0561A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff in Resources */,
 				D353BE1E0E175552004C68A6 /* AquaSKK-InputMethod.tif in Resources */,
 				D353BE1F0E175552004C68A6 /* AquaSKK-Jisx0201Kana.png in Resources */,
 				D353BE200E175552004C68A6 /* AquaSKK-Jisx0208Latin.png in Resources */,
 				D353BE210E175552004C68A6 /* AquaSKK-Katakana.png in Resources */,
 				D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */,
+				EA56B0591A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff in Resources */,
 				D31C99D00E9E4A3D00CBE4D1 /* Mini-Ascii.tiff in Resources */,
 				D31C99D10E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff in Resources */,
+				EA56B04D1A22C62400954B5F /* AquaSKK-Katakana@2x.png in Resources */,
+				EA56B0531A22CBA400954B5F /* Mini-Ascii@2x.tiff in Resources */,
 				D31C99D20E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff in Resources */,
 				D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */,
 				D31C99D40E9E4A3D00CBE4D1 /* Mini-Katakana.tiff in Resources */,
 				D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */,
 				D3F0576210BAD10F00F3233E /* sub-rule.desc in Resources */,
+				EA56B04B1A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png in Resources */,
 				D3F0576510BAD12600F3233E /* comma.rule in Resources */,
 				D3F0576610BAD12600F3233E /* period.rule in Resources */,
 				D357591A10BD72E00066692B /* azik.rule in Resources */,
