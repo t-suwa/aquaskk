@@ -6,7 +6,7 @@ An input method without morphological analysis.
 ## How to build
 
 ### Build package/dmg
-Install [Iceberg](http://s.sudre.free.fr/Software/Iceberg.html).  And run `/Library/StartupItems/IcebergControlTowerTool` as root.
+Install [Iceberg](http://s.sudre.free.fr/Software/Iceberg.html).  And run `/Library/StartupItems/IcebergControlTower/IcebergControlTowerTool` as root.
 
 ```
 $ cd aquaskk/platform/mac
