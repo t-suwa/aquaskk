@@ -33,3 +33,7 @@ $ make install-rc
 ```
 
 You might need logout/login to start new AquaSKK process.
+
+# Troubelshoot
+## Use with iTerm2/Apple Terminal.app
+see http://mzp.hatenablog.com/entry/2015/03/15/213219
