@@ -352,7 +352,8 @@
     if(bundle) {
         // Info.plist に Java キーが含まれていなければ無視
         if([bundle objectForInfoDictionaryKey:@"Java"] == nil &&
-           [bundle objectForInfoDictionaryKey:@"Eclipse"] == nil) {
+           [bundle objectForInfoDictionaryKey:@"Eclipse"] == nil &&
+           [bundle objectForInfoDictionaryKey:@"JVMOptions"] == nil) {
             [self debug:@"Not Java Application"];
             return;
         }
