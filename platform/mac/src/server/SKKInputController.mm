@@ -41,8 +41,7 @@
 - (void)setDirectMode:(BOOL)flag;
 - (void)workAroundForSpecificApplications;
 - (void)cancelKeyEventForASCII;
-- (void)workAroundForJRE;
-- (void)workAroundForLINE;
+- (BOOL)isBlacklistedApp:(NSBundle*)bunde;
 - (void)debug:(NSString*)message;
 - (NSUserDefaults*)defaults;
 
@@ -348,34 +347,36 @@
 }
 
 - (void)workAroundForSpecificApplications {
-    [self workAroundForJRE];
-    [self workAroundForLINE];
-}
-
-- (void)workAroundForJRE {
     NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
     NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
     NSBundle* bundle = [NSBundle bundleWithPath:path];
 
-    if(bundle) {
-        // Info.plist に Java キーが含まれていなければ無視
-        if([bundle objectForInfoDictionaryKey:@"Java"] == nil &&
-           [bundle objectForInfoDictionaryKey:@"Eclipse"] == nil &&
-           [bundle objectForInfoDictionaryKey:@"JVMOptions"] == nil) {
-            [self debug:@"Not Java Application"];
-            return;
-        }
-    } else {
-        // 直接 Java を起動していない場合は無視
-        if(![[client_ bundleIdentifier] hasPrefix:@"com.apple.javajdk"]) {
-            [self debug:@"Not JDK"];
-            return;
-        }
+    if([self isBlacklistedApp:bundle]) {
+        [self debug:@"cancel key event"];
+        [self cancelKeyEventForASCII];
     }
+}
 
-    [self debug:@"workAroundForJRE"];
+- (BOOL)isBlacklistedApp:(NSBundle *)bundle {
+    if([[client_ bundleIdentifier] hasPrefix:@"com.apple.javajdk"]) {
+        // Javaを直接起動している
+        return YES;
+    }
+    if(!bundle) { return NO; }
 
-    [self cancelKeyEventForASCII];
+    if([[bundle bundleIdentifier] hasPrefix:@"jp.naver.line.mac"]) {
+        return YES;
+    }
+    if([bundle objectForInfoDictionaryKey:@"Java"]) {
+        return YES;
+    }
+    if([bundle objectForInfoDictionaryKey:@"Eclipse"]) {
+        return YES;
+    }
+    if([bundle objectForInfoDictionaryKey:@"JVMOptions"]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)cancelKeyEventForASCII {
@@ -385,18 +386,6 @@
 
     [client_ setMarkedText:null selectionRange:range replacementRange:range];
     [client_ setMarkedText:@"" selectionRange:range replacementRange:range];
-}
-
-- (void)workAroundForLINE {
-    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
-    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
-    NSBundle* bundle = [NSBundle bundleWithPath:path];
-
-    if(bundle) {
-        if([(NSString *)[bundle objectForInfoDictionaryKey:@"CFBundleExecutable"] compare:@"LINE"] == NSOrderedSame) {
-            [self cancelKeyEventForASCII];
-        }
-    }
 }
 
 - (void)debug:(NSString*)str {
