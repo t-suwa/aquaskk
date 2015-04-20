@@ -39,7 +39,10 @@
 - (void)setPrivateMode:(BOOL)flag;
 - (BOOL)directMode;
 - (void)setDirectMode:(BOOL)flag;
+- (void)workAroundForSpecificApplications;
+- (void)cancelKeyEventForASCII;
 - (void)workAroundForJRE;
+- (void)workAroundForLINE;
 - (void)debug:(NSString*)message;
 - (NSUserDefaults*)defaults;
 
@@ -87,7 +90,7 @@
     bool result = session_->HandleEvent(param);
 
     if(current != [menu_ currentInputMode] || param.id == SKK_JMODE) {
-        [self workAroundForJRE];
+        [self workAroundForSpecificApplications];
     }
 
     return result ? YES : NO;
@@ -344,6 +347,11 @@
     [[self defaults] setObject:result forKey:SKKUserDefaultKeys::direct_clients];
 }
 
+- (void)workAroundForSpecificApplications {
+    [self workAroundForJRE];
+    [self workAroundForLINE];
+}
+
 - (void)workAroundForJRE {
     NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
     NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
@@ -367,12 +375,28 @@
 
     [self debug:@"workAroundForJRE"];
 
+    [self cancelKeyEventForASCII];
+}
+
+- (void)cancelKeyEventForASCII {
     // Ctrl-L を強制挿入することで、アプリケーション側のキー処理を無効化する
     NSString* null = [NSString stringWithFormat:@"%c", 0x0c];
     NSRange range = NSMakeRange(NSNotFound, NSNotFound);
 
     [client_ setMarkedText:null selectionRange:range replacementRange:range];
     [client_ setMarkedText:@"" selectionRange:range replacementRange:range];
+}
+
+- (void)workAroundForLINE {
+    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
+    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
+    NSBundle* bundle = [NSBundle bundleWithPath:path];
+
+    if(bundle) {
+        if([(NSString *)[bundle objectForInfoDictionaryKey:@"CFBundleExecutable"] compare:@"LINE"] == NSOrderedSame) {
+            [self cancelKeyEventForASCII];
+        }
+    }
 }
 
 - (void)debug:(NSString*)str {
