@@ -41,7 +41,7 @@
 - (void)setDirectMode:(BOOL)flag;
 - (void)workAroundForSpecificApplications;
 - (void)cancelKeyEventForASCII;
-- (BOOL)isBlacklistApp:(NSBundle*)bunde;
+- (BOOL)isBlacklistedApp:(NSBundle*)bunde;
 - (void)debug:(NSString*)message;
 - (NSUserDefaults*)defaults;
 
@@ -351,13 +351,13 @@
     NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
     NSBundle* bundle = [NSBundle bundleWithPath:path];
 
-    if([self isBlacklistApp:bundle]) {
+    if([self isBlacklistedApp:bundle]) {
         [self debug:@"cancel key event"];
         [self cancelKeyEventForASCII];
     }
 }
 
-- (BOOL)isBlacklistApp:(NSBundle *)bundle {
+- (BOOL)isBlacklistedApp:(NSBundle *)bundle {
     if([[client_ bundleIdentifier] hasPrefix:@"com.apple.javajdk"]) {
         // Javaを直接起動している
         return YES;
