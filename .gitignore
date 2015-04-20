@@ -1,5 +1,5 @@
 /platform/mac/proj/build/
 **/*.xcodeproj/*
-!**/*.xcodeproj/project.pbxproja
+!**/*.xcodeproj/project.pbxproj
 !*.xcodeproj/default.*
 !**/*.xcodeproj/default.*
