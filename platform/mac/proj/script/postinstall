@@ -10,6 +10,7 @@ require 'ConstVars'
 require 'fileutils'
 
 begin
+  system 'touch /tmp/post-flight'
   user = ENV['USER']
   group = `id -gn #{user}`.chop
 

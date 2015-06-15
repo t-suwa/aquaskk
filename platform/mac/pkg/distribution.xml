@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <title>AquaSKK</title>
+    <pkg-ref id="org.codefirst.aquaskk.pkg"/>
+    <welcome file="welcome.rtf" />
+    <license file="license.rtf" />
+    <allowed-os-versions>
+        <os-version min="10.9.4" />
+    </allowed-os-versions>
+    <options customize="never" require-scripts="false"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="org.codefirst.aquaskk.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="org.codefirst.aquaskk.pkg" visible="false">
+        <pkg-ref id="org.codefirst.aquaskk.pkg"/>
+    </choice>
+    <pkg-ref id="org.codefirst.aquaskk.pkg" version="4.2.5" onConclusion="RequireLogout">aquaskk-pkg.pkg</pkg-ref>
+</installer-gui-script>
