@@ -362,6 +362,10 @@
         // Javaを直接起動している
         return YES;
     }
+    if([[client_ bundleIdentifier] hasPrefix:@"net.java.openjdk"]) {
+        // OpenJDKを使っている
+        return YES;
+    }
     if(!bundle) { return NO; }
 
     if([[bundle bundleIdentifier] hasPrefix:@"jp.naver.line.mac"]) {
