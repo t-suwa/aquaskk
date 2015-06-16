@@ -52,7 +52,7 @@ pkg: release
 	rm -fr AquaSKK.pkg
 	mkdir -p $(PKG_ROOT)/$(DEST)
 	cp -r $(RELEASE_TARGET) $(PKG_ROOT)/$(DEST)
-	pkgbuild --root $(PKG_ROOT) --component-plist pkg/aquaskk.plist --scripts proj/script --identifier $(PKG_ID) --version $(PKG_VERSION) $(WORKDIR)/aquaskk-pkg.pkg
+	pkgbuild --root $(PKG_ROOT) --component-plist pkg/aquaskk.plist --identifier $(PKG_ID) --version $(PKG_VERSION) $(WORKDIR)/aquaskk-pkg.pkg
 	productbuild --distribution pkg/distribution.xml --package-path $(WORKDIR) --resources 'proj/contents' $(WORKDIR)/aquaskk-dist.pkg
 	productsign --sign $(PKG_SIGN_ID) $(WORKDIR)/aquaskk-dist.pkg AquaSKK.pkg
 
