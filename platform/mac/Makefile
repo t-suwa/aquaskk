@@ -10,11 +10,13 @@ DEBUG_TARGET	= proj/build/Debug/$(TARGET)
 RELEASE_TARGET	= proj/build/Release/$(TARGET)
 DEBUG_BUILD	= $(XCODE) -configuration Debug
 RELEASE_BUILD	= $(XCODE) -configuration Release
-PKGMAKER	= /Developer/usr/bin/packagemaker
-PKGOPTION	= -b -i jp.sourceforge.aquaskk.pkg -d AquaSKK.pmdoc
-FREEZE	= /usr/local/bin/freeze
 HDIMAGE	= hdiutil create -ov -srcfolder $(WORKDIR)
 TODAY	= `date +%Y%m%d`
+
+PKG_ROOT = $(WORKDIR)/root
+PKG_ID = org.codefirst.aquaskk.pkg
+PKG_VERSION = 4.2.5
+PKG_SIGN_ID = "Developer ID Installer: HIROKI MIZUNO"
 
 ifeq ($(MAKECMDGOALS), install)
 	COPY_SOURCE	= $(DEBUG_TARGET)
@@ -48,18 +50,17 @@ release:
 
 pkg: release
 	rm -fr AquaSKK.pkg
-	$(FREEZE) proj/AquaSKK.packproj
+	mkdir -p $(PKG_ROOT)/$(DEST)
+	cp -r $(RELEASE_TARGET) $(PKG_ROOT)/$(DEST)
+	pkgbuild --root $(PKG_ROOT) --component-plist pkg/aquaskk.plist --identifier $(PKG_ID) --version $(PKG_VERSION) $(WORKDIR)/aquaskk-pkg.pkg
+	productbuild --distribution pkg/distribution.xml --package-path $(WORKDIR) --resources 'proj/contents' $(WORKDIR)/aquaskk-dist.pkg
+	productsign --sign $(PKG_SIGN_ID) $(WORKDIR)/aquaskk-dist.pkg AquaSKK.pkg
 
 dmg: pkg
 	rm -fr $(WORKDIR)
 	mkdir $(WORKDIR)
 	mv AquaSKK.pkg $(WORKDIR)
 	$(HDIMAGE) /tmp/AquaSKK-$(TODAY).dmg
-
-package: release
-	rm -fr $(WORKDIR)
-	mkdir $(WORKDIR)
-	cd proj; $(PKGMAKER) $(PKGOPTION) -o $(WORKDIR)/AquaSKK.pkg; cd ..
 
 kill:
 	@pid=`ps -A|awk '/[A]quaSKK.app/ { print $$1; }'`; \
