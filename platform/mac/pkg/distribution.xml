@@ -17,5 +17,5 @@
     <choice id="org.codefirst.aquaskk.pkg" visible="false">
         <pkg-ref id="org.codefirst.aquaskk.pkg"/>
     </choice>
-    <pkg-ref id="org.codefirst.aquaskk.pkg" version="4.2.5" onConclusion="RequireLogout">aquaskk-pkg.pkg</pkg-ref>
+    <pkg-ref id="org.codefirst.aquaskk.pkg" version="4.2.6" onConclusion="RequireLogout">aquaskk-pkg.pkg</pkg-ref>
 </installer-gui-script>

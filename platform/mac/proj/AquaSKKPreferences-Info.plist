@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Copyright © 2014, codefirst</string>
+	<string>Copyright © 2014-2015, codefirst</string>
 	<key>CFBundleIdentifier</key>
 	<string>jp.sourceforge.inputmethod.aquaskk.preferences</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.2.5</string>
+	<string>4.2.6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2015-5-13</string>
+	<string>2015-6-24</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSUIElement</key>
