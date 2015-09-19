@@ -32,7 +32,7 @@ class MacFrontEnd : public SKKFrontEnd {
     NSRange notFound() const;
     NSMutableAttributedString* createMarkedText(const std::string& str, int cursorOffset);
 
-    void workaroundForMicrosoftPowerPoint(NSString* string);
+    void workaroundForBlacklistApp(NSString* string);
     bool isBlacklistApp() const;
 
 public:
