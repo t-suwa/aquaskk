@@ -1175,7 +1175,7 @@
 				);
 				PRODUCT_NAME = AquaSKK;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -1209,7 +1209,7 @@
 				);
 				PRODUCT_NAME = AquaSKK;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1238,7 +1238,7 @@
 				);
 				PRODUCT_NAME = AquaSKKPreferences;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1265,7 +1265,7 @@
 				);
 				PRODUCT_NAME = AquaSKKPreferences;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
