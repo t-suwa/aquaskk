@@ -101,12 +101,23 @@ NSMutableAttributedString* MacFrontEnd::createMarkedText(const std::string& str,
 }
 
 void MacFrontEnd::workaroundForMicrosoftPowerPoint(NSString* string) {
-    NSString* powerPoint = @"com.microsoft.powerpoint";
-    NSRange range = notFound();
-
     // 確定前に、非確定文字列に確定予定文字列をセットするとうまくいく
-    if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
+    if(isBlacklistApp()) {
+        NSRange range = notFound();
         [client_ setMarkedText:string selectionRange:range replacementRange:range];
     }
     // 正しいかどうかは不明
+}
+
+// workaroundが必要なアプリかどうかを判定する
+bool MacFrontEnd::isBlacklistApp() const {
+  NSString* powerPoint = @"com.microsoft.powerpoint";
+  NSString* pycharm = @"com.jetbrains.pycharm";
+  if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
+      return true;
+  }
+  if([[client_ bundleIdentifier] caseInsensitiveCompare:pycharm] == NSOrderedSame) {
+      return true;
+  }
+  return false;
 }

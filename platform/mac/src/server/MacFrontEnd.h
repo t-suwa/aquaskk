@@ -33,6 +33,7 @@ class MacFrontEnd : public SKKFrontEnd {
     NSMutableAttributedString* createMarkedText(const std::string& str, int cursorOffset);
 
     void workaroundForMicrosoftPowerPoint(NSString* string);
+    bool isBlacklistApp() const;
 
 public:
     MacFrontEnd(id client);
