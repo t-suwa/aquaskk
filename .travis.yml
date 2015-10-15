@@ -1,0 +1,7 @@
+language: objective-c
+
+script:
+  - cd platform/mac 
+  - make debug
+  - make test
+  - make release

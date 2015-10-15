@@ -82,7 +82,6 @@ namespace {
 @interface SKKModeTips : NSObject {
     InputModeWindow* window_;
     SKKLayoutManager* layout_;
-    BOOL active_;
 }
 
 - (id)initWithLayoutManager:(SKKLayoutManager*)layout;
@@ -95,17 +94,17 @@ namespace {
 
 - (void)activate:(id)sender {
     NSPoint pt = layout_->InputOrigin();
-
     CGPoint cursor = FlipPoint(pt.x, pt.y);
     CGRectContainer list = CreateWindowBoundsListOf(ActiveProcessID());
 
     // カーソル位置がウィンドウ矩形に含まれていなければ無視する
     int count = std::count_if(list.begin(), list.end(),
                               std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
-    if(!count) return;
+    if(!count) {
+        return;
+    }
 
     [window_ showAt:pt level:layout_->WindowLevel()];
-    active_ = NO;
 }
 
 - (void)cancel {
@@ -117,7 +116,6 @@ namespace {
     if(self) {
         window_ = [InputModeWindow sharedWindow];
         layout_ = layout;
-        active_ = NO;
         [self changeMode:HirakanaInputMode];
     }
 
@@ -134,9 +132,6 @@ namespace {
 }
 
 - (void)show {
-    if(active_) return;
-
-    active_ = YES;
     [self cancel];
     [self performSelector:@selector(activate:) withObject:self afterDelay:0.1];
 }

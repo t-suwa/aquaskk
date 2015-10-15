@@ -45,7 +45,7 @@ LDFLAGS	= -L. -lskk
 all: $(TESTBINS)
 
 test: all
-	@for test in $(TESTBINS); do echo $$test && ./$$test > /dev/null; done
+	@for test in $(TESTBINS); do ./$$test || exit 1; done
 
 clean:
 	$(RM) -r $(TESTBINS) $(LIB) *.o $(DEPDIR)

@@ -63,6 +63,7 @@ namespace {
 - (id)initWithClient:(id)client {
     if(self = [super init]) {
         client_ = client;
+        activation_ = YES;
         currentInputMode_ = HirakanaInputMode;
     }
 
@@ -75,7 +76,10 @@ namespace {
     if(identifer) {
         currentInputMode_ = mode;
         unifiedInputMode__ = mode;
-        [client_ selectInputMode:identifer];
+
+        if(activation_) {
+            [client_ selectInputMode:identifer];
+        }
     }
 }
 
@@ -91,6 +95,13 @@ namespace {
 
 - (int)convertIdToEventId:(NSString*)identifier {
     return findInputModeTable(identifier).event_id;
+}
+
+- (void)activation {
+    activation_ = YES;
+}
+- (void)deactivation {
+    activation_ = NO;
 }
 
 - (SKKInputMode)convertIdToInputMode:(NSString*)identifier {

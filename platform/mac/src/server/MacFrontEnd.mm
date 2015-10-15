@@ -32,7 +32,7 @@ void MacFrontEnd::InsertString(const std::string& str) {
     if(!str.empty()) {
         string = [NSString stringWithUTF8String:str.c_str()];
 
-        workaroundForMicrosoftPowerPoint(string);
+        workaroundForBlacklistApp(string);
     }
 
     [client_ insertText:string replacementRange:notFound()];
@@ -100,13 +100,24 @@ NSMutableAttributedString* MacFrontEnd::createMarkedText(const std::string& str,
     return marked;
 }
 
-void MacFrontEnd::workaroundForMicrosoftPowerPoint(NSString* string) {
-    NSString* powerPoint = @"com.microsoft.powerpoint";
-    NSRange range = notFound();
-
+void MacFrontEnd::workaroundForBlacklistApp(NSString* string) {
     // 確定前に、非確定文字列に確定予定文字列をセットするとうまくいく
-    if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
+    if(isBlacklistApp()) {
+        NSRange range = notFound();
         [client_ setMarkedText:string selectionRange:range replacementRange:range];
     }
     // 正しいかどうかは不明
+}
+
+// workaroundが必要なアプリかどうかを判定する
+bool MacFrontEnd::isBlacklistApp() const {
+  NSString* powerPoint = @"com.microsoft.powerpoint";
+  NSString* pycharm = @"com.jetbrains.pycharm";
+  if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
+      return true;
+  }
+  if([[client_ bundleIdentifier] caseInsensitiveCompare:pycharm] == NSOrderedSame) {
+      return true;
+  }
+  return false;
 }

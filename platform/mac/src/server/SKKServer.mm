@@ -65,11 +65,11 @@ namespace {
         int mode;
         NSString* name;
     } InputModeIcons[] = {
-        { HirakanaInputMode,		@"AquaSKK-Hirakana.png" },
-        { KatakanaInputMode,		@"AquaSKK-Katakana.png" },
-        { Jisx0201KanaInputMode,	@"AquaSKK-Jisx0201Kana.png" },
-        { AsciiInputMode,		@"AquaSKK-Ascii.png" },
-        { Jisx0208LatinInputMode,	@"AquaSKK-Jisx0208Latin.png" },
+        { HirakanaInputMode,		@"AquaSKK-Hirakana" },
+        { KatakanaInputMode,		@"AquaSKK-Katakana" },
+        { Jisx0201KanaInputMode,	@"AquaSKK-Jisx0201Kana" },
+        { AsciiInputMode,		@"AquaSKK-Ascii" },
+        { Jisx0208LatinInputMode,	@"AquaSKK-Jisx0208Latin" },
         { 0,				0 }
     };
 }
@@ -331,10 +331,8 @@ static void terminate(int) {
     NSMutableDictionary* icons = [[NSMutableDictionary alloc] initWithCapacity:0];
 
     for(int i = 0; InputModeIcons[i].name != 0; ++ i) {
-        NSString* path = [self pathForResource:InputModeIcons[i].name];
-        NSImage* image = [[NSImage alloc] initWithContentsOfFile:path];
+        NSImage* image = [NSImage imageNamed:InputModeIcons[i].name];
         [icons setObject:image forKey:[NSNumber numberWithInt:InputModeIcons[i].mode]];
-        [image release];
     }
 
     [[InputModeWindow sharedWindow] setModeIcons:icons];
