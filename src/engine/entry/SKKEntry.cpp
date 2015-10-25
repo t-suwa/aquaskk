@@ -138,6 +138,13 @@ SKKEntry SKKEntry::Normalize(SKKInputMode mode) const {
 
     entry.SetEntry(result);
 
+    // ACT配列等では入力した文字がSKKの辞書とは一致しないので、カナから変換する。
+    std::string roman;
+    jconv::hirakana_to_roman(kana_, roman);
+    if(!roman.empty()) {
+        entry.SetOkuri(roman.substr(0,1), kana_);
+    }
+
     return entry;
 }
 
