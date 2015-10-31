@@ -5,5 +5,5 @@
 period.rule     句点をピリオド(．)にする
 comma.rule      読点をカンマ(，)にする
 azik.rule       拡張ローマ字入力「AZIK」を使う
-act.rule       拡張ローマ字入力「ACT」を使う
+act.rule       act.conf 拡張ローマ字入力「ACT」を使う
 yakumono-ippai.rule SKK日本語FEP互換の記号入力を使う
