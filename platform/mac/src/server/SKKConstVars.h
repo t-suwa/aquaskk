@@ -38,6 +38,7 @@ namespace SKKUserDefaultKeys {
     extern NSString* keyboard_layout;
 
     extern NSString* sub_rules;
+    extern NSString* sub_keymaps;
 
     extern NSString* enable_extended_completion;
     extern NSString* enable_dynamic_completion;

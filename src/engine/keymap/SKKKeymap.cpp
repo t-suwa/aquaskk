@@ -26,46 +26,11 @@
 #include "SKKKeymapEntry.h"
 
 void SKKKeymap::Initialize(const std::string& path) {
-    std::ifstream config(path.c_str());
+    load(path, true);
+}
 
-    if(!config) return;
-
-    // 初期化
-    events_.clear();
-    attributes_.clear();
-    option_.clear();
-
-    std::string configKey;
-    std::string configValue;
-    while(config >> configKey >> configValue) {
-	// コメントは無視
-	if(!configKey.empty() && configKey[0] != '#') {
-	    SKKKeymapEntry entry(configKey, configValue);
-
-	    // キー情報を読み取る
-	    int key;
-	    while(entry >> key) {
-		// 明示的なイベント
-		if(entry.IsEvent()) {
-		    events_[key] = entry.Symbol();
-                    continue;
-                }
-
-                // SKK_CHAR 属性
-                if(entry.IsAttribute()) {
-		    events_[key] = SKK_CHAR;
-		    attributes_[key] |= entry.Symbol();
-                    continue;
-		}
-
-                // 処理オプション
-                option_[key] = entry.Symbol();
-	    }
-	}
-
-	// 行末まで読み飛ばす
-	config.ignore(0xff, '\n');
-    }
+void SKKKeymap::Patch(const std::string& path) {
+    load(path, false);
 }
 
 SKKEvent SKKKeymap::Fetch(int charcode, int keycode, int mods) {
@@ -97,6 +62,55 @@ SKKEvent SKKKeymap::Fetch(int charcode, int keycode, int mods) {
     }
 
     return event;
+}
+
+void SKKKeymap::load(const std::string& path, bool initialize) {
+    std::ifstream config(path.c_str());
+
+    if(!config) return;
+
+    // 初期化
+    if(initialize) {
+        events_.clear();
+        attributes_.clear();
+        option_.clear();
+    }
+
+    std::string configKey;
+    std::string configValue;
+    while(config >> configKey >> configValue) {
+        // コメントは無視
+	if(!configKey.empty() && configKey[0] != '#') {
+	    SKKKeymapEntry entry(configKey, configValue);
+
+	    // キー情報を読み取る
+	    int key;
+	    while(entry >> key) {
+                // 明示的なイベント
+                if(entry.IsEvent()) {
+                    events_[key] = entry.Symbol();
+                    continue;
+                }
+
+                // SKK_CHAR 属性
+                if(entry.IsAttribute()) {
+                    // NotInputChars q とあった場合、qからInputChars属性をはずす
+                    if(entry.IsNot()) {
+                        attributes_[key] &= ~entry.Symbol();
+                    } else {
+                        events_[key] = SKK_CHAR;
+                        attributes_[key] |= entry.Symbol();
+                    }
+                    continue;
+                }
+
+                // 処理オプション
+                option_[key] = entry.Symbol();
+            }
+        }
+        // 行末まで読み飛ばす
+        config.ignore(0xff, '\n');
+    }
 }
 
 SKKKeymap::Keymap::iterator SKKKeymap::find(int charcode, int keycode, int mods, Keymap& keymap) {

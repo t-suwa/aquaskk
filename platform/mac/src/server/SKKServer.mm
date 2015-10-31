@@ -227,11 +227,17 @@ static void terminate(int) {
     SKKRomanKanaConverter::theInstance().Initialize([tmp UTF8String]);
 
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSArray* subRules = [defaults arrayForKey:SKKUserDefaultKeys::sub_rules];
 
+    NSArray* subRules = [defaults arrayForKey:SKKUserDefaultKeys::sub_rules];
     for(NSString* path in subRules) {
         NSLog(@"loading SubRule: %@", path);
         SKKRomanKanaConverter::theInstance().Patch([path UTF8String]);
+    }
+
+    NSArray* subKeymaps = [defaults arrayForKey:SKKUserDefaultKeys::sub_keymaps];
+    for(NSString* path in subKeymaps) {
+        NSLog(@"loading SubKeyMap: %@", path);
+        SKKPreProcessor::theInstance().Patch([path UTF8String]);
     }
 
     [self initializeInputModeIcons];

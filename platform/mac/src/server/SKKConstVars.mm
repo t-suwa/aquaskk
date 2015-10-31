@@ -37,6 +37,7 @@ namespace SKKUserDefaultKeys {
     DECLARE_NSStringKey(keyboard_layout);
 
     DECLARE_NSStringKey(sub_rules);
+    DECLARE_NSStringKey(sub_keymaps);
 
     DECLARE_NSStringKey(enable_extended_completion);
     DECLARE_NSStringKey(enable_dynamic_completion);
