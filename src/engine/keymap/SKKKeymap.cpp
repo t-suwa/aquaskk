@@ -128,5 +128,10 @@ SKKKeymap::Keymap::iterator SKKKeymap::find(int charcode, int keycode, int mods,
 	return iter;
     }
 
+    // 互換性保持のためシフトを押してない場合のキーマップを調べる
+    if(std::isgraph(charcode) && (mods & SKKKeyState::SHIFT)) {
+	return find(charcode, keycode, mods & ~SKKKeyState::SHIFT, keymap);
+    }
+
     return keymap.end();
  }
