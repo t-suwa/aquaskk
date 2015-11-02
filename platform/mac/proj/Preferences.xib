@@ -548,7 +548,7 @@
 																		<object class="NSTableHeaderCell" key="NSHeaderCell">
 																			<int key="NSCellFlags">75497536</int>
 																			<int key="NSCellFlags2">134219776</int>
-																			<string key="NSContents">かな変換規則</string>
+																			<string key="NSContents">拡張設定規則</string>
 																			<reference key="NSSupport" ref="26"/>
 																			<reference key="NSBackgroundColor" ref="678487664"/>
 																			<reference key="NSTextColor" ref="776130739"/>
@@ -699,7 +699,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="48248580"/>
 									</object>
-									<string key="NSLabel">かな規則</string>
+									<string key="NSLabel">拡張設定</string>
 									<reference key="NSColor" ref="10089358"/>
 									<reference key="NSTabView" ref="423547033"/>
 								</object>

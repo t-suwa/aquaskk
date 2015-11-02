@@ -31,6 +31,7 @@ namespace {
     const NSString* SUB_RULE_FOLDER = @"folder";
     const NSString* SUB_RULE_PATH = @"path";
     const NSString* SUB_RULE_SWITCH = @"active";
+    const NSString* SUB_RULE_KEYMAP = @"keymap";
     const NSString* SUB_RULE_DESCRIPTION = @"description";
     const NSString* SUB_RULE_TYPE = @"type";
 }
@@ -222,6 +223,10 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 
             [rule setObject:file forKey:SUB_RULE_PATH];
 
+            if(const char* keymap = table->Keymap([file UTF8String])) {
+                [rule setObject:[NSString stringWithUTF8String:keymap] forKey:SUB_RULE_KEYMAP];
+            }
+
             [rule setObject:[NSString stringWithUTF8String:table->Description([file UTF8String])]
                      forKey:SUB_RULE_DESCRIPTION];
 
@@ -286,7 +291,8 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 }
 
 - (void)saveChanges {
-    NSMutableArray* active_rules = [[NSMutableArray alloc] init];
+    NSMutableArray* active_subrules = [[NSMutableArray alloc] init];
+    NSMutableArray* active_keymaps = [[NSMutableArray alloc] init];
 
     NSLog(@"saving changes ...");
 
@@ -295,20 +301,25 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 
         if([active boolValue]) {
             NSString* folder = [rule objectForKey:SUB_RULE_FOLDER];
-            NSString* path = [rule objectForKey:SUB_RULE_PATH];
+            NSString* subrule = [rule objectForKey:SUB_RULE_PATH];
+            NSString* keymap = [rule objectForKey:SUB_RULE_KEYMAP];
 
-            NSLog(@"activating sub rule: %@", path);
+            NSLog(@"activating sub rule: %@", subrule);
+            NSLog(@"activating sub keymap: %@", keymap);
 
-            [active_rules addObject:[folder stringByAppendingPathComponent:path]];
+            [active_subrules addObject:[folder stringByAppendingPathComponent:subrule]];
+            [active_keymaps addObject:[folder stringByAppendingPathComponent:keymap]];
         }
     }
 
-    [preferences_ setObject:active_rules forKey:SKKUserDefaultKeys::sub_rules];
+    [preferences_ setObject:active_subrules forKey:SKKUserDefaultKeys::sub_rules];
+    [preferences_ setObject:active_keymaps forKey:SKKUserDefaultKeys::sub_keymaps];
     
     [preferences_ writeToFile:SKKFilePaths::UserDefaults atomically:YES];
     [dictionarySet_ writeToFile:SKKFilePaths::DictionarySet atomically:YES];
 
-    [active_rules release];
+    [active_subrules release];
+    [active_keymaps release];
 }
 
 - (void)reloadServer {

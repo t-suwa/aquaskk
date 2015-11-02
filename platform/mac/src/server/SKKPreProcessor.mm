@@ -38,6 +38,10 @@ void SKKPreProcessor::Initialize(const std::string& path) {
     keymap_.Initialize(path);
 }
 
+void SKKPreProcessor::Patch(const std::string& path) {
+    keymap_.Patch(path);
+}
+
 SKKEvent SKKPreProcessor::Execute(const NSEvent* event) {
     NSString* diststr = [event characters];
     int dispchar = diststr ? *[diststr UTF8String] : 0;

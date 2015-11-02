@@ -361,6 +361,7 @@ namespace jconv {
     // translator(UTF-8 only)
     void hirakana_to_katakana(const std::string& from, std::string& to);
     void hirakana_to_jisx0201_kana(const std::string& from, std::string& to);
+    void hirakana_to_roman(const std::string& from, std::string& to);
 
     void katakana_to_hirakana(const std::string& from, std::string& to);
     void katakana_to_jisx0201_kana(const std::string& from, std::string& to);
