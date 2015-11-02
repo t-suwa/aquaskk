@@ -4,6 +4,7 @@
 
 period.rule     句点をピリオド(．)にする
 comma.rule      読点をカンマ(，)にする
-azik.rule azik.conf 拡張ローマ字入力「AZIK」を使う
+azik.rule azik.conf 拡張ローマ字入力「AZIK」を使う(JIS配列用)
+azik_us.rule azik.conf 拡張ローマ字入力「AZIK」を使う(US配列用)
 act.rule act.conf 拡張ローマ字入力「ACT」を使う
 yakumono-ippai.rule SKK日本語FEP互換の記号入力を使う
