@@ -305,10 +305,12 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
             NSString* keymap = [rule objectForKey:SUB_RULE_KEYMAP];
 
             NSLog(@"activating sub rule: %@", subrule);
-            NSLog(@"activating sub keymap: %@", keymap);
-
-            [active_subrules addObject:[folder stringByAppendingPathComponent:subrule]];
-            [active_keymaps addObject:[folder stringByAppendingPathComponent:keymap]];
+	    [active_subrules addObject:[folder stringByAppendingPathComponent:subrule]];
+		
+            if(keymap != nil) {
+                NSLog(@"activating sub keymap: %@", keymap);
+                [active_keymaps addObject:[folder stringByAppendingPathComponent:keymap]];
+            }
         }
     }
 
