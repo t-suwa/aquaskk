@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
+		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
+		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
 		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
 		13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */ = {isa = PBXBuildFile; fileRef = 13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
@@ -98,7 +100,6 @@
 		D39E444F0EAB4FB300FB584C /* InputModeWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D39E444E0EAB4FB300FB584C /* InputModeWindow.mm */; };
 		D3AD8DA81119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3AD8DA51119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp */; };
 		D3CB86780EB47E970069107D /* MacAnnotator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3CB86770EB47E970069107D /* MacAnnotator.mm */; };
-		D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */ = {isa = PBXBuildFile; fileRef = D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */; };
 		D3D549BF1024904000622CB2 /* SKKInputModeSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */; };
 		D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */; };
 		D3E29EBC12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */; };
@@ -153,6 +154,8 @@
 
 /* Begin PBXFileReference section */
 		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
+		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
+		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
 		1397AFB21BCFDD1E004A3E7D /* act.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = act.rule; sourceTree = "<group>"; };
 		13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = "yakumono-ippai.rule"; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
@@ -352,7 +355,6 @@
 		D3CB86750EB47E790069107D /* SKKAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKAnnotator.h; sourceTree = "<group>"; };
 		D3CB86760EB47E970069107D /* MacAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacAnnotator.h; sourceTree = "<group>"; };
 		D3CB86770EB47E970069107D /* MacAnnotator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacAnnotator.mm; sourceTree = "<group>"; };
-		D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "azik-kana-rule.conf"; sourceTree = "<group>"; };
 		D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputModeSelector.cpp; sourceTree = "<group>"; };
 		D3D549BE1024904000622CB2 /* SKKInputModeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeSelector.h; sourceTree = "<group>"; };
 		D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -752,9 +754,10 @@
 			children = (
 				D353BE110E175540004C68A6 /* keymap.conf */,
 				D353BE100E175540004C68A6 /* kana-rule.conf */,
-				D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */,
 				D3F0576110BAD10F00F3233E /* sub-rule.desc */,
 				D357591910BD72E00066692B /* azik.rule */,
+				1326BC8C1BE7974B008F1D05 /* azik.conf */,
+				138EA4E51BE85B2400E8A70E /* azik_us.rule */,
 				1397AFB21BCFDD1E004A3E7D /* act.rule */,
 				131E98E21BE4EE4600E898E6 /* act.conf */,
 				D3F0576410BAD12600F3233E /* period.rule */,
@@ -970,12 +973,14 @@
 				EA56B04A1A22C62400954B5F /* AquaSKK-Hirakana@2x.png in Resources */,
 				EA56B0551A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff in Resources */,
 				D353BE0D0E17552F004C68A6 /* DictionarySet.plist in Resources */,
+				1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */,
 				D353BE0E0E17552F004C68A6 /* UserDefaults.plist in Resources */,
 				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
 				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
 				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
 				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
+				138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */,
 				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
 				EA56B04C1A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png in Resources */,
 				131E98E31BE4EE4600E898E6 /* act.conf in Resources */,
@@ -995,7 +1000,6 @@
 				D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */,
 				13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */,
 				D31C99D40E9E4A3D00CBE4D1 /* Mini-Katakana.tiff in Resources */,
-				D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */,
 				D3F0576210BAD10F00F3233E /* sub-rule.desc in Resources */,
 				EA56B04B1A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png in Resources */,
 				D3F0576510BAD12600F3233E /* comma.rule in Resources */,
