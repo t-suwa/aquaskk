@@ -380,6 +380,10 @@
     if([bundle objectForInfoDictionaryKey:@"JVMOptions"]) {
         return YES;
     }
+    if([[bundle bundleIdentifier] hasPrefix:@"com.microsoft.Excel"] &&
+       [[bundle objectForInfoDictionaryKey:@"CFBundleVersion"] hasPrefix:@"15."]) {
+        return YES;
+    }
     return NO;
 }
 
