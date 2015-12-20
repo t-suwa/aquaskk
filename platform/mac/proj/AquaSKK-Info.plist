@@ -6,8 +6,6 @@
 	<string>Japanese</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>jp.sourceforge.inputmethod.aquaskk</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -30,6 +28,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk</string>
 				<key>TISIntendedLanguage</key>
 				<string>ja</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>AquaSKK-InputMethod.tif</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<false/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -37,8 +37,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>1</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>AquaSKK-InputMethod.tif</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>AquaSKK-InputMethod.tif</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>AquaSKK-InputMethod.tif</string>
@@ -53,6 +51,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk.FullWidthRoman</string>
 				<key>TISIntendedLanguage</key>
 				<string>ja</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>Mini-Jisx0208Latin.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -60,8 +60,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>0</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>Mini-Jisx0208Latin.tiff</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>Mini-Jisx0208Latin.tiff</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>Mini-Jisx0208Latin.tiff</string>
@@ -76,6 +74,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk.HalfWidthKana</string>
 				<key>TISIntendedLanguage</key>
 				<string>ja</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>Mini-Jisx0201Kana.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -83,8 +83,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>0</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>Mini-Jisx0201Kana.tiff</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>Mini-Jisx0201Kana.tiff</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>Mini-Jisx0201Kana.tiff</string>
@@ -99,6 +97,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk.Hiragana</string>
 				<key>TISIntendedLanguage</key>
 				<string>ja</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>Mini-Hirakana.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -106,8 +106,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>1</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>Mini-Hirakana.tiff</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>Mini-Hirakana.tiff</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>Mini-Hirakana.tiff</string>
@@ -122,6 +120,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk.Katakana</string>
 				<key>TISIntendedLanguage</key>
 				<string>ja</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>Mini-Katakana.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -129,8 +129,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>2</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>Mini-Katakana.tiff</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>Mini-Katakana.tiff</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>Mini-Katakana.tiff</string>
@@ -145,6 +143,8 @@
 				<string>jp.sourceforge.inputmethod.aquaskk.Ascii</string>
 				<key>TISIntendedLanguage</key>
 				<string>en</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>Mini-Ascii.tiff</string>
 				<key>tsInputModeDefaultStateKey</key>
 				<true/>
 				<key>tsInputModeIsVisibleKey</key>
@@ -152,8 +152,6 @@
 				<key>tsInputModeJISKeyboardShortcutKey</key>
 				<integer>3</integer>
 				<key>tsInputModeMenuIconFileKey</key>
-				<string>Mini-Ascii.tiff</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>Mini-Ascii.tiff</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>Mini-Ascii.tiff</string>
