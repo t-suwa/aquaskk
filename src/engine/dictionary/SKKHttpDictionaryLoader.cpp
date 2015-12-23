@@ -120,8 +120,11 @@ bool SKKHttpDictionaryLoader::download(net::socket::tcpstream& http, int length)
     std::string line;
     std::ofstream ofs(tmp_path_.c_str());
 
+    int readed = 0;
     while(std::getline(http, line)) {
+        readed += line.size() + 1;
         ofs << line << std::endl;
+        if(readed >= length) { break; }
     }
 
     // ダウンロードに失敗したか？
