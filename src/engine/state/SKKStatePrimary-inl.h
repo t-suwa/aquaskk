@@ -181,13 +181,23 @@ State SKKState::Hirakana(const Event& event) {
         return 0;
 
     case SKK_CHAR:
-	if(param.IsToggleKana()) {
-	    return State::Transition(&SKKState::Katakana);
-	}
+        if(!editor_->CanConvert(param.code)) {
+            // 変換する文字がない場合のみ、ToggleKana等の処理する
+            //
+            // 例: AZIKの場合
+            //
+            //   - [: ToggeKana
+            //   - x[: 鍵括弧
+            //
+            // が割り当てられている
+            if(param.IsToggleKana()) {
+                return State::Transition(&SKKState::Katakana);
+            }
 
-	if(param.IsToggleJisx0201Kana()) {
-	    return State::Transition(&SKKState::Jisx0201Kana);
-	}
+            if(param.IsToggleJisx0201Kana()) {
+              return State::Transition(&SKKState::Jisx0201Kana);
+            }
+        }
     }
 
     return &SKKState::KanaInput;
@@ -208,13 +218,16 @@ State SKKState::Katakana(const Event& event) {
         return 0;
 
     default:
-	if(event == SKK_JMODE || param.IsToggleKana()) {
-	    return State::Transition(&SKKState::Hirakana);
-	}
+        if(!editor_->CanConvert(param.code)) {
+            // 変換する文字がない場合のみ、ToggleKana等の処理する
+            if(event == SKK_JMODE || param.IsToggleKana()) {
+                return State::Transition(&SKKState::Hirakana);
+            }
 
-	if(param.IsToggleJisx0201Kana()) {
-	    return State::Transition(&SKKState::Jisx0201Kana);
-	}
+            if(param.IsToggleJisx0201Kana()) {
+                return State::Transition(&SKKState::Jisx0201Kana);
+            }
+        }
     }
 
     return &SKKState::KanaInput;
@@ -235,10 +248,13 @@ State SKKState::Jisx0201Kana(const Event& event) {
         return 0;
 
     default:
-	if(event == SKK_JMODE ||
-           param.IsToggleKana() || param.IsToggleJisx0201Kana()) {
-	    return State::Transition(&SKKState::Hirakana);
-	}
+        if(!editor_->CanConvert(param.code)) {
+            // 変換する文字がない場合のみ、ToggleKana等の処理する
+            if(event == SKK_JMODE ||
+                param.IsToggleKana() || param.IsToggleJisx0201Kana()) {
+              return State::Transition(&SKKState::Hirakana);
+            }
+        }
     }
 
     return &SKKState::KanaInput;
