@@ -181,7 +181,7 @@ State SKKState::Hirakana(const Event& event) {
         return 0;
 
     case SKK_CHAR:
-        if(!editor_->CanConvert(param.code)) {
+        if(!(param.IsInputChars() && editor_->CanConvert(param.code))) {
             // 変換する文字がない場合のみ、ToggleKana等の処理する
             //
             // 例: AZIKの場合
@@ -218,7 +218,7 @@ State SKKState::Katakana(const Event& event) {
         return 0;
 
     default:
-        if(!editor_->CanConvert(param.code)) {
+        if(!(event == SKK_CHAR && param.IsInputChars() && editor_->CanConvert(param.code))) {
             // 変換する文字がない場合のみ、ToggleKana等の処理する
             if(event == SKK_JMODE || param.IsToggleKana()) {
                 return State::Transition(&SKKState::Hirakana);
@@ -248,7 +248,7 @@ State SKKState::Jisx0201Kana(const Event& event) {
         return 0;
 
     default:
-        if(!editor_->CanConvert(param.code)) {
+        if(!(event == SKK_CHAR && param.IsInputChars() && editor_->CanConvert(param.code))) {
             // 変換する文字がない場合のみ、ToggleKana等の処理する
             if(event == SKK_JMODE ||
                 param.IsToggleKana() || param.IsToggleJisx0201Kana()) {
