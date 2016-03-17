@@ -111,13 +111,11 @@ void MacFrontEnd::workaroundForBlacklistApp(NSString* string) {
 
 // workaroundが必要なアプリかどうかを判定する
 bool MacFrontEnd::isBlacklistApp() const {
-  NSString* powerPoint = @"com.microsoft.powerpoint";
-  NSString* pycharm = @"com.jetbrains.pycharm";
-  if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
-      return true;
-  }
-  if([[client_ bundleIdentifier] caseInsensitiveCompare:pycharm] == NSOrderedSame) {
-      return true;
-  }
-  return false;
+    NSArray *bundleIds = @[@"com.microsoft.powerpoint", @"com.jetbrains.pycharm", @"com.jetbrains.intellij"];
+    for(NSString *bundleId in bundleIds) {
+        if([[client_ bundleIdentifier] caseInsensitiveCompare:bundleId] == NSOrderedSame) {
+            return true;
+        }
+    }
+    return false;
 }
