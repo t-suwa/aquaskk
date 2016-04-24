@@ -12,6 +12,7 @@
 		137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F495B1CCC66E30050EF81 /* BlacklistApps.m */; };
 		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
 		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
+		13D9CCA71CCCB02800480486 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D9CCA61CCCB02800480486 /* BlacklistApps.m */; };
 		13E607841C2693A300FD8FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E607831C2693A300FD8FB9 /* Images.xcassets */; };
 		13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */ = {isa = PBXBuildFile; fileRef = 13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
@@ -161,6 +162,8 @@
 		137F495B1CCC66E30050EF81 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlacklistApps.m; path = ../src/preferences/BlacklistApps.m; sourceTree = "<group>"; };
 		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
 		1397AFB21BCFDD1E004A3E7D /* act.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = act.rule; sourceTree = "<group>"; };
+		13D9CCA51CCCB02800480486 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlacklistApps.h; sourceTree = "<group>"; };
+		13D9CCA61CCCB02800480486 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlacklistApps.m; sourceTree = "<group>"; };
 		13E607831C2693A300FD8FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AquaSKK/Images.xcassets; sourceTree = "<group>"; };
 		13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = "yakumono-ippai.rule"; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
@@ -671,6 +674,8 @@
 		D353BDCE0E175513004C68A6 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				13D9CCA51CCCB02800480486 /* BlacklistApps.h */,
+				13D9CCA61CCCB02800480486 /* BlacklistApps.m */,
 				D38FB82A1032F33100048A30 /* MacConfig.h */,
 				D38FB82B1032F33100048A30 /* MacConfig.mm */,
 				D3CB86760EB47E970069107D /* MacAnnotator.h */,
@@ -1062,6 +1067,7 @@
 				D353BDC90E175502004C68A6 /* SKKTrie.cpp in Sources */,
 				D353BDCA0E175502004C68A6 /* jconv.cpp in Sources */,
 				D353BDE80E175513004C68A6 /* MacCandidateWindow.mm in Sources */,
+				13D9CCA71CCCB02800480486 /* BlacklistApps.m in Sources */,
 				D353BDE90E175513004C68A6 /* MacClipboard.mm in Sources */,
 				D353BDEA0E175513004C68A6 /* MacFrontEnd.mm in Sources */,
 				D353BDEB0E175513004C68A6 /* MacInputModeWindow.mm in Sources */,
