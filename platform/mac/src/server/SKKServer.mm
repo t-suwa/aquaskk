@@ -341,9 +341,9 @@ static void terminate(int) {
     NSString* blacklistApps = SKKFilePaths::BlacklistApps;
 
     if([self fileExistsAtPath:blacklistApps] != YES) {
-        NSMutableArray* array = [[NSMutableArray alloc] init];
-        [array writeToFile:blacklistApps atomically:YES];
-        [array release];
+        NSString* factoryBlacklistApps = [self pathForSystemResource:@"BlacklistApps.plist"];
+        NSData* data = [NSData dataWithContentsOfFile:factoryBlacklistApps];
+        [data writeToFile:blacklistApps atomically:YES];
     }
 }
 

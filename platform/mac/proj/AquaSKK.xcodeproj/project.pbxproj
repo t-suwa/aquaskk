@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
 		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
+		132946B81CCCEC8000AE83D8 /* BlacklistApps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */; };
 		137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F495B1CCC66E30050EF81 /* BlacklistApps.m */; };
 		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
 		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
@@ -158,6 +159,7 @@
 /* Begin PBXFileReference section */
 		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
 		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
+		132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlacklistApps.plist; sourceTree = "<group>"; };
 		137F495A1CCC66E30050EF81 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlacklistApps.h; path = ../src/preferences/BlacklistApps.h; sourceTree = "<group>"; };
 		137F495B1CCC66E30050EF81 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlacklistApps.m; path = ../src/preferences/BlacklistApps.m; sourceTree = "<group>"; };
 		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
@@ -753,6 +755,7 @@
 		D353BE0A0E17552F004C68A6 /* plist */ = {
 			isa = PBXGroup;
 			children = (
+				132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */,
 				D353BE0C0E17552F004C68A6 /* UserDefaults.plist */,
 				D353BE0B0E17552F004C68A6 /* DictionarySet.plist */,
 			);
@@ -1010,6 +1013,7 @@
 				D31C99D10E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff in Resources */,
 				EA56B04D1A22C62400954B5F /* AquaSKK-Katakana@2x.png in Resources */,
 				EA56B0531A22CBA400954B5F /* Mini-Ascii@2x.tiff in Resources */,
+				132946B81CCCEC8000AE83D8 /* BlacklistApps.plist in Resources */,
 				D31C99D20E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff in Resources */,
 				D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */,
 				13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */,
