@@ -102,6 +102,14 @@ namespace SKKFilePaths {
         return path;
     }
 
+    static NSString* pathForBlacklistApps() {
+        ObjC::RAIIPool pool;
+        static NSString* path = [[NSString stringWithFormat:@"%@/BlacklistApps.plist",
+                                  pathForApplicationSupport()] retain];
+
+        return path;
+    }
+
     static NSString* pathForDictionarySet() {
         ObjC::RAIIPool pool;
         static NSString* path = [[NSString stringWithFormat:@"%@/DictionarySet.plist",
@@ -120,6 +128,7 @@ namespace SKKFilePaths {
     }
 
     NSString* SystemResourceFolder = pathForSystemResource();
+    NSString* BlacklistApps = pathForBlacklistApps();
     NSString* ApplicationSupportFolder = pathForApplicationSupport();
     NSString* DictionarySet = pathForDictionarySet();
     NSString* UserDefaults = pathForUserDefaults();
