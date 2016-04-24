@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
 		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
+		137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F495B1CCC66E30050EF81 /* BlacklistApps.m */; };
 		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
 		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
 		13E607841C2693A300FD8FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E607831C2693A300FD8FB9 /* Images.xcassets */; };
@@ -156,6 +157,8 @@
 /* Begin PBXFileReference section */
 		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
 		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
+		137F495A1CCC66E30050EF81 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlacklistApps.h; path = ../src/preferences/BlacklistApps.h; sourceTree = "<group>"; };
+		137F495B1CCC66E30050EF81 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlacklistApps.m; path = ../src/preferences/BlacklistApps.m; sourceTree = "<group>"; };
 		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
 		1397AFB21BCFDD1E004A3E7D /* act.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = act.rule; sourceTree = "<group>"; };
 		13E607831C2693A300FD8FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AquaSKK/Images.xcassets; sourceTree = "<group>"; };
@@ -886,6 +889,8 @@
 				D353BE250E175578004C68A6 /* main.mm */,
 				D353BE260E175578004C68A6 /* PreferenceController.h */,
 				D353BE270E175578004C68A6 /* PreferenceController.mm */,
+				137F495A1CCC66E30050EF81 /* BlacklistApps.h */,
+				137F495B1CCC66E30050EF81 /* BlacklistApps.m */,
 				D353BE230E175578004C68A6 /* DictionarySet.h */,
 				D353BE240E175578004C68A6 /* DictionarySet.mm */,
 				D37ADC60111F0B07000B8988 /* DictionaryTypeTransformer.h */,
@@ -1106,6 +1111,7 @@
 			files = (
 				D353BE280E175578004C68A6 /* DictionarySet.mm in Sources */,
 				D353BE290E175578004C68A6 /* main.mm in Sources */,
+				137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */,
 				D353BE2A0E175578004C68A6 /* PreferenceController.mm in Sources */,
 				D353BE2B0E1756D8004C68A6 /* SKKConstVars.mm in Sources */,
 				D353BE5C0E1756EE004C68A6 /* SKKServerProxy.mm in Sources */,
