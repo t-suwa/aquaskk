@@ -55,6 +55,8 @@ namespace {
         layoutNames_ = [[NSMutableArray alloc] init];
         preferences_ = [[NSMutableDictionary
                             dictionaryWithContentsOfFile:SKKFilePaths::UserDefaults] retain];
+        blacklistApps_ = [[NSMutableArray
+                           arrayWithContentsOfFile:SKKFilePaths::BlacklistApps] retain];
         dictionarySet_ = [[NSMutableArray
                               arrayWithContentsOfFile:SKKFilePaths::DictionarySet] retain];
 
@@ -77,6 +79,7 @@ namespace {
 - (void)dealloc {
     [proxy_ release];
     [candidateWindowFont_ release];
+    [blacklistApps_ release];
     [dictionarySet_ release];
     [preferences_ release];
     [layoutNames_ release];
@@ -89,6 +92,7 @@ namespace {
 
     [objController_ setContent:preferences_];
     [arrayController_ setContent:dictionarySet_];
+    [blacklistArrayController_ setContent:blacklistApps_];
     [dictionaryTypes_ setContent:[proxy_ createDictionaryTypes]];
 
     [self initializeVersion];
@@ -318,6 +322,7 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
     [preferences_ setObject:active_keymaps forKey:SKKUserDefaultKeys::sub_keymaps];
     
     [preferences_ writeToFile:SKKFilePaths::UserDefaults atomically:YES];
+    [blacklistApps_ writeToFile:SKKFilePaths::BlacklistApps atomically:YES];
     [dictionarySet_ writeToFile:SKKFilePaths::DictionarySet atomically:YES];
 
     [active_subrules release];

@@ -26,6 +26,7 @@
         <customObject id="3" userLabel="Preference Controller" customClass="PreferenceController">
             <connections>
                 <outlet property="arrayController_" destination="1" id="165"/>
+                <outlet property="blacklistArrayController_" destination="mIb-rR-bjG" id="jHk-Ny-3Ca"/>
                 <outlet property="copyright_" destination="314" id="327"/>
                 <outlet property="dictionaryTypes_" destination="356" id="440"/>
                 <outlet property="fontButton_" destination="41" id="117"/>
@@ -531,7 +532,7 @@
                                         <button id="41">
                                             <rect key="frame" x="212" y="81" width="213" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="425BAF13-5445-4F10-B1A0-D11BE4E4274E" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
+                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="DF7D4D22-362C-445A-909F-9396F0537884" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <connections>
@@ -947,6 +948,7 @@
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
+                                                                <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="key"/>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <connections>
                                                                     <binding destination="mIb-rR-bjG" name="value" keyPath="arrangedObjects.bundleIdentifier" id="UcN-vJ-7DW"/>
@@ -1277,7 +1279,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Sfd-qa-SaM"/>
     </objects>
     <resources>
-        <image name="425BAF13-5445-4F10-B1A0-D11BE4E4274E" width="1" height="1">
+        <image name="DF7D4D22-362C-445A-909F-9396F0537884" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
