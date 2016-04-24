@@ -330,6 +330,7 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 }
 
 - (void)reloadServer {
+    [proxy_ reloadBlacklistApps];
     [proxy_ reloadUserDefaults];
     [proxy_ reloadDictionarySet];
     [proxy_ reloadComponents];

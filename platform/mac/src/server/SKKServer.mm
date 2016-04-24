@@ -20,6 +20,7 @@
 
 */
 
+#include "BlacklistApps.h"
 #include "SKKServer.h"
 #include "SKKPreProcessor.h"
 #include "SKKRomanKanaConverter.h"
@@ -84,6 +85,7 @@ static void terminate(int) {
 - (void)prepareConnection;
 - (void)prepareUserDefaults;
 - (void)prepareDictionary;
+- (void)prepareBlacklistApps;
 - (id)newIMKServer;
 
 - (void)initializeInputModeIcons;
@@ -104,11 +106,21 @@ static void terminate(int) {
     [self prepareConnection];
     [self prepareUserDefaults];
     [self prepareDictionary];
+    [self prepareBlacklistApps];
     imkserver_ = [self newIMKServer];
 
     [self reloadDictionarySet];
     [self reloadUserDefaults];
     [self reloadComponents];
+}
+
+- (void)reloadBlacklistApps {
+    NSLog(@"loading BlacklistApps ...");
+    NSArray* array = [NSMutableArray arrayWithContentsOfFile:SKKFilePaths::BlacklistApps];
+    if(array == nil) {
+        NSLog(@"can't read BlacklistApps.plist");
+    }
+    [[BlacklistApps sharedManager] load: array];
 }
 
 - (void)reloadUserDefaults {
@@ -323,6 +335,16 @@ static void terminate(int) {
     SKKRegisterFactoryMethod<SKKProxyDictionary>(DictionaryTypes::Proxy);
     SKKRegisterFactoryMethod<MacKotoeriDictionary>(DictionaryTypes::Kotoeri);
     SKKRegisterFactoryMethod<SKKGadgetDictionary>(DictionaryTypes::Gadget);
+}
+
+- (void)prepareBlacklistApps {
+    NSString* blacklistApps = SKKFilePaths::BlacklistApps;
+
+    if([self fileExistsAtPath:blacklistApps] != YES) {
+        NSMutableArray* array = [[NSMutableArray alloc] init];
+        [array writeToFile:blacklistApps atomically:YES];
+        [array release];
+    }
 }
 
 - (id)newIMKServer {
