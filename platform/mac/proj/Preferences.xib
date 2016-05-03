@@ -532,7 +532,7 @@
                                         <button id="41">
                                             <rect key="frame" x="212" y="81" width="213" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="DF7D4D22-362C-445A-909F-9396F0537884" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
+                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="402378BF-D40C-4788-ADD3-D7DA2698160E" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <connections>
@@ -895,7 +895,7 @@
                                     </subviews>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="闇" identifier="" id="mM2-M1-1NO">
+                            <tabViewItem label="互換性" identifier="" id="mM2-M1-1NO">
                                 <view key="view" id="Kz8-RT-1hf">
                                     <rect key="frame" x="10" y="25" width="434" height="219"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1279,7 +1279,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Sfd-qa-SaM"/>
     </objects>
     <resources>
-        <image name="DF7D4D22-362C-445A-909F-9396F0537884" width="1" height="1">
+        <image name="402378BF-D40C-4788-ADD3-D7DA2698160E" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
