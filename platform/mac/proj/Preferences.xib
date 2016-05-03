@@ -532,7 +532,7 @@
                                         <button id="41">
                                             <rect key="frame" x="212" y="81" width="213" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="402378BF-D40C-4788-ADD3-D7DA2698160E" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
+                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="043B9728-B4CD-4D15-8E99-00C373AD80D0" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <connections>
@@ -923,14 +923,14 @@
                                             </connections>
                                         </button>
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="31s-Mp-xoF">
-                                            <rect key="frame" x="17" y="43" width="400" height="170"/>
+                                            <rect key="frame" x="17" y="43" width="400" height="143"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="MeS-P9-Ey0">
-                                                <rect key="frame" x="1" y="23" width="398" height="146"/>
+                                                <rect key="frame" x="1" y="0.0" width="398" height="142"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="xTY-hZ-VHj" id="quH-Hu-C2r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="146"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="119"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1001,6 +1001,83 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="23"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </tableHeaderView>
+                                        </scrollView>
+                                        <scrollView borderType="none" horizontalLineScroll="1" horizontalPageScroll="1" verticalLineScroll="1" verticalPageScroll="1" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" id="LTP-4p-VCp">
+                                            <rect key="frame" x="17" y="194" width="378" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="gHb-4t-Z8N">
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ZmA-X4-8n3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="378" height="19"/>
+                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment content="互換性の設定についてはWikiをご覧ください。">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <url key="NSLink" string="https://github.com/codefirst/aquaskk/wiki/Workaround"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="85">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="226.75">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="378" height="19"/>
+                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="HOY-a6-1mD">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="H4W-k7-Cdp">
+                                                <rect key="frame" x="362" y="0.0" width="16" height="19"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
                                         </scrollView>
                                     </subviews>
                                 </view>
@@ -1279,7 +1356,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Sfd-qa-SaM"/>
     </objects>
     <resources>
-        <image name="402378BF-D40C-4788-ADD3-D7DA2698160E" width="1" height="1">
+        <image name="043B9728-B4CD-4D15-8E99-00C373AD80D0" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
