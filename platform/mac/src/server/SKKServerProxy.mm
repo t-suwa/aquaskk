@@ -40,6 +40,10 @@
     [super dealloc];
 }
 
+- (void)reloadBlacklistApps {
+    [proxy_ reloadBlacklistApps];
+}
+
 - (void)reloadUserDefaults {
     [proxy_ reloadUserDefaults];
 }

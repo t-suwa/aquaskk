@@ -20,6 +20,7 @@
 
 */
 
+#include "BlacklistApps.h"
 #include "SKKInputController.h"
 #include "SKKLayoutManager.h"
 #include "SKKInputSession.h"
@@ -368,23 +369,7 @@
     }
     if(!bundle) { return NO; }
 
-    if([[bundle bundleIdentifier] hasPrefix:@"jp.naver.line.mac"]) {
-        return YES;
-    }
-    if([bundle objectForInfoDictionaryKey:@"Java"]) {
-        return YES;
-    }
-    if([bundle objectForInfoDictionaryKey:@"Eclipse"]) {
-        return YES;
-    }
-    if([bundle objectForInfoDictionaryKey:@"JVMOptions"]) {
-        return YES;
-    }
-    if([[bundle bundleIdentifier] hasPrefix:@"com.microsoft.Excel"] &&
-       [[bundle objectForInfoDictionaryKey:@"CFBundleVersion"] hasPrefix:@"15."]) {
-        return YES;
-    }
-    return NO;
+    return [[BlacklistApps sharedManager] isInsertEmptyString:bundle];
 }
 
 - (void)cancelKeyEventForASCII {

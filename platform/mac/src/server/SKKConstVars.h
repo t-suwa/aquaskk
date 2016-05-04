@@ -91,6 +91,7 @@ namespace SKKDictionaryTypeKeys {
 namespace SKKFilePaths {
     extern NSString* SystemResourceFolder;
     extern NSString* ApplicationSupportFolder;
+    extern NSString* BlacklistApps;
     extern NSString* DictionarySet;
     extern NSString* UserDefaults;
 };
