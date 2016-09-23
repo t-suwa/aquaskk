@@ -109,6 +109,7 @@ static void terminate(int) {
     [self prepareBlacklistApps];
     imkserver_ = [self newIMKServer];
 
+    [self reloadBlacklistApps];
     [self reloadDictionarySet];
     [self reloadUserDefaults];
     [self reloadComponents];
