@@ -54,6 +54,7 @@
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
         client_ = [client retain];
+        context_ = [[NSTextInputContext alloc] initWithClient:client];
         activated_ = NO;
         proxy_ = [[SKKServerProxy alloc] init];
         menu_ = [[SKKInputMenu alloc] initWithClient:client];
@@ -74,6 +75,7 @@
     delete layout_;
 
     [client_ release];
+    [context_ release];
     [menu_ release];
     [proxy_ release];
     [super dealloc];
@@ -83,7 +85,17 @@
 - (BOOL)handleEvent:(NSEvent*)event client:(id)sender {
     if([self directMode]) return NO;
 
+    SKKInputMode system = [menu_ convertIdToInputMode:context_.selectedKeyboardInputSource];
     SKKInputMode current = [menu_ currentInputMode];
+
+    if(system != current) {
+      // AquaSKKの制御外で入力モードが変更されているので、
+      // SKKの状態もそれにあわせて変更する。
+      //
+      // 例えば、KarabinerのInputSource変更を使うと発生する。
+      [self changeInputMode:context_.selectedKeyboardInputSource];
+      current = system;
+    }
 
     SKKEvent param = SKKPreProcessor::theInstance().Execute(event);
 
@@ -161,21 +173,25 @@
         }
     } else {
         // 個々の入力モードを選択している場合
-        SKKEvent param;
-
-        // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
-        param.id = [menu_ convertIdToEventId:(NSString*)value];
-
-        // setValue内でメニューの更新があると、 selectInputMode -> setValueの無限ループが発生するため、
-        // 更新を停止する
-        [menu_ deactivation];
-        if(param.id != InvalidInputMode) {
-            session_->HandleEvent(param);
-
-            modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)value]);
-        }
-        [menu_ activation];
+        [self changeInputMode:value];
     }
+}
+
+- (void)changeInputMode:(NSString*)identifier {
+    SKKEvent param;
+
+    // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
+    param.id = [menu_ convertIdToEventId:(NSString*)identifier];
+
+    // setValue内でメニューの更新があると、 selectInputMode -> setValueの無限ループが発生するため、
+    // 更新を停止する
+    [menu_ deactivation];
+    if(param.id != InvalidInputMode) {
+        session_->HandleEvent(param);
+
+        modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)identifier]);
+    }
+    [menu_ activation];
 }
 
 // IMKInputController
