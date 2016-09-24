@@ -71,11 +71,7 @@ static BlacklistApps* sharedData_ = nil;
 - (BOOL)isBlacklistApp:(NSString*)bundleIdentifier withKey:(NSString*)key {
     NSMutableDictionary* entry = [self getEntry: bundleIdentifier];
 
-    if(entry) {
-        return [entry[key] boolValue];
-    } else {
-      return NO;
-    }
+    return [entry[key] boolValue];
 }
 
 - (BOOL)isJavaApp:(NSBundle*)bundle {
