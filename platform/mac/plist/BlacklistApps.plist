@@ -10,15 +10,9 @@
 	</dict>
 	<dict>
 		<key>bundleIdentifier</key>
-		<string>com.jetbrains.pycharm</string>
+		<string>com.jetbrains</string>
 		<key>insertEmptyString</key>
-		<true/>
-		<key>insertMarkedText</key>
-		<true/>
-	</dict>
-	<dict>
-		<key>bundleIdentifier</key>
-		<string>com.jetbrains.intellij</string>
+		<false />
 		<key>insertMarkedText</key>
 		<true/>
 	</dict>

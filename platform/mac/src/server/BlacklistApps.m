@@ -37,11 +37,12 @@ static BlacklistApps* sharedData_ = nil;
 }
 
 - (BOOL)isInsertEmptyString:(NSBundle *)bundle {
-    if([self isJavaApp:bundle]) {
-        return YES;
+    NSMutableDictionary* entry = [self getEntry:[bundle bundleIdentifier]];
+    if(entry) {
+        return [entry[@"insertEmptyString"] boolValue];
     }
 
-    if([self isBlacklistApp:[bundle bundleIdentifier] withKey:@"insertEmptyString"]) {
+    if([self isJavaApp:bundle]) {
         return YES;
     }
 
@@ -58,14 +59,19 @@ static BlacklistApps* sharedData_ = nil;
     return [self isBlacklistApp:bundleIdentifier withKey:@"insertMarkedText"];
 }
 
-- (BOOL)isBlacklistApp:(NSString*)bundleIdentifier withKey:(NSString*)key {
+- (NSMutableDictionary*)getEntry:(NSString*)bundleIdentifier{
     for (NSMutableDictionary* entry in blacklistApps_) {
-        if([bundleIdentifier hasPrefix: entry[@"bundleIdentifier"]] &&
-           [entry[key] boolValue] == YES) {
-            return YES;
+        if([bundleIdentifier hasPrefix: entry[@"bundleIdentifier"]]) {
+            return entry;
         }
     }
-    return NO;
+    return nil;
+}
+
+- (BOOL)isBlacklistApp:(NSString*)bundleIdentifier withKey:(NSString*)key {
+    NSMutableDictionary* entry = [self getEntry: bundleIdentifier];
+
+    return [entry[key] boolValue];
 }
 
 - (BOOL)isJavaApp:(NSBundle*)bundle {
