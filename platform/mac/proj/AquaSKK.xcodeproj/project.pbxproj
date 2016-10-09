@@ -15,6 +15,7 @@
 		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
 		13D9CCA71CCCB02800480486 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D9CCA61CCCB02800480486 /* BlacklistApps.m */; };
 		13E607841C2693A300FD8FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E607831C2693A300FD8FB9 /* Images.xcassets */; };
+		13F0D7491DA9CB5B00684A21 /* karabiner.xml in Resources */ = {isa = PBXBuildFile; fileRef = 13F0D7471DA9CB5B00684A21 /* karabiner.xml */; };
 		13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */ = {isa = PBXBuildFile; fileRef = 13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
 		D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */; };
@@ -167,6 +168,7 @@
 		13D9CCA51CCCB02800480486 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlacklistApps.h; sourceTree = "<group>"; };
 		13D9CCA61CCCB02800480486 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlacklistApps.m; sourceTree = "<group>"; };
 		13E607831C2693A300FD8FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AquaSKK/Images.xcassets; sourceTree = "<group>"; };
+		13F0D7471DA9CB5B00684A21 /* karabiner.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = karabiner.xml; sourceTree = "<group>"; };
 		13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = "yakumono-ippai.rule"; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
 		D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEnvironment.cpp; sourceTree = "<group>"; };
@@ -427,6 +429,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13F0D7451DA9CB5B00684A21 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				13F0D7471DA9CB5B00684A21 /* karabiner.xml */,
+			);
+			name = others;
+			path = ../../../data/others;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* aquaskk */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,6 +846,7 @@
 		D3FC32290DD1B0DF006A3F5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				13F0D7451DA9CB5B00684A21 /* others */,
 				D353BE140E175552004C68A6 /* icons */,
 				D353BE0F0E175540004C68A6 /* config */,
 				D353BE0A0E17552F004C68A6 /* plist */,
@@ -994,6 +1006,7 @@
 				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
 				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
+				13F0D7491DA9CB5B00684A21 /* karabiner.xml in Resources */,
 				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
 				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
 				138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */,
