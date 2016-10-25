@@ -124,8 +124,6 @@
 
     [self debug:@"activateServer"];
 
-    [self initializeKeyboardLayout];
-
     activated_ = YES;
 
     session_->Activate();
@@ -140,6 +138,8 @@
 }
 
 - (void)setValue:(id)value forTag:(long)tag client:(id)sender {
+    [self initializeKeyboardLayout];
+
     if([self directMode]) return;
 
     if(tag != kTextServiceInputModePropertyTag) return;
