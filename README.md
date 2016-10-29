@@ -35,3 +35,6 @@ You might need logout/login to start new AquaSKK process.
 # Troubleshoot
 ## Use with iTerm2/Apple Terminal.app
 see http://mzp.hatenablog.com/entry/2015/03/15/213219
+
+## Use with JetBrains products
+see http://mzp.hatenablog.com/entry/2016/10/29/095435
