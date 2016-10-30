@@ -88,7 +88,8 @@
     SKKInputMode system = [menu_ convertIdToInputMode:context_.selectedKeyboardInputSource];
     SKKInputMode current = [menu_ currentInputMode];
 
-    if(system != current) {
+    // AquaSKK統合の場合、systemがInvalidInputModeになるので、そのときは無視する
+    if(system != InvalidInputMode && system != current) {
       // AquaSKKの制御外で入力モードが変更されているので、
       // SKKの状態もそれにあわせて変更する。
       //
