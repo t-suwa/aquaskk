@@ -526,7 +526,7 @@
                                         <button id="41">
                                             <rect key="frame" x="212" y="81" width="213" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="AF96B744-0109-4AED-A8BA-5A0F619B2BC0" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
+                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="9DDD47E0-5CC2-4821-AA94-7DACB733B544" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <connections>
@@ -917,14 +917,14 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="xTY-hZ-VHj" id="quH-Hu-C2r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="119"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="399" height="119"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                         <tableColumns>
-                                                            <tableColumn width="259.5234375" minWidth="40" maxWidth="1000" id="AWn-W6-HXi">
+                                                            <tableColumn width="173.0234375" minWidth="40" maxWidth="1000" id="AWn-W6-HXi">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Bundle Identifier">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -941,7 +941,7 @@
                                                                     <binding destination="mIb-rR-bjG" name="value" keyPath="arrangedObjects.bundleIdentifier" id="UcN-vJ-7DW"/>
                                                                 </connections>
                                                             </tableColumn>
-                                                            <tableColumn width="64.46875" minWidth="40" maxWidth="1000" headerToolTip="" id="dhN-2h-pwE">
+                                                            <tableColumn width="60.96875" minWidth="40" maxWidth="1000" headerToolTip="" id="dhN-2h-pwE">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="空文字挿入">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -956,7 +956,7 @@
                                                                     <binding destination="mIb-rR-bjG" name="value" keyPath="arrangedObjects.insertEmptyString" id="s4N-RS-5MS"/>
                                                                 </connections>
                                                             </tableColumn>
-                                                            <tableColumn identifier="" width="65" minWidth="10" maxWidth="3.4028234663852886e+38" id="LZf-Pw-ljr">
+                                                            <tableColumn identifier="" width="69" minWidth="10" maxWidth="3.4028234663852886e+38" id="LZf-Pw-ljr">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="露払後確定">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -971,12 +971,27 @@
                                                                     <binding destination="mIb-rR-bjG" name="value" keyPath="arrangedObjects.insertMarkedText" id="Ljq-us-6PN"/>
                                                                 </connections>
                                                             </tableColumn>
+                                                            <tableColumn width="84" minWidth="10" maxWidth="3.4028234663852886e+38" id="ZYS-Lg-Wdu">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="入力ソース同期">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="ApK-Jo-zUM">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="mIb-rR-bjG" name="value" keyPath="arrangedObjects.syncInputSource" id="1l0-65-XIZ"/>
+                                                                </connections>
+                                                            </tableColumn>
                                                         </tableColumns>
                                                     </tableView>
                                                 </subviews>
                                             </clipView>
-                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="QX1-h8-Kcb">
-                                                <rect key="frame" x="1" y="153" width="398" height="16"/>
+                                            <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="QX1-h8-Kcb">
+                                                <rect key="frame" x="1" y="126" width="398" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="j0w-I5-5oo">
@@ -984,7 +999,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <tableHeaderView key="headerView" id="xTY-hZ-VHj">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="399" height="23"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </tableHeaderView>
                                         </scrollView>
@@ -1334,7 +1349,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Sfd-qa-SaM"/>
     </objects>
     <resources>
-        <image name="AF96B744-0109-4AED-A8BA-5A0F619B2BC0" width="1" height="1">
+        <image name="9DDD47E0-5CC2-4821-AA94-7DACB733B544" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
