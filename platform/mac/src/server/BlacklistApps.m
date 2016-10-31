@@ -59,6 +59,10 @@ static BlacklistApps* sharedData_ = nil;
     return [self isBlacklistApp:bundleIdentifier withKey:@"insertMarkedText"];
 }
 
+- (BOOL)isSyncInputSource:(NSBundle *)bundle {
+    return [self isBlacklistApp:[bundle bundleIdentifier] withKey:@"syncInputSource"];
+}
+
 - (NSMutableDictionary*)getEntry:(NSString*)bundleIdentifier{
     for (NSMutableDictionary* entry in blacklistApps_) {
         if([bundleIdentifier hasPrefix: entry[@"bundleIdentifier"]]) {
