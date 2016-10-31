@@ -44,6 +44,7 @@
 - (void)cancelKeyEventForASCII;
 - (BOOL)isBlacklistedApp:(NSBundle*)bunde;
 - (void)debug:(NSString*)message;
+- (NSBundle*)currentBundle;
 - (NSUserDefaults*)defaults;
 
 @end
@@ -365,11 +366,7 @@
 }
 
 - (void)workAroundForSpecificApplications {
-    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
-    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
-    NSBundle* bundle = [NSBundle bundleWithPath:path];
-
-    if([self isBlacklistedApp:bundle]) {
+    if([self isBlacklistedApp:[self currentBundle]]) {
         [self debug:@"cancel key event"];
         [self cancelKeyEventForASCII];
     }
@@ -402,6 +399,12 @@
 #ifdef SKK_DEBUG
     NSLog(@"%@: %@", [client_ bundleIdentifier], str);
 #endif
+}
+
+- (NSBundle*)currentBundle {
+    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
+    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
+    return [NSBundle bundleWithPath:path];
 }
 
 - (NSUserDefaults*)defaults {
