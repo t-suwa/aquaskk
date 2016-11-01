@@ -12,8 +12,10 @@
 		<key>bundleIdentifier</key>
 		<string>com.jetbrains</string>
 		<key>insertEmptyString</key>
-		<false />
+		<false/>
 		<key>insertMarkedText</key>
+		<true/>
+		<key>syncInputSource</key>
 		<true/>
 	</dict>
 	<dict>

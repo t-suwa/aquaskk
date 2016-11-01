@@ -31,6 +31,7 @@
 - (void)load:(NSArray*)blacklistApps;
 - (BOOL)isInsertEmptyString:(NSBundle *)bundle;
 - (BOOL)isInsertMarkedText:(NSString *)bundleIdentifier;
+- (BOOL)isSyncInputSource:(NSBundle *)bundle;
 + (BlacklistApps*)sharedManager;
 @end
 

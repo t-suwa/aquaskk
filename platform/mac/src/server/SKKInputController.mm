@@ -43,7 +43,9 @@
 - (void)workAroundForSpecificApplications;
 - (void)cancelKeyEventForASCII;
 - (BOOL)isBlacklistedApp:(NSBundle*)bunde;
+- (SKKInputMode)syncInputSource;
 - (void)debug:(NSString*)message;
+- (NSBundle*)currentBundle;
 - (NSUserDefaults*)defaults;
 
 @end
@@ -85,17 +87,10 @@
 - (BOOL)handleEvent:(NSEvent*)event client:(id)sender {
     if([self directMode]) return NO;
 
-    SKKInputMode system = [menu_ convertIdToInputMode:context_.selectedKeyboardInputSource];
     SKKInputMode current = [menu_ currentInputMode];
 
-    // AquaSKK統合の場合、systemがInvalidInputModeになるので、そのときは無視する
-    if(system != InvalidInputMode && system != current) {
-      // AquaSKKの制御外で入力モードが変更されているので、
-      // SKKの状態もそれにあわせて変更する。
-      //
-      // 例えば、KarabinerのInputSource変更を使うと発生する。
-      [self changeInputMode:context_.selectedKeyboardInputSource];
-      current = system;
+    if([[BlacklistApps sharedManager] isSyncInputSource:[self currentBundle]]) {
+        current = [self syncInputSource];
     }
 
     SKKEvent param = SKKPreProcessor::theInstance().Execute(event);
@@ -365,11 +360,7 @@
 }
 
 - (void)workAroundForSpecificApplications {
-    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
-    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
-    NSBundle* bundle = [NSBundle bundleWithPath:path];
-
-    if([self isBlacklistedApp:bundle]) {
+    if([self isBlacklistedApp:[self currentBundle]]) {
         [self debug:@"cancel key event"];
         [self cancelKeyEventForASCII];
     }
@@ -389,6 +380,26 @@
     return [[BlacklistApps sharedManager] isInsertEmptyString:bundle];
 }
 
+// AquaSKKの制御外で入力モードが変更されることがあるので、
+// SKKの状態もそれにあわせて変更する。
+//
+// 例えば、KarabinerのInputSource変更を使うと発生する。
+- (SKKInputMode)syncInputSource {
+    SKKInputMode system = [menu_ convertIdToInputMode:context_.selectedKeyboardInputSource];
+    SKKInputMode current = [menu_ currentInputMode];
+
+    // AquaSKK統合の場合、systemがInvalidInputModeになるので、そのときは無視する
+    if(system == InvalidInputMode) {
+        return current;
+    }
+
+    // AquaSKKの制御外で入力モードが変更されている
+    if(system != current) {
+        [self changeInputMode:context_.selectedKeyboardInputSource];
+        return system;
+    }
+}
+
 - (void)cancelKeyEventForASCII {
     // Ctrl-L を強制挿入することで、アプリケーション側のキー処理を無効化する
     NSString* null = [NSString stringWithFormat:@"%c", 0x0c];
@@ -402,6 +413,12 @@
 #ifdef SKK_DEBUG
     NSLog(@"%@: %@", [client_ bundleIdentifier], str);
 #endif
+}
+
+- (NSBundle*)currentBundle {
+    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
+    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
+    return [NSBundle bundleWithPath:path];
 }
 
 - (NSUserDefaults*)defaults {
