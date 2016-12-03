@@ -155,7 +155,12 @@ namespace jconv {
 	to = from;
 	kana_convert(&kana::katakana, &kana::jisx0201_kana, to);
     }
-    
+
+    void katakana_to_roman(const std::string& from, std::string& to){
+	to = from;
+	kana_convert(&kana::katakana, &kana::roman, to);
+    }
+
     void jisx0201_kana_to_hirakana(const std::string& from, std::string& to) {
 	to = from;
 	kana_convert(&kana::jisx0201_kana, &kana::hirakana, to);
@@ -164,6 +169,11 @@ namespace jconv {
     void jisx0201_kana_to_katakana(const std::string& from, std::string& to) {
 	to = from;
 	kana_convert(&kana::jisx0201_kana, &kana::katakana, to);
+    }
+
+    void jisx0201_kana_to_roman(const std::string& from, std::string& to){
+	to = from;
+	kana_convert(&kana::jisx0201_kana, &kana::roman, to);
     }
 
     // latin record
