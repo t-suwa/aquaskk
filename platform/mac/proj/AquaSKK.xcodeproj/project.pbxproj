@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130F69EA1DF40A58001B6DFB /* old-kana.rule in Resources */ = {isa = PBXBuildFile; fileRef = 130F69E91DF40A58001B6DFB /* old-kana.rule */; };
 		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
 		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
 		132946B81CCCEC8000AE83D8 /* BlacklistApps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */; };
@@ -158,6 +159,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		130F69E91DF40A58001B6DFB /* old-kana.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "old-kana.rule"; sourceTree = "<group>"; };
 		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
 		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
 		132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlacklistApps.plist; sourceTree = "<group>"; };
@@ -785,6 +787,7 @@
 				138EA4E51BE85B2400E8A70E /* azik_us.rule */,
 				1397AFB21BCFDD1E004A3E7D /* act.rule */,
 				131E98E21BE4EE4600E898E6 /* act.conf */,
+				130F69E91DF40A58001B6DFB /* old-kana.rule */,
 				D3F0576410BAD12600F3233E /* period.rule */,
 				D3F0576310BAD12600F3233E /* comma.rule */,
 				13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */,
@@ -1008,6 +1011,7 @@
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
 				13F0D7491DA9CB5B00684A21 /* karabiner.xml in Resources */,
 				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
+				130F69EA1DF40A58001B6DFB /* old-kana.rule in Resources */,
 				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
 				138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */,
 				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
