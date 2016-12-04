@@ -91,9 +91,9 @@ namespace jconv {
 	{ "な", "ナ", "ﾅ", "na" }, { "に", "ニ", "ﾆ", "ni" }, { "ぬ", "ヌ", "ﾇ", "nu" }, { "ね", "ネ", "ﾈ", "ne" }, { "の", "ノ", "ﾉ", "no" },
 	{ "は", "ハ", "ﾊ", "ha" }, { "ひ", "ヒ", "ﾋ", "hi" }, { "ふ", "フ", "ﾌ", "hu" }, { "へ", "ヘ", "ﾍ", "he" }, { "ほ", "ホ", "ﾎ", "ho" },
 	{ "ま", "マ", "ﾏ", "ma" }, { "み", "ミ", "ﾐ", "mi" }, { "む", "ム", "ﾑ", "mu" }, { "め", "メ", "ﾒ", "me" }, { "も", "モ", "ﾓ", "mo" },
-	{ "や", "ヤ", "ﾔ", "ya" }, { "ゐ", "ヰ", "ｲ", "yi" }, { "ゆ", "ユ", "ﾕ", "yu" }, { "ゑ", "ヱ", "ｴ", "ye" }, { "よ", "ヨ", "ﾖ", "yo" },
+	{ "や", "ヤ", "ﾔ", "ya" }, { "ゆ", "ユ", "ﾕ", "yu" }, { "よ", "ヨ", "ﾖ", "yo" },
 	{ "ら", "ラ", "ﾗ", "ra" }, { "り", "リ", "ﾘ", "ri" }, { "る", "ル", "ﾙ", "ru" }, { "れ", "レ", "ﾚ", "re" }, { "ろ", "ロ", "ﾛ", "ro" },
-	{ "わ", "ワ", "ﾜ", "wa" }, { "を", "ヲ", "ｦ", "wo" }, { "ん", "ン", "ﾝ", "nn" },
+	{ "わ", "ワ", "ﾜ", "wa" }, { "ゐ", "ヰ", "ｲ", "wi" }, { "ゑ", "ヱ", "ｴ", "we" }, { "を", "ヲ", "ｦ", "wo" }, { "ん", "ン", "ﾝ", "nn" },
 	{ "ぁ", "ァ", "ｧ", "xa" }, { "ぃ", "ィ", "ｨ", "xi" }, { "ぅ", "ゥ", "ｩ", "xu" }, { "ぇ", "ェ", "ｪ", "xe" }, { "ぉ", "ォ", "ｫ", "xo" },
 	{ "っ", "ッ", "ｯ", "tt" }, { "ゃ", "ャ", "ｬ", "xya" }, { "ゅ", "ュ", "ｭ", "xyu" }, { "ょ", "ョ", "ｮ", "xyo" }, { "　", "　", " ", " " },
 	{ "。", "。", "｡", "。" }, { "、", "、", "､", "､" }, { "ー", "ー", "ｰ", "-" }, { "「", "「", "｢", "｢" }, { "」", "」", "｣", "｣" },
@@ -155,7 +155,12 @@ namespace jconv {
 	to = from;
 	kana_convert(&kana::katakana, &kana::jisx0201_kana, to);
     }
-    
+
+    void katakana_to_roman(const std::string& from, std::string& to){
+	to = from;
+	kana_convert(&kana::katakana, &kana::roman, to);
+    }
+
     void jisx0201_kana_to_hirakana(const std::string& from, std::string& to) {
 	to = from;
 	kana_convert(&kana::jisx0201_kana, &kana::hirakana, to);
@@ -164,6 +169,11 @@ namespace jconv {
     void jisx0201_kana_to_katakana(const std::string& from, std::string& to) {
 	to = from;
 	kana_convert(&kana::jisx0201_kana, &kana::katakana, to);
+    }
+
+    void jisx0201_kana_to_roman(const std::string& from, std::string& to){
+	to = from;
+	kana_convert(&kana::jisx0201_kana, &kana::roman, to);
     }
 
     // latin record
