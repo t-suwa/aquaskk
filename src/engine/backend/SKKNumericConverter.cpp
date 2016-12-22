@@ -116,6 +116,7 @@ static std::string ConvertType3(const std::string& src) {
     const char* unit1[] = { "", "万", "億", "兆", "京", "垓" };
     const char* unit2[] = { "十", "百", "千" };
     std::string result;
+    unsigned int previous_size = 0;
 
     if(src.size() == 1 && src[0] == '0') {
 	return "〇";
@@ -156,7 +157,11 @@ static std::string ConvertType3(const std::string& src) {
 	    if(src[i] == '1') {
 		result += "一";
 	    }
-	    result += unit1[(distance - 1) / 4];
+	    // 「垓、京、兆、億、万」が連続しない場合に追加
+	    if(previous_size < result.size()) {
+	        result += unit1[(distance - 1) / 4];
+	        previous_size = result.size();
+	    }
 	} else {
 	    // 十の位以上
 	    if(distance > 1) {
@@ -189,6 +194,7 @@ static std::string ConvertType5(const std::string& src) {
     const char* unit1[] = { "", "萬", "億", "兆", "京", "垓" };
     const char* unit2[] = { "拾", "百", "阡" };
     std::string result;
+    unsigned int previous_size = 0;
 
     if(src.size() == 1 && src[0] == '0') {
 	return "零";
@@ -229,7 +235,11 @@ static std::string ConvertType5(const std::string& src) {
 
 	// 「十、百、千」以外の位
 	if(distance > 4 && (distance - 1) % 4 == 0) {
-	    result += unit1[(distance - 1) / 4];
+	    // 「垓、京、兆、億、萬」が連続しない場合に追加
+	    if (previous_size < result.size()){
+	        result += unit1[(distance - 1) / 4];
+	        previous_size = result.size();
+	    }
 	} else {
 	    // 十の位以上
 	    if(distance > 1) {
