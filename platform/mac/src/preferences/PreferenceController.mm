@@ -62,7 +62,12 @@ namespace {
 
         NSString* fontName = [preferences_ objectForKey:SKKUserDefaultKeys::candidate_window_font_name];
         NSNumber* fontSize =  [preferences_ objectForKey:SKKUserDefaultKeys::candidate_window_font_size];
-        candidateWindowFont_ = [[NSFont fontWithName:fontName size:[fontSize floatValue]] retain];
+        candidateWindowFont_ =
+            [NSFont fontWithName:fontName size:[fontSize floatValue]] ?:
+            [NSFont labelFontOfSize:[fontSize floatValue]];
+
+        [candidateWindowFont_ retain];
+
         proxy_ = [[SKKServerProxy alloc] init];
 
         NSValueTransformer* transformer
