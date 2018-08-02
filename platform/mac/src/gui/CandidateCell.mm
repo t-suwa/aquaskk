@@ -36,7 +36,11 @@
 - (id)initWithFont:(NSFont*)font {
     if(self = [super init]) {
 	entry_ = [[NSMutableAttributedString alloc] init];
-	attributes_ = [[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName] retain];
+	attributes_ = [[NSDictionary dictionaryWithObjectsAndKeys:
+                    font, NSFontAttributeName,
+                    [NSColor labelColor], NSForegroundColorAttributeName,
+                    nil]
+                   retain];
 
 	NSAttributedString* tmpstr = [[NSAttributedString alloc]
 					 initWithString:[NSString stringWithUTF8String:" A  漢字 "]
