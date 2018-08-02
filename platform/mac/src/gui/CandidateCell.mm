@@ -69,7 +69,7 @@
 
     // ラベルの背景色
     [entry_ addAttribute:NSBackgroundColorAttributeName
-	    value:[NSColor selectedMenuItemColor] range:NSMakeRange(0, 3)];
+	    value:[NSColor controlAccentColor] range:NSMakeRange(0, 3)];
 
     // ラベルの文字色
     [entry_ addAttribute:NSForegroundColorAttributeName
