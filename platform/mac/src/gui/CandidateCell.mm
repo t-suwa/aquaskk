@@ -105,7 +105,11 @@
 
     [[NSGraphicsContext currentContext] setShouldAntialias:NO];
 
-    [[[NSColor blackColor] colorWithAlphaComponent:0.1] setFill];
+    if (@available(macOS 10_14, *)) {
+        [[[NSColor windowBackgroundColor] colorWithSystemEffect: NSColorSystemEffectPressed] setFill];
+    } else {
+        [[[NSColor blackColor] colorWithAlphaComponent:0.1] setFill];
+    }
     NSRectFillUsingOperation(focus, NSCompositeSourceOver);
 
     [[NSColor windowFrameColor] setStroke];
