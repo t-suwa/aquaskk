@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode10
 
 script:
-  - cd platform/mac 
+  - cd platform/mac
   - make debug
   - make test
   - make release
