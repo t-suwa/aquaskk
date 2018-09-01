@@ -68,8 +68,13 @@
     [tmpstr release];
 
     // ラベルの背景色
-    [entry_ addAttribute:NSBackgroundColorAttributeName
-	    value:[NSColor controlAccentColor] range:NSMakeRange(0, 3)];
+    if (@available(macOS 10_14, *)) {
+      [entry_ addAttribute:NSBackgroundColorAttributeName
+        value:[NSColor controlAccentColor] range:NSMakeRange(0, 3)];
+    } else {
+      [entry_ addAttribute:NSBackgroundColorAttributeName
+        value:[NSColor selectedMenuItemColor] range:NSMakeRange(0, 3)];
+    }
 
     // ラベルの文字色
     [entry_ addAttribute:NSForegroundColorAttributeName
