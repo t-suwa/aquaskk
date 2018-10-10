@@ -169,6 +169,19 @@ State SKKState::KanaEntry(const Event& event) {
             return State::Transition(&SKKState::KanaInput);
         }
 
+        // Sticky key
+        if(param.IsStickyKey()) {
+            if(context_->entry.IsEmpty()) {
+                if(param.IsInputChars()) {
+                    editor_->HandleChar(param.code, param.IsDirect());
+                }
+                editor_->Commit();
+                return State::Transition(&SKKState::KanaInput);
+            } else {
+                return State::Transition(&SKKState::OkuriInput);
+            }
+        }
+
         // 送りあり
         if(param.IsUpperCases() && !context_->entry.IsEmpty()) {
             return State::Forward(&SKKState::OkuriInput);
@@ -179,7 +192,7 @@ State SKKState::KanaEntry(const Event& event) {
                 editor_->Commit();
                 return State::Transition(&SKKState::Ascii);
             }
-            
+
             if(param.IsSwitchToJisx0208Latin()) {
                 editor_->Commit();
                 return State::Transition(&SKKState::Jisx0208Latin);
