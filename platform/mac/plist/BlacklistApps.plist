@@ -20,6 +20,16 @@
 	</dict>
 	<dict>
 		<key>bundleIdentifier</key>
+		<string>com.google.android.studio</string>
+		<key>insertEmptyString</key>
+		<false/>
+		<key>insertMarkedText</key>
+		<true/>
+		<key>syncInputSource</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>bundleIdentifier</key>
 		<string>jp.naver.line.mac</string>
 		<key>insertEmptyString</key>
 		<false/>
