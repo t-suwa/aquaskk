@@ -5,6 +5,10 @@
 DEVELOPMENT_TEAM="" # required to sign a release build for notarization. try make pkg DEVELOPMENT_TEAM=XXXX
 APPSTORECONNECT_USERNAME="" required to submit a release build for notarization. try make notarize APPSTORECONNECT_USERNAME=XXXX
 
+ifneq (,$(filter pkg notarize,$(MAKECMDGOALS)))
+	RELEASE_BUILD_OPTS = CODE_SIGN_INJECT_BASE_ENTITLEMENTS=NO CODE_SIGN_IDENTITY="Developer ID Application" DEVELOPMENT_TEAM=$(DEVELOPMENT_TEAM)
+endif
+
 TARGET	= AquaSKK.app
 DEST	= /Library/Input\ Methods
 WORKDIR	= /tmp/AquaSKK
@@ -12,7 +16,7 @@ XCODE	= xcodebuild -project proj/AquaSKK.xcodeproj
 DEBUG_TARGET	= proj/build/Debug/$(TARGET)
 RELEASE_TARGET	= proj/build/Release/$(TARGET)
 DEBUG_BUILD	= $(XCODE) -configuration Debug
-RELEASE_BUILD	= $(XCODE) -configuration Release CODE_SIGN_INJECT_BASE_ENTITLEMENTS=NO CODE_SIGN_IDENTITY="Developer ID Application" DEVELOPMENT_TEAM=$(DEVELOPMENT_TEAM)
+RELEASE_BUILD	= $(XCODE) -configuration Release $(RELEASE_BUILD_OPTS)
 HDIMAGE	= hdiutil create -ov -srcfolder $(WORKDIR)
 TODAY	= `date +%Y%m%d`
 
