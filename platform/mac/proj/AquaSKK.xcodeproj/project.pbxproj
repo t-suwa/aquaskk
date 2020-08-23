@@ -1167,6 +1167,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1188,6 +1189,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_MODEL_TUNING = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1223,6 +1225,7 @@
 					"\"$(SRCROOT)/../../../src/engine/tests\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1256,6 +1259,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../src/engine/tests\"",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1285,6 +1289,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1312,6 +1317,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
