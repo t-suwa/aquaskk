@@ -159,7 +159,7 @@ namespace {
     [panel setDirectoryURL:dirurl];
     [panel beginSheetModalForWindow:prefWindow_ completionHandler:^(NSInteger result) {
         if(result == NSOKButton) {
-            [preferences_ setObject:[[panel URL] absoluteString]
+            [preferences_ setObject:[[panel URL] path]
                              forKey:SKKUserDefaultKeys::user_dictionary_path];
         }
     }];
