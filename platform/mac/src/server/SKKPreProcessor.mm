@@ -38,6 +38,10 @@ void SKKPreProcessor::Initialize(const std::string& path) {
     keymap_.Initialize(path);
 }
 
+void SKKPreProcessor::Patch(const std::string& path) {
+    keymap_.Patch(path);
+}
+
 SKKEvent SKKPreProcessor::Execute(const NSEvent* event) {
     NSString* diststr = [event characters];
     int dispchar = diststr ? *[diststr UTF8String] : 0;
@@ -46,13 +50,11 @@ SKKEvent SKKPreProcessor::Execute(const NSEvent* event) {
     int keycode = [event keyCode];
     int mods = 0;
 
-    // シフト属性が有効なのはデッドキーのみ
     if([event modifierFlags] & NSShiftKeyMask) {
 	if(std::isgraph(dispchar)) { // 空白類を除いた英数字記号
 	    charcode = dispchar;
-	} else {
-	    mods += SKKKeyState::SHIFT;
 	}
+	mods += SKKKeyState::SHIFT;
     }
 
     if([event modifierFlags] & NSControlKeyMask) {

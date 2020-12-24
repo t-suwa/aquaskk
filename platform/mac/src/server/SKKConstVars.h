@@ -38,6 +38,7 @@ namespace SKKUserDefaultKeys {
     extern NSString* keyboard_layout;
 
     extern NSString* sub_rules;
+    extern NSString* sub_keymaps;
 
     extern NSString* enable_extended_completion;
     extern NSString* enable_dynamic_completion;
@@ -90,6 +91,7 @@ namespace SKKDictionaryTypeKeys {
 namespace SKKFilePaths {
     extern NSString* SystemResourceFolder;
     extern NSString* ApplicationSupportFolder;
+    extern NSString* BlacklistApps;
     extern NSString* DictionarySet;
     extern NSString* UserDefaults;
 };

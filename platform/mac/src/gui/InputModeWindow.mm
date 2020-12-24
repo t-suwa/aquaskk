@@ -134,9 +134,7 @@
     NSArray* reps = [icon representations];
 
     if([reps count]) {
-        // NSImage の - (NSSize)size ではなく、ピクセルサイズを取得する
-        NSImageRep* image = [reps objectAtIndex:0];
-        iconSize = NSMakeSize(image.pixelsWide, image.pixelsHigh);
+        iconSize = icon.size;
     }
 
     // ppc では、背景を clearColor にした NSWindow の矩形サイズが、いつ

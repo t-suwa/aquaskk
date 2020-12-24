@@ -31,6 +31,7 @@ namespace {
     const NSString* SUB_RULE_FOLDER = @"folder";
     const NSString* SUB_RULE_PATH = @"path";
     const NSString* SUB_RULE_SWITCH = @"active";
+    const NSString* SUB_RULE_KEYMAP = @"keymap";
     const NSString* SUB_RULE_DESCRIPTION = @"description";
     const NSString* SUB_RULE_TYPE = @"type";
 }
@@ -54,12 +55,19 @@ namespace {
         layoutNames_ = [[NSMutableArray alloc] init];
         preferences_ = [[NSMutableDictionary
                             dictionaryWithContentsOfFile:SKKFilePaths::UserDefaults] retain];
+        blacklistApps_ = [[NSMutableArray
+                           arrayWithContentsOfFile:SKKFilePaths::BlacklistApps] retain];
         dictionarySet_ = [[NSMutableArray
                               arrayWithContentsOfFile:SKKFilePaths::DictionarySet] retain];
 
         NSString* fontName = [preferences_ objectForKey:SKKUserDefaultKeys::candidate_window_font_name];
         NSNumber* fontSize =  [preferences_ objectForKey:SKKUserDefaultKeys::candidate_window_font_size];
-        candidateWindowFont_ = [[NSFont fontWithName:fontName size:[fontSize floatValue]] retain];
+        candidateWindowFont_ =
+            [NSFont fontWithName:fontName size:[fontSize floatValue]] ?:
+            [NSFont labelFontOfSize:[fontSize floatValue]];
+
+        [candidateWindowFont_ retain];
+
         proxy_ = [[SKKServerProxy alloc] init];
 
         NSValueTransformer* transformer
@@ -76,6 +84,7 @@ namespace {
 - (void)dealloc {
     [proxy_ release];
     [candidateWindowFont_ release];
+    [blacklistApps_ release];
     [dictionarySet_ release];
     [preferences_ release];
     [layoutNames_ release];
@@ -88,6 +97,7 @@ namespace {
 
     [objController_ setContent:preferences_];
     [arrayController_ setContent:dictionarySet_];
+    [blacklistArrayController_ setContent:blacklistApps_];
     [dictionaryTypes_ setContent:[proxy_ createDictionaryTypes]];
 
     [self initializeVersion];
@@ -149,7 +159,7 @@ namespace {
     [panel setDirectoryURL:dirurl];
     [panel beginSheetModalForWindow:prefWindow_ completionHandler:^(NSInteger result) {
         if(result == NSOKButton) {
-            [preferences_ setObject:[[panel URL] absoluteString]
+            [preferences_ setObject:[[panel URL] path]
                              forKey:SKKUserDefaultKeys::user_dictionary_path];
         }
     }];
@@ -222,6 +232,10 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 
             [rule setObject:file forKey:SUB_RULE_PATH];
 
+            if(const char* keymap = table->Keymap([file UTF8String])) {
+                [rule setObject:[NSString stringWithUTF8String:keymap] forKey:SUB_RULE_KEYMAP];
+            }
+
             [rule setObject:[NSString stringWithUTF8String:table->Description([file UTF8String])]
                      forKey:SUB_RULE_DESCRIPTION];
 
@@ -286,7 +300,8 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 }
 
 - (void)saveChanges {
-    NSMutableArray* active_rules = [[NSMutableArray alloc] init];
+    NSMutableArray* active_subrules = [[NSMutableArray alloc] init];
+    NSMutableArray* active_keymaps = [[NSMutableArray alloc] init];
 
     NSLog(@"saving changes ...");
 
@@ -295,23 +310,32 @@ static NSInteger compareInputSource(id obj1, id obj2, void *context) {
 
         if([active boolValue]) {
             NSString* folder = [rule objectForKey:SUB_RULE_FOLDER];
-            NSString* path = [rule objectForKey:SUB_RULE_PATH];
+            NSString* subrule = [rule objectForKey:SUB_RULE_PATH];
+            NSString* keymap = [rule objectForKey:SUB_RULE_KEYMAP];
 
-            NSLog(@"activating sub rule: %@", path);
-
-            [active_rules addObject:[folder stringByAppendingPathComponent:path]];
+            NSLog(@"activating sub rule: %@", subrule);
+	    [active_subrules addObject:[folder stringByAppendingPathComponent:subrule]];
+		
+            if(keymap != nil) {
+                NSLog(@"activating sub keymap: %@", keymap);
+                [active_keymaps addObject:[folder stringByAppendingPathComponent:keymap]];
+            }
         }
     }
 
-    [preferences_ setObject:active_rules forKey:SKKUserDefaultKeys::sub_rules];
+    [preferences_ setObject:active_subrules forKey:SKKUserDefaultKeys::sub_rules];
+    [preferences_ setObject:active_keymaps forKey:SKKUserDefaultKeys::sub_keymaps];
     
     [preferences_ writeToFile:SKKFilePaths::UserDefaults atomically:YES];
+    [blacklistApps_ writeToFile:SKKFilePaths::BlacklistApps atomically:YES];
     [dictionarySet_ writeToFile:SKKFilePaths::DictionarySet atomically:YES];
 
-    [active_rules release];
+    [active_subrules release];
+    [active_keymaps release];
 }
 
 - (void)reloadServer {
+    [proxy_ reloadBlacklistApps];
     [proxy_ reloadUserDefaults];
     [proxy_ reloadDictionarySet];
     [proxy_ reloadComponents];

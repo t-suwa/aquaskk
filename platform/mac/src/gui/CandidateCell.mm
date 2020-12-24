@@ -36,7 +36,11 @@
 - (id)initWithFont:(NSFont*)font {
     if(self = [super init]) {
 	entry_ = [[NSMutableAttributedString alloc] init];
-	attributes_ = [[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName] retain];
+	attributes_ = [[NSDictionary dictionaryWithObjectsAndKeys:
+                    font, NSFontAttributeName,
+                    [NSColor labelColor], NSForegroundColorAttributeName,
+                    nil]
+                   retain];
 
 	NSAttributedString* tmpstr = [[NSAttributedString alloc]
 					 initWithString:[NSString stringWithUTF8String:" A  漢字 "]
@@ -64,8 +68,13 @@
     [tmpstr release];
 
     // ラベルの背景色
-    [entry_ addAttribute:NSBackgroundColorAttributeName
-	    value:[NSColor selectedMenuItemColor] range:NSMakeRange(0, 3)];
+    if (@available(macOS 10_14, *)) {
+      [entry_ addAttribute:NSBackgroundColorAttributeName
+        value:[NSColor controlAccentColor] range:NSMakeRange(0, 3)];
+    } else {
+      [entry_ addAttribute:NSBackgroundColorAttributeName
+        value:[NSColor selectedMenuItemColor] range:NSMakeRange(0, 3)];
+    }
 
     // ラベルの文字色
     [entry_ addAttribute:NSForegroundColorAttributeName
@@ -101,7 +110,11 @@
 
     [[NSGraphicsContext currentContext] setShouldAntialias:NO];
 
-    [[[NSColor blackColor] colorWithAlphaComponent:0.1] setFill];
+    if (@available(macOS 10_14, *)) {
+        [[[NSColor windowBackgroundColor] colorWithSystemEffect: NSColorSystemEffectPressed] setFill];
+    } else {
+        [[[NSColor blackColor] colorWithAlphaComponent:0.1] setFill];
+    }
     NSRectFillUsingOperation(focus, NSCompositeSourceOver);
 
     [[NSColor windowFrameColor] setStroke];

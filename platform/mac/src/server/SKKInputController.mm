@@ -20,6 +20,7 @@
 
 */
 
+#include "BlacklistApps.h"
 #include "SKKInputController.h"
 #include "SKKLayoutManager.h"
 #include "SKKInputSession.h"
@@ -39,8 +40,12 @@
 - (void)setPrivateMode:(BOOL)flag;
 - (BOOL)directMode;
 - (void)setDirectMode:(BOOL)flag;
-- (void)workAroundForJRE;
+- (void)workAroundForSpecificApplications;
+- (void)cancelKeyEventForASCII;
+- (BOOL)isBlacklistedApp:(NSBundle*)bunde;
+- (SKKInputMode)syncInputSource;
 - (void)debug:(NSString*)message;
+- (NSBundle*)currentBundle;
 - (NSUserDefaults*)defaults;
 
 @end
@@ -50,7 +55,8 @@
 - (id)initWithServer:(id)server delegate:(id)delegate client:(id)client {
     self = [super initWithServer:server delegate:delegate client:client];
     if(self) {
-        client_ = client;
+        client_ = [client retain];
+        context_ = [[NSTextInputContext alloc] initWithClient:client];
         activated_ = NO;
         proxy_ = [[SKKServerProxy alloc] init];
         menu_ = [[SKKInputMenu alloc] initWithClient:client];
@@ -70,6 +76,8 @@
     delete session_;
     delete layout_;
 
+    [client_ release];
+    [context_ release];
     [menu_ release];
     [proxy_ release];
     [super dealloc];
@@ -81,12 +89,16 @@
 
     SKKInputMode current = [menu_ currentInputMode];
 
+    if([[BlacklistApps sharedManager] isSyncInputSource:[self currentBundle]]) {
+        current = [self syncInputSource];
+    }
+
     SKKEvent param = SKKPreProcessor::theInstance().Execute(event);
 
     bool result = session_->HandleEvent(param);
 
     if(current != [menu_ currentInputMode] || param.id == SKK_JMODE) {
-        [self workAroundForJRE];
+        [self workAroundForSpecificApplications];
     }
 
     return result ? YES : NO;
@@ -108,8 +120,6 @@
 
     [self debug:@"activateServer"];
 
-    [self initializeKeyboardLayout];
-
     activated_ = YES;
 
     session_->Activate();
@@ -124,6 +134,8 @@
 }
 
 - (void)setValue:(id)value forTag:(long)tag client:(id)sender {
+    [self initializeKeyboardLayout];
+
     if([self directMode]) return;
 
     if(tag != kTextServiceInputModePropertyTag) return;
@@ -157,17 +169,25 @@
         }
     } else {
         // 個々の入力モードを選択している場合
-        SKKEvent param;
-
-        // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
-        param.id = [menu_ convertIdToEventId:(NSString*)value];
-
-        if(param.id != InvalidInputMode) {
-            session_->HandleEvent(param);
-
-            modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)value]);
-        }
+        [self changeInputMode:value];
     }
+}
+
+- (void)changeInputMode:(NSString*)identifier {
+    SKKEvent param;
+
+    // ex) "com.apple.inputmethod.Roman" => SKK_ASCII_MODE
+    param.id = [menu_ convertIdToEventId:(NSString*)identifier];
+
+    // setValue内でメニューの更新があると、 selectInputMode -> setValueの無限ループが発生するため、
+    // 更新を停止する
+    [menu_ deactivation];
+    if(param.id != InvalidInputMode) {
+        session_->HandleEvent(param);
+
+        modeIcon_->SelectInputMode([menu_ convertIdToInputMode:(NSString*)identifier]);
+    }
+    [menu_ activation];
 }
 
 // IMKInputController
@@ -188,6 +208,7 @@
         { "Web::日本語を快適に",      @selector(webHome:),           0 },
         { "Web::SourceForge.JP",      @selector(webSourceForge:),    0 },
         { "Web::Wiki",                @selector(webWiki:),           0 },
+        { "Web::Github[forked]",      @selector(github:),            0 },
         { 0,                          0,                             0 }
     };
 
@@ -297,6 +318,10 @@
     [self openURL:@"http://sourceforge.jp/projects/aquaskk/wiki/FrontPage"];
 }
 
+- (void)github:(id)sender {
+    [self openURL:@"https://github.com/codefirst/aquaskk"];
+}
+
 @end
 
 @implementation SKKInputController (Local)
@@ -334,28 +359,48 @@
     [[self defaults] setObject:result forKey:SKKUserDefaultKeys::direct_clients];
 }
 
-- (void)workAroundForJRE {
-    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
-    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
-    NSBundle* bundle = [NSBundle bundleWithPath:path];
+- (void)workAroundForSpecificApplications {
+    if([self isBlacklistedApp:[self currentBundle]]) {
+        [self debug:@"cancel key event"];
+        [self cancelKeyEventForASCII];
+    }
+}
 
-    if(bundle) {
-        // Info.plist に Java キーが含まれていなければ無視
-        if([bundle objectForInfoDictionaryKey:@"Java"] == nil &&
-           [bundle objectForInfoDictionaryKey:@"Eclipse"] == nil) {
-            [self debug:@"Not Java Application"];
-            return;
-        }
-    } else {
-        // 直接 Java を起動していない場合は無視
-        if(![[client_ bundleIdentifier] hasPrefix:@"com.apple.javajdk"]) {
-            [self debug:@"Not JDK"];
-            return;
-        }
+- (BOOL)isBlacklistedApp:(NSBundle *)bundle {
+    if([[client_ bundleIdentifier] hasPrefix:@"com.apple.javajdk"]) {
+        // Javaを直接起動している
+        return YES;
+    }
+    if([[client_ bundleIdentifier] hasPrefix:@"net.java.openjdk"]) {
+        // OpenJDKを使っている
+        return YES;
+    }
+    if(!bundle) { return NO; }
+
+    return [[BlacklistApps sharedManager] isInsertEmptyString:bundle];
+}
+
+// AquaSKKの制御外で入力モードが変更されることがあるので、
+// SKKの状態もそれにあわせて変更する。
+//
+// 例えば、KarabinerのInputSource変更を使うと発生する。
+- (SKKInputMode)syncInputSource {
+    SKKInputMode system = [menu_ convertIdToInputMode:context_.selectedKeyboardInputSource];
+    SKKInputMode current = [menu_ currentInputMode];
+
+    // AquaSKK統合の場合、systemがInvalidInputModeになるので、そのときは無視する
+    if(system == InvalidInputMode) {
+        return current;
     }
 
-    [self debug:@"workAroundForJRE"];
+    // AquaSKKの制御外で入力モードが変更されている
+    if(system != current) {
+        [self changeInputMode:context_.selectedKeyboardInputSource];
+        return system;
+    }
+}
 
+- (void)cancelKeyEventForASCII {
     // Ctrl-L を強制挿入することで、アプリケーション側のキー処理を無効化する
     NSString* null = [NSString stringWithFormat:@"%c", 0x0c];
     NSRange range = NSMakeRange(NSNotFound, NSNotFound);
@@ -368,6 +413,12 @@
 #ifdef SKK_DEBUG
     NSLog(@"%@: %@", [client_ bundleIdentifier], str);
 #endif
+}
+
+- (NSBundle*)currentBundle {
+    NSWorkspace* workspace = [NSWorkspace sharedWorkspace];
+    NSString* path = [workspace absolutePathForAppBundleWithIdentifier:[client_ bundleIdentifier]];
+    return [NSBundle bundleWithPath:path];
 }
 
 - (NSUserDefaults*)defaults {

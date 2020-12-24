@@ -31,6 +31,7 @@ namespace {
         SKKInputMode mode;
         NSString* identifier;
     } table[] = {
+        // InputMode
         { SKK_HIRAKANA_MODE, 		HirakanaInputMode,
           @"com.apple.inputmethod.Japanese.Hiragana" },
         { SKK_KATAKANA_MODE, 		KatakanaInputMode,
@@ -41,6 +42,18 @@ namespace {
           @"com.apple.inputmethod.Japanese.FullWidthRoman" },
         { SKK_ASCII_MODE,		AsciiInputMode,
           @"com.apple.inputmethod.Roman" },
+        // InputSource
+        { SKK_HIRAKANA_MODE, 		HirakanaInputMode,
+          @"jp.sourceforge.inputmethod.aquaskk.Hiragana" },
+        { SKK_KATAKANA_MODE, 		KatakanaInputMode,
+          @"jp.sourceforge.inputmethod.aquaskk.Katakana" },
+        { SKK_JISX0201KANA_MODE,	Jisx0201KanaInputMode,
+          @"jp.sourceforge.inputmethod.aquaskk.HalfWidthKana" },
+        { SKK_JISX0208LATIN_MODE,	Jisx0208LatinInputMode,
+          @"jp.sourceforge.inputmethod.aquaskk.FullWidthRoman" },
+        { SKK_ASCII_MODE,		AsciiInputMode,
+          @"jp.sourceforge.inputmethod.aquaskk.Ascii" },
+        // Error
         { SKK_NULL,			InvalidInputMode,
           0 }
     };
@@ -63,6 +76,7 @@ namespace {
 - (id)initWithClient:(id)client {
     if(self = [super init]) {
         client_ = client;
+        activation_ = YES;
         currentInputMode_ = HirakanaInputMode;
     }
 
@@ -75,7 +89,10 @@ namespace {
     if(identifer) {
         currentInputMode_ = mode;
         unifiedInputMode__ = mode;
-        [client_ selectInputMode:identifer];
+
+        if(activation_) {
+            [client_ selectInputMode:identifer];
+        }
     }
 }
 
@@ -91,6 +108,13 @@ namespace {
 
 - (int)convertIdToEventId:(NSString*)identifier {
     return findInputModeTable(identifier).event_id;
+}
+
+- (void)activation {
+    activation_ = YES;
+}
+- (void)deactivation {
+    activation_ = NO;
 }
 
 - (SKKInputMode)convertIdToInputMode:(NSString*)identifier {

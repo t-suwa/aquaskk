@@ -28,6 +28,7 @@
 // AquaSKK 制御用プロトコル
 
 @protocol SKKSupervisor
+- (void)reloadBlacklistApps;
 - (void)reloadUserDefaults;
 - (void)reloadDictionarySet;
 - (void)reloadComponents;

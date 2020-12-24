@@ -27,7 +27,8 @@
 #include <map>
 
 class SubRuleDescriptions {
-    std::map<std::string, std::string> table_;
+    std::map<std::string, std::string> description_;
+    std::map<std::string, std::string> keymap_;
 
     void add(const std::string& line);
 
@@ -35,6 +36,7 @@ public:
     SubRuleDescriptions(const char* folder);
 
     const char* Description(const char* rule_path);
+    const char* Keymap(const char* rule_path);
 };
 
 #endif

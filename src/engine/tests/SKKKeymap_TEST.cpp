@@ -41,4 +41,19 @@ int main() {
 
     param = keymap.Fetch('v', 0, SKKKeyState::META);
     assert(param == SKKEvent(SKK_PASTE, 'v', 0));
+
+    keymap.Patch("keymap_patch.conf");
+
+    // not changed
+    param = keymap.Fetch('b', 0, 0);
+    assert(param == SKKEvent(SKK_CHAR, 'b', InputChars));
+
+    // remove attributes
+    param = keymap.Fetch('q', 0, 0);
+    assert(param == SKKEvent(SKK_CHAR, 'q', InputChars));
+
+    param = keymap.Fetch('"', 0, 0);
+    assert(param == SKKEvent(SKK_CHAR, '"', UpperCases | InputChars));
+
+
 }

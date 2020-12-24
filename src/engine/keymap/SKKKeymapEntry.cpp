@@ -72,6 +72,7 @@ static const struct {
     { "RemoveTrigger",          RemoveTrigger,          TYPE_ATTRIBUTE },
     { "InputChars",             InputChars,             TYPE_ATTRIBUTE },
     { "CompConversion",         CompConversion,         TYPE_ATTRIBUTE },
+    { "StickyKey",              StickyKey,              TYPE_ATTRIBUTE },
 
     { "AlwaysHandled",          AlwaysHandled,          TYPE_HANDLE_OPTION },
     { "PseudoHandled",          PseudoHandled,          TYPE_HANDLE_OPTION },
@@ -104,8 +105,15 @@ void translate(std::string& src, const std::string& from, const std::string& to)
 // ======================================================================
 SKKKeymapEntry::SKKKeymapEntry() : pos_(0) {}
 
-SKKKeymapEntry::SKKKeymapEntry(const std::string& configKey, const std::string& configValue) : pos_(0) {
-    int index = fetchKeymapIndex(configKey);
+SKKKeymapEntry::SKKKeymapEntry(const std::string& configKey, const std::string& configValue) : pos_(0), not_(false) {
+    std::string key(configKey);
+
+    if(configKey.find("Not") == 0) {
+        not_ = true;
+        key = configKey.substr(3);
+    }
+
+    int index = fetchKeymapIndex(key);
     if(index < 0) {
 	std::cout << "SKKKeymapEntry::SKKKeymapEntry(): invalid key name[" << configKey << "]" << std::endl;
 	return;
@@ -150,6 +158,10 @@ bool SKKKeymapEntry::IsEvent() const {
 
 bool SKKKeymapEntry::IsAttribute() const {
     return type_ == TYPE_ATTRIBUTE;
+}
+
+bool SKKKeymapEntry::IsNot() const {
+    return not_;
 }
 
 int SKKKeymapEntry::Symbol() const {

@@ -622,6 +622,18 @@ shift::0x20             mode=J,marked=[登録：a]
 ctrl::g                 mode=A,marked=▽a
 ctrl::g                 mode=J
 
+# sticky shift
+# ----------------------------------------------------------------------
+;                       mode=J,marked=▽
+a                       mode=J,marked=▽あ
+;                       mode=J,marked=▽あ*
+r                       mode=J,marked=▽あ*r
+i                       mode=J,marked=▼有り
+ctrl::m                 mode=J,fixed=有り
+ctrl::j                 mode=J
+;                       mode=J,marked=▽
+;                       mode=J,fixed=；
+
 # 削除(単語登録中)
 # ----------------------------------------------------------------------
 A                       mode=J,marked=▽あ

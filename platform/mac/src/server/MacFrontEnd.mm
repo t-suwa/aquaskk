@@ -21,6 +21,7 @@
 */
 
 #include <iostream>
+#include "BlacklistApps.h"
 #include "MacFrontEnd.h"
 #include "utf8util.h"
 
@@ -32,7 +33,7 @@ void MacFrontEnd::InsertString(const std::string& str) {
     if(!str.empty()) {
         string = [NSString stringWithUTF8String:str.c_str()];
 
-        workaroundForMicrosoftPowerPoint(string);
+        workaroundForBlacklistApp(string);
     }
 
     [client_ insertText:string replacementRange:notFound()];
@@ -58,7 +59,7 @@ void MacFrontEnd::ComposeString(const std::string& str, int candidateStart, int 
     NSMutableAttributedString* marked = createMarkedText(str, 0);
     NSRange cursorPos = NSMakeRange([marked length] + 0, 0);
     NSRange segment = NSMakeRange(candidateStart, candidateLength);
-    
+
     [marked addAttribute:NSMarkedClauseSegmentAttributeName
                    value:[NSNumber numberWithInt:0] range:segment];
 
@@ -100,13 +101,17 @@ NSMutableAttributedString* MacFrontEnd::createMarkedText(const std::string& str,
     return marked;
 }
 
-void MacFrontEnd::workaroundForMicrosoftPowerPoint(NSString* string) {
-    NSString* powerPoint = @"com.microsoft.powerpoint";
-    NSRange range = notFound();
-
+void MacFrontEnd::workaroundForBlacklistApp(NSString* string) {
     // 確定前に、非確定文字列に確定予定文字列をセットするとうまくいく
-    if([[client_ bundleIdentifier] caseInsensitiveCompare:powerPoint] == NSOrderedSame) {
+    if(isBlacklistApp()) {
+        NSLog(@"insert marked text");
+        NSRange range = notFound();
         [client_ setMarkedText:string selectionRange:range replacementRange:range];
     }
     // 正しいかどうかは不明
+}
+
+// workaroundが必要なアプリかどうかを判定する
+bool MacFrontEnd::isBlacklistApp() const {
+    return [[BlacklistApps sharedManager] isInsertMarkedText: [client_ bundleIdentifier]];
 }

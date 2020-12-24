@@ -30,6 +30,22 @@ int main() {
     assert(key == SKKKeyState::CharCode('m', SKKKeyState::CTRL));
 
     entry = SKKKeymapEntry("Direct", "group::a,c,d-f");
+    assert(!entry.IsNot());
+    assert(!entry.IsEvent());
+    assert(entry.Symbol() == Direct);
+    entry >> key;
+    assert(key == SKKKeyState::CharCode('a', false));
+    entry >> key;
+    assert(key == SKKKeyState::CharCode('c', false));
+    entry >> key;
+    assert(key == SKKKeyState::CharCode('d', false));
+    entry >> key;
+    assert(key == SKKKeyState::CharCode('e', false));
+    entry >> key;
+    assert(key == SKKKeyState::CharCode('f', false));
+
+    entry = SKKKeymapEntry("NotDirect", "group::a,c,d-f");
+    assert(entry.IsNot());
     assert(!entry.IsEvent());
     assert(entry.Symbol() == Direct);
     entry >> key;
