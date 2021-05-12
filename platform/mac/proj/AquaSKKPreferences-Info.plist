@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Copyright © 2014-2018, codefirst</string>
 	<key>CFBundleIdentifier</key>
-	<string>jp.sourceforge.inputmethod.aquaskk.preferences</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
