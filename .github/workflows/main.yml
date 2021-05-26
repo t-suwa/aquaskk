@@ -9,21 +9,21 @@ on:
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
       - run: sudo xcode-select -s /Applications/Xcode_12.5.app
       - run: cd platform/mac
       - run: make debug
   test:
-    runs-on: macOS-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
       - run: sudo xcode-select -s /Applications/Xcode_12.5.app
       - run: cd platform/mac
       - run: make test
   release:
-    runs-on: macOS-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
       - run: sudo xcode-select -s /Applications/Xcode_12.5.app
