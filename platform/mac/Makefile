@@ -64,8 +64,8 @@ pkg: release
 	productsign --sign $(PKG_SIGN_ID) $(WORKDIR)/aquaskk-dist.pkg AquaSKK.pkg
 
 notarize: pkg
-	xcrun altool --notarize-app --primary-bundle-id jp.sourceforge.inputmethod.aquaskk --file AquaSKK.pkg --username $(APPSTORECONNECT_USERNAME)
-	echo "you can staple the notarization ticket after it has been notarized successfully by executing: xcrun stapler staple AquaSKK.pkg"
+	xcrun notarytool submit --wait AquaSKK.pkg --apple-id $(APPSTORECONNECT_USERNAME) --team-id $(DEVELOPMENT_TEAM)
+	xcrun stapler staple AquaSKK.pkg
 
 dmg: pkg
 	rm -fr $(WORKDIR)
