@@ -3,7 +3,7 @@
 ###
 
 DEVELOPMENT_TEAM="" # required to sign a release build for notarization. try make pkg DEVELOPMENT_TEAM=XXXX
-APPSTORECONNECT_USERNAME="" required to submit a release build for notarization. try make notarize APPSTORECONNECT_USERNAME=XXXX
+APPSTORECONNECT_USERNAME="" # required to submit a release build for notarization. try make notarize APPSTORECONNECT_USERNAME=XXXX
 
 ifneq (,$(filter pkg notarize,$(MAKECMDGOALS)))
 	RELEASE_BUILD_OPTS = CODE_SIGN_INJECT_BASE_ENTITLEMENTS=NO CODE_SIGN_IDENTITY="Developer ID Application" DEVELOPMENT_TEAM=$(DEVELOPMENT_TEAM)
