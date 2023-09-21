@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130F69EA1DF40A58001B6DFB /* old-kana.rule in Resources */ = {isa = PBXBuildFile; fileRef = 130F69E91DF40A58001B6DFB /* old-kana.rule */; };
+		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
+		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
+		132946B81CCCEC8000AE83D8 /* BlacklistApps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */; };
+		137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F495B1CCC66E30050EF81 /* BlacklistApps.m */; };
+		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
+		1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFB21BCFDD1E004A3E7D /* act.rule */; };
+		13D9CCA71CCCB02800480486 /* BlacklistApps.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D9CCA61CCCB02800480486 /* BlacklistApps.m */; };
+		13E607841C2693A300FD8FB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E607831C2693A300FD8FB9 /* Images.xcassets */; };
+		13F0D7491DA9CB5B00684A21 /* karabiner.xml in Resources */ = {isa = PBXBuildFile; fileRef = 13F0D7471DA9CB5B00684A21 /* karabiner.xml */; };
+		13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */ = {isa = PBXBuildFile; fileRef = 13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
 		D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */; };
 		D30996690E4C80EA00B2F24E /* SKKRecursiveEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */; };
@@ -95,7 +106,6 @@
 		D39E444F0EAB4FB300FB584C /* InputModeWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = D39E444E0EAB4FB300FB584C /* InputModeWindow.mm */; };
 		D3AD8DA81119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3AD8DA51119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp */; };
 		D3CB86780EB47E970069107D /* MacAnnotator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3CB86770EB47E970069107D /* MacAnnotator.mm */; };
-		D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */ = {isa = PBXBuildFile; fileRef = D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */; };
 		D3D549BF1024904000622CB2 /* SKKInputModeSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */; };
 		D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */; };
 		D3E29EBC12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */; };
@@ -112,6 +122,17 @@
 		D3FC33B30DD1D454006A3F5A /* AquaSKKPreferences.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3FC32300DD1B102006A3F5A /* AquaSKKPreferences.app */; };
 		D3FE45FE0E9FA98E009B64E7 /* SKKInputMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3FE45FD0E9FA98E009B64E7 /* SKKInputMenu.mm */; };
 		D3FF02C9100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */; };
+		EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */; };
+		EA56B04A1A22C62400954B5F /* AquaSKK-Hirakana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */; };
+		EA56B04B1A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */; };
+		EA56B04C1A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */; };
+		EA56B04D1A22C62400954B5F /* AquaSKK-Katakana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */; };
+		EA56B0531A22CBA400954B5F /* Mini-Ascii@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */; };
+		EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */; };
+		EA56B0551A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */; };
+		EA56B0561A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */; };
+		EA56B0571A22CBA400954B5F /* Mini-Katakana@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */; };
+		EA56B0591A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +159,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		130F69E91DF40A58001B6DFB /* old-kana.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "old-kana.rule"; sourceTree = "<group>"; };
+		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
+		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
+		132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlacklistApps.plist; sourceTree = "<group>"; };
+		137F495A1CCC66E30050EF81 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlacklistApps.h; path = ../src/preferences/BlacklistApps.h; sourceTree = "<group>"; };
+		137F495B1CCC66E30050EF81 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlacklistApps.m; path = ../src/preferences/BlacklistApps.m; sourceTree = "<group>"; };
+		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
+		1397AFB21BCFDD1E004A3E7D /* act.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = act.rule; sourceTree = "<group>"; };
+		13D9CCA51CCCB02800480486 /* BlacklistApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlacklistApps.h; sourceTree = "<group>"; };
+		13D9CCA61CCCB02800480486 /* BlacklistApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlacklistApps.m; sourceTree = "<group>"; };
+		13E607831C2693A300FD8FB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AquaSKK/Images.xcassets; sourceTree = "<group>"; };
+		13F0D7471DA9CB5B00684A21 /* karabiner.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = karabiner.xml; sourceTree = "<group>"; };
+		13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = text; path = "yakumono-ippai.rule"; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
 		D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEnvironment.cpp; sourceTree = "<group>"; };
 		D3045879102D3E590055E32F /* SKKInputEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputEnvironment.h; sourceTree = "<group>"; };
@@ -335,7 +369,6 @@
 		D3CB86750EB47E790069107D /* SKKAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKAnnotator.h; sourceTree = "<group>"; };
 		D3CB86760EB47E970069107D /* MacAnnotator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacAnnotator.h; sourceTree = "<group>"; };
 		D3CB86770EB47E970069107D /* MacAnnotator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacAnnotator.mm; sourceTree = "<group>"; };
-		D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "azik-kana-rule.conf"; sourceTree = "<group>"; };
 		D3D549BD1024904000622CB2 /* SKKInputModeSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputModeSelector.cpp; sourceTree = "<group>"; };
 		D3D549BE1024904000622CB2 /* SKKInputModeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeSelector.h; sourceTree = "<group>"; };
 		D3D5E8B60E68D67400EBC462 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -363,6 +396,17 @@
 		D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKGadgetDictionary.cpp; sourceTree = "<group>"; };
 		D3FF02C8100A2C9D0028EDE6 /* SKKGadgetDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKGadgetDictionary.h; sourceTree = "<group>"; };
 		D3FF02CB100A2CB60028EDE6 /* calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
+		EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Ascii@2x.png"; sourceTree = "<group>"; };
+		EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Hirakana@2x.png"; sourceTree = "<group>"; };
+		EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0201Kana@2x.png"; sourceTree = "<group>"; };
+		EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Jisx0208Latin@2x.png"; sourceTree = "<group>"; };
+		EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AquaSKK-Katakana@2x.png"; sourceTree = "<group>"; };
+		EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Ascii@2x.tiff"; sourceTree = "<group>"; };
+		EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Hirakana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0201Kana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Jisx0208Latin@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Mini-Katakana@2x.tiff"; sourceTree = "<group>"; };
+		EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "AquaSKK-InputMethod@2x.tiff"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,9 +431,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13F0D7451DA9CB5B00684A21 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				13F0D7471DA9CB5B00684A21 /* karabiner.xml */,
+			);
+			name = others;
+			path = ../../../data/others;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* aquaskk */ = {
 			isa = PBXGroup;
 			children = (
+				13E607831C2693A300FD8FB9 /* Images.xcassets */,
 				D3FC32270DD1B0D2006A3F5A /* Input Method */,
 				D3FC32360DD1B121006A3F5A /* Preferences */,
 				D3FC322B0DD1B0ED006A3F5A /* Product */,
@@ -635,6 +689,8 @@
 		D353BDCE0E175513004C68A6 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				13D9CCA51CCCB02800480486 /* BlacklistApps.h */,
+				13D9CCA61CCCB02800480486 /* BlacklistApps.m */,
 				D38FB82A1032F33100048A30 /* MacConfig.h */,
 				D38FB82B1032F33100048A30 /* MacConfig.mm */,
 				D3CB86760EB47E970069107D /* MacAnnotator.h */,
@@ -712,6 +768,7 @@
 		D353BE0A0E17552F004C68A6 /* plist */ = {
 			isa = PBXGroup;
 			children = (
+				132946B71CCCEC8000AE83D8 /* BlacklistApps.plist */,
 				D353BE0C0E17552F004C68A6 /* UserDefaults.plist */,
 				D353BE0B0E17552F004C68A6 /* DictionarySet.plist */,
 			);
@@ -724,11 +781,16 @@
 			children = (
 				D353BE110E175540004C68A6 /* keymap.conf */,
 				D353BE100E175540004C68A6 /* kana-rule.conf */,
-				D3CD2F571018BA16001884C0 /* azik-kana-rule.conf */,
 				D3F0576110BAD10F00F3233E /* sub-rule.desc */,
 				D357591910BD72E00066692B /* azik.rule */,
+				1326BC8C1BE7974B008F1D05 /* azik.conf */,
+				138EA4E51BE85B2400E8A70E /* azik_us.rule */,
+				1397AFB21BCFDD1E004A3E7D /* act.rule */,
+				131E98E21BE4EE4600E898E6 /* act.conf */,
+				130F69E91DF40A58001B6DFB /* old-kana.rule */,
 				D3F0576410BAD12600F3233E /* period.rule */,
 				D3F0576310BAD12600F3233E /* comma.rule */,
+				13F715931BAD8AFA00F93C56 /* yakumono-ippai.rule */,
 			);
 			name = config;
 			path = ../../../data/config;
@@ -738,16 +800,27 @@
 			isa = PBXGroup;
 			children = (
 				D31C99CB0E9E4A3D00CBE4D1 /* Mini-Ascii.tiff */,
+				EA56B04E1A22CBA400954B5F /* Mini-Ascii@2x.tiff */,
 				D31C99CC0E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff */,
+				EA56B04F1A22CBA400954B5F /* Mini-Hirakana@2x.tiff */,
 				D31C99CD0E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff */,
+				EA56B0501A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff */,
 				D31C99CE0E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff */,
+				EA56B0511A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff */,
 				D31C99CF0E9E4A3D00CBE4D1 /* Mini-Katakana.tiff */,
+				EA56B0521A22CBA400954B5F /* Mini-Katakana@2x.tiff */,
 				D353BE170E175552004C68A6 /* AquaSKK-InputMethod.tif */,
+				EA56B0581A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff */,
 				D353BE150E175552004C68A6 /* AquaSKK-Ascii.png */,
+				EA56B0441A22C62400954B5F /* AquaSKK-Ascii@2x.png */,
 				D353BE160E175552004C68A6 /* AquaSKK-Hirakana.png */,
+				EA56B0451A22C62400954B5F /* AquaSKK-Hirakana@2x.png */,
 				D353BE1A0E175552004C68A6 /* AquaSKK-Katakana.png */,
+				EA56B0481A22C62400954B5F /* AquaSKK-Katakana@2x.png */,
 				D353BE180E175552004C68A6 /* AquaSKK-Jisx0201Kana.png */,
+				EA56B0461A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png */,
 				D353BE190E175552004C68A6 /* AquaSKK-Jisx0208Latin.png */,
+				EA56B0471A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png */,
 			);
 			name = icons;
 			path = ../../../data/icons;
@@ -776,6 +849,7 @@
 		D3FC32290DD1B0DF006A3F5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				13F0D7451DA9CB5B00684A21 /* others */,
 				D353BE140E175552004C68A6 /* icons */,
 				D353BE0F0E175540004C68A6 /* config */,
 				D353BE0A0E17552F004C68A6 /* plist */,
@@ -838,6 +912,8 @@
 				D353BE250E175578004C68A6 /* main.mm */,
 				D353BE260E175578004C68A6 /* PreferenceController.h */,
 				D353BE270E175578004C68A6 /* PreferenceController.mm */,
+				137F495A1CCC66E30050EF81 /* BlacklistApps.h */,
+				137F495B1CCC66E30050EF81 /* BlacklistApps.m */,
 				D353BE230E175578004C68A6 /* DictionarySet.h */,
 				D353BE240E175578004C68A6 /* DictionarySet.mm */,
 				D37ADC60111F0B07000B8988 /* DictionaryTypeTransformer.h */,
@@ -895,18 +971,18 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 1250;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AquaSKK" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				Base,
+				fr,
+				ja,
+				de,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* aquaskk */;
 			productRefGroup = 29B97314FDCFA39411CA2CEA /* aquaskk */;
@@ -925,25 +1001,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				D322B8D10DDC8174002C33F9 /* AquaSKK.xib in Resources */,
+				EA56B04A1A22C62400954B5F /* AquaSKK-Hirakana@2x.png in Resources */,
+				EA56B0551A22CBA400954B5F /* Mini-Jisx0201Kana@2x.tiff in Resources */,
 				D353BE0D0E17552F004C68A6 /* DictionarySet.plist in Resources */,
+				1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */,
 				D353BE0E0E17552F004C68A6 /* UserDefaults.plist in Resources */,
 				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
 				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
+				13F0D7491DA9CB5B00684A21 /* karabiner.xml in Resources */,
+				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
+				130F69EA1DF40A58001B6DFB /* old-kana.rule in Resources */,
+				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
+				138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */,
 				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
+				EA56B04C1A22C62400954B5F /* AquaSKK-Jisx0208Latin@2x.png in Resources */,
+				131E98E31BE4EE4600E898E6 /* act.conf in Resources */,
+				13E607841C2693A300FD8FB9 /* Images.xcassets in Resources */,
+				EA56B0571A22CBA400954B5F /* Mini-Katakana@2x.tiff in Resources */,
+				EA56B0561A22CBA400954B5F /* Mini-Jisx0208Latin@2x.tiff in Resources */,
 				D353BE1E0E175552004C68A6 /* AquaSKK-InputMethod.tif in Resources */,
 				D353BE1F0E175552004C68A6 /* AquaSKK-Jisx0201Kana.png in Resources */,
 				D353BE200E175552004C68A6 /* AquaSKK-Jisx0208Latin.png in Resources */,
 				D353BE210E175552004C68A6 /* AquaSKK-Katakana.png in Resources */,
 				D3D5E8B70E68D67400EBC462 /* InfoPlist.strings in Resources */,
+				EA56B0591A22CCA300954B5F /* AquaSKK-InputMethod@2x.tiff in Resources */,
 				D31C99D00E9E4A3D00CBE4D1 /* Mini-Ascii.tiff in Resources */,
 				D31C99D10E9E4A3D00CBE4D1 /* Mini-Hirakana.tiff in Resources */,
+				EA56B04D1A22C62400954B5F /* AquaSKK-Katakana@2x.png in Resources */,
+				EA56B0531A22CBA400954B5F /* Mini-Ascii@2x.tiff in Resources */,
+				132946B81CCCEC8000AE83D8 /* BlacklistApps.plist in Resources */,
 				D31C99D20E9E4A3D00CBE4D1 /* Mini-Jisx0201Kana.tiff in Resources */,
 				D31C99D30E9E4A3D00CBE4D1 /* Mini-Jisx0208Latin.tiff in Resources */,
+				13F715941BAD8AFA00F93C56 /* yakumono-ippai.rule in Resources */,
 				D31C99D40E9E4A3D00CBE4D1 /* Mini-Katakana.tiff in Resources */,
-				D3CD2F581018BA16001884C0 /* azik-kana-rule.conf in Resources */,
 				D3F0576210BAD10F00F3233E /* sub-rule.desc in Resources */,
+				EA56B04B1A22C62400954B5F /* AquaSKK-Jisx0201Kana@2x.png in Resources */,
 				D3F0576510BAD12600F3233E /* comma.rule in Resources */,
+				1397AFB31BCFDD1E004A3E7D /* act.rule in Resources */,
 				D3F0576610BAD12600F3233E /* period.rule in Resources */,
 				D357591A10BD72E00066692B /* azik.rule in Resources */,
 			);
@@ -993,6 +1088,7 @@
 				D353BDC90E175502004C68A6 /* SKKTrie.cpp in Sources */,
 				D353BDCA0E175502004C68A6 /* jconv.cpp in Sources */,
 				D353BDE80E175513004C68A6 /* MacCandidateWindow.mm in Sources */,
+				13D9CCA71CCCB02800480486 /* BlacklistApps.m in Sources */,
 				D353BDE90E175513004C68A6 /* MacClipboard.mm in Sources */,
 				D353BDEA0E175513004C68A6 /* MacFrontEnd.mm in Sources */,
 				D353BDEB0E175513004C68A6 /* MacInputModeWindow.mm in Sources */,
@@ -1042,6 +1138,7 @@
 			files = (
 				D353BE280E175578004C68A6 /* DictionarySet.mm in Sources */,
 				D353BE290E175578004C68A6 /* main.mm in Sources */,
+				137F495C1CCC66E30050EF81 /* BlacklistApps.m in Sources */,
 				D353BE2A0E175578004C68A6 /* PreferenceController.mm in Sources */,
 				D353BE2B0E1756D8004C68A6 /* SKKConstVars.mm in Sources */,
 				D353BE5C0E1756EE004C68A6 /* SKKServerProxy.mm in Sources */,
@@ -1065,16 +1162,41 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
@@ -1083,17 +1205,39 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_MODEL_TUNING = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
@@ -1102,14 +1246,14 @@
 		D3FC32240DD1B09C006A3F5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1123,15 +1267,17 @@
 					"\"$(SRCROOT)/../../../src/engine/tests\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sourceforge.inputmethod.aquaskk;
 				PRODUCT_NAME = AquaSKK;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -1140,13 +1286,14 @@
 		D3FC32250DD1B09C006A3F5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = aquaskk_Prefix.pch;
@@ -1157,15 +1304,17 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../src/engine/tests\"",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sourceforge.inputmethod.aquaskk;
 				PRODUCT_NAME = AquaSKK;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1174,8 +1323,10 @@
 		D3FC32330DD1B102006A3F5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1186,15 +1337,17 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sourceforge.inputmethod.aquaskk.preferences;
 				PRODUCT_NAME = AquaSKKPreferences;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1202,8 +1355,10 @@
 		D3FC32340DD1B102006A3F5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1213,15 +1368,17 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AquaSKKPreferences-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sourceforge.inputmethod.aquaskk.preferences;
 				PRODUCT_NAME = AquaSKKPreferences;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

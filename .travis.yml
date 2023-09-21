@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode12.5
+
+script:
+  - cd platform/mac
+  - make debug
+  - make test
+  - make release

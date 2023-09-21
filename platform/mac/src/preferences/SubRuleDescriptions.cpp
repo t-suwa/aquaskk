@@ -36,11 +36,19 @@ SubRuleDescriptions::SubRuleDescriptions(const char* folder) {
 }
 
 const char* SubRuleDescriptions::Description(const char* rule_path) {
-    if(table_.find(rule_path) != table_.end()) {
-        return table_[rule_path].c_str();
+    if(description_.find(rule_path) != description_.end()) {
+        return description_[rule_path].c_str();
     }
 
     return rule_path;
+}
+
+const char* SubRuleDescriptions::Keymap(const char* rule_path) {
+    if(keymap_.find(rule_path) != keymap_.end()) {
+        return keymap_[rule_path].c_str();
+    }
+
+    return NULL;
 }
 
 // ----------------------------------------------------------------------
@@ -50,9 +58,15 @@ void SubRuleDescriptions::add(const std::string& line) {
 
     std::istringstream buf(line);
     std::string path;
+    std::string keymap;
     std::string description;
 
-    if(buf >> path >> description) {
-        table_[path] = description;
+    if(buf >> path >> keymap) {
+        if(buf >> description) {
+            keymap_[path] = keymap;
+            description_[path] = description;
+        } else {
+            description_[path] = keymap;
+        }
     }
 }

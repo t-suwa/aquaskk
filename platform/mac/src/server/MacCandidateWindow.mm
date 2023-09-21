@@ -120,7 +120,7 @@ void MacCandidateWindow::reloadUserDefaults() {
     NSString* fontName = [defaults stringForKey:SKKUserDefaultKeys::candidate_window_font_name];
     float fontSize = [defaults floatForKey:SKKUserDefaultKeys::candidate_window_font_size];
 
-    NSFont* font = [NSFont fontWithName:fontName size:fontSize];
+    NSFont* font = [NSFont fontWithName:fontName size:fontSize] ?: [NSFont labelFontOfSize:fontSize];
 
     NSString* labels = [defaults stringForKey:SKKUserDefaultKeys::candidate_window_labels];
     cellCount_ = [labels length];

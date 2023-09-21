@@ -1,0 +1,9 @@
+/platform/mac/proj/build/
+**/*.xcodeproj/*
+!**/*.xcodeproj/project.pbxproj
+!*.xcodeproj/default.*
+!**/*.xcodeproj/default.*
+.depend
+*.o
+*.a
+src/engine/tests/*_TEST

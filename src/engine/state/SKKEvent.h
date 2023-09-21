@@ -71,7 +71,8 @@ enum {
     PrevCandidate               = (1 << 11),
     RemoveTrigger               = (1 << 12),
     InputChars			= (1 << 13),
-    CompConversion		= (1 << 14)
+    CompConversion		= (1 << 14),
+    StickyKey			= (1 << 15)
 };
 
 // 処理オプション
@@ -109,6 +110,7 @@ public:
     bool IsRemoveTrigger() const                { return attribute & RemoveTrigger; }
     bool IsInputChars() const	                { return attribute & InputChars; }
     bool IsCompConversion() const               { return attribute & CompConversion; }
+    bool IsStickyKey() const                    { return attribute & StickyKey; }
 
     const static SKKEvent& Null() {
         static SKKEvent obj(SKK_NULL, 0, 0);

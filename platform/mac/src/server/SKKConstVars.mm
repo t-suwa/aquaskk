@@ -37,6 +37,7 @@ namespace SKKUserDefaultKeys {
     DECLARE_NSStringKey(keyboard_layout);
 
     DECLARE_NSStringKey(sub_rules);
+    DECLARE_NSStringKey(sub_keymaps);
 
     DECLARE_NSStringKey(enable_extended_completion);
     DECLARE_NSStringKey(enable_dynamic_completion);
@@ -101,6 +102,14 @@ namespace SKKFilePaths {
         return path;
     }
 
+    static NSString* pathForBlacklistApps() {
+        ObjC::RAIIPool pool;
+        static NSString* path = [[NSString stringWithFormat:@"%@/BlacklistApps.plist",
+                                  pathForApplicationSupport()] retain];
+
+        return path;
+    }
+
     static NSString* pathForDictionarySet() {
         ObjC::RAIIPool pool;
         static NSString* path = [[NSString stringWithFormat:@"%@/DictionarySet.plist",
@@ -119,6 +128,7 @@ namespace SKKFilePaths {
     }
 
     NSString* SystemResourceFolder = pathForSystemResource();
+    NSString* BlacklistApps = pathForBlacklistApps();
     NSString* ApplicationSupportFolder = pathForApplicationSupport();
     NSString* DictionarySet = pathForDictionarySet();
     NSString* UserDefaults = pathForUserDefaults();

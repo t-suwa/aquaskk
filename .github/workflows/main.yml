@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
+      - run: make debug
+        working-directory: platform/mac
+  test:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
+      - run: make test
+        working-directory: platform/mac
+  release:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
+      - run: make release
+        working-directory: platform/mac

@@ -20,6 +20,7 @@
 
 */
 
+#include "BlacklistApps.h"
 #include "SKKServer.h"
 #include "SKKPreProcessor.h"
 #include "SKKRomanKanaConverter.h"
@@ -65,11 +66,11 @@ namespace {
         int mode;
         NSString* name;
     } InputModeIcons[] = {
-        { HirakanaInputMode,		@"AquaSKK-Hirakana.png" },
-        { KatakanaInputMode,		@"AquaSKK-Katakana.png" },
-        { Jisx0201KanaInputMode,	@"AquaSKK-Jisx0201Kana.png" },
-        { AsciiInputMode,		@"AquaSKK-Ascii.png" },
-        { Jisx0208LatinInputMode,	@"AquaSKK-Jisx0208Latin.png" },
+        { HirakanaInputMode,		@"AquaSKK-Hirakana" },
+        { KatakanaInputMode,		@"AquaSKK-Katakana" },
+        { Jisx0201KanaInputMode,	@"AquaSKK-Jisx0201Kana" },
+        { AsciiInputMode,		@"AquaSKK-Ascii" },
+        { Jisx0208LatinInputMode,	@"AquaSKK-Jisx0208Latin" },
         { 0,				0 }
     };
 }
@@ -84,6 +85,7 @@ static void terminate(int) {
 - (void)prepareConnection;
 - (void)prepareUserDefaults;
 - (void)prepareDictionary;
+- (void)prepareBlacklistApps;
 - (id)newIMKServer;
 
 - (void)initializeInputModeIcons;
@@ -104,11 +106,22 @@ static void terminate(int) {
     [self prepareConnection];
     [self prepareUserDefaults];
     [self prepareDictionary];
+    [self prepareBlacklistApps];
     imkserver_ = [self newIMKServer];
 
+    [self reloadBlacklistApps];
     [self reloadDictionarySet];
     [self reloadUserDefaults];
     [self reloadComponents];
+}
+
+- (void)reloadBlacklistApps {
+    NSLog(@"loading BlacklistApps ...");
+    NSArray* array = [NSMutableArray arrayWithContentsOfFile:SKKFilePaths::BlacklistApps];
+    if(array == nil) {
+        NSLog(@"can't read BlacklistApps.plist");
+    }
+    [[BlacklistApps sharedManager] load: array];
 }
 
 - (void)reloadUserDefaults {
@@ -227,11 +240,17 @@ static void terminate(int) {
     SKKRomanKanaConverter::theInstance().Initialize([tmp UTF8String]);
 
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSArray* subRules = [defaults arrayForKey:SKKUserDefaultKeys::sub_rules];
 
+    NSArray* subRules = [defaults arrayForKey:SKKUserDefaultKeys::sub_rules];
     for(NSString* path in subRules) {
         NSLog(@"loading SubRule: %@", path);
         SKKRomanKanaConverter::theInstance().Patch([path UTF8String]);
+    }
+
+    NSArray* subKeymaps = [defaults arrayForKey:SKKUserDefaultKeys::sub_keymaps];
+    for(NSString* path in subKeymaps) {
+        NSLog(@"loading SubKeyMap: %@", path);
+        SKKPreProcessor::theInstance().Patch([path UTF8String]);
     }
 
     [self initializeInputModeIcons];
@@ -319,6 +338,16 @@ static void terminate(int) {
     SKKRegisterFactoryMethod<SKKGadgetDictionary>(DictionaryTypes::Gadget);
 }
 
+- (void)prepareBlacklistApps {
+    NSString* blacklistApps = SKKFilePaths::BlacklistApps;
+
+    if([self fileExistsAtPath:blacklistApps] != YES) {
+        NSString* factoryBlacklistApps = [self pathForSystemResource:@"BlacklistApps.plist"];
+        NSData* data = [NSData dataWithContentsOfFile:factoryBlacklistApps];
+        [data writeToFile:blacklistApps atomically:YES];
+    }
+}
+
 - (id)newIMKServer {
     NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
     NSString* connection = [info objectForKey:@"InputMethodConnectionName"];
@@ -331,10 +360,8 @@ static void terminate(int) {
     NSMutableDictionary* icons = [[NSMutableDictionary alloc] initWithCapacity:0];
 
     for(int i = 0; InputModeIcons[i].name != 0; ++ i) {
-        NSString* path = [self pathForResource:InputModeIcons[i].name];
-        NSImage* image = [[NSImage alloc] initWithContentsOfFile:path];
+        NSImage* image = [NSImage imageNamed:InputModeIcons[i].name];
         [icons setObject:image forKey:[NSNumber numberWithInt:InputModeIcons[i].mode]];
-        [image release];
     }
 
     [[InputModeWindow sharedWindow] setModeIcons:icons];

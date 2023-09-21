@@ -90,7 +90,7 @@
     [xform translateXBy:pt.x yBy:pt.y];
     [xform concat];
 
-    [[[NSColor blackColor] colorWithAlphaComponent:0.3] setFill];
+    [[NSColor systemGrayColor] setFill];
 
     [plate_ fill];
     [indicator_ drawAtPoint:NSMakePoint(([plate_ bounds].size.width - [indicator_ size].width) / 2.0,

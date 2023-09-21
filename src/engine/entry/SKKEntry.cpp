@@ -120,23 +120,31 @@ std::string SKKEntry::ToggleJisx0201Kana(SKKInputMode mode) const {
 
 SKKEntry SKKEntry::Normalize(SKKInputMode mode) const {
     SKKEntry entry(*this);
-    std::string result = normal_entry_;
+    std::string result = normal_entry_, roman;
 
     // 入力モードがカタカナ/半角カナなら、見出し語をひらかなに正規化する
+    // ACT配列等では入力した文字がSKKの辞書とは一致しないので、カナから変換する。
     switch(mode) {
     case KatakanaInputMode:
         jconv::katakana_to_hirakana(normal_entry_, result);
+        jconv::katakana_to_roman(kana_, roman);
         break;
 
     case Jisx0201KanaInputMode:
         jconv::jisx0201_kana_to_hirakana(normal_entry_, result);
+        jconv::jisx0201_kana_to_roman(kana_, roman);
         break;
 
     default:
+        jconv::hirakana_to_roman(kana_, roman);
         break;
     }
 
     entry.SetEntry(result);
+
+    if(!roman.empty()) {
+        entry.SetOkuri(roman.substr(0,1), kana_);
+    }
 
     return entry;
 }

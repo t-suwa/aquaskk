@@ -361,12 +361,15 @@ namespace jconv {
     // translator(UTF-8 only)
     void hirakana_to_katakana(const std::string& from, std::string& to);
     void hirakana_to_jisx0201_kana(const std::string& from, std::string& to);
+    void hirakana_to_roman(const std::string& from, std::string& to);
 
     void katakana_to_hirakana(const std::string& from, std::string& to);
     void katakana_to_jisx0201_kana(const std::string& from, std::string& to);
+    void katakana_to_roman(const std::string& from, std::string& to);
 
     void jisx0201_kana_to_hirakana(const std::string& from, std::string& to);
     void jisx0201_kana_to_katakana(const std::string& from, std::string& to);
+    void jisx0201_kana_to_roman(const std::string& from, std::string& to);
 
     void ascii_to_jisx0208_latin(const std::string& from, std::string& to);
     void jisx0208_latin_to_ascii(const std::string& from, std::string& to);

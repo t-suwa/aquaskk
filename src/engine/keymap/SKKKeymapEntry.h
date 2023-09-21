@@ -32,6 +32,7 @@ class SKKKeymapEntry {
     int symbol_;
     int label_;
     int mods_;
+    bool not_;
 
     typedef std::pair<int, int> KeyRange;
     std::vector<KeyRange> keys_;
@@ -61,6 +62,9 @@ public:
 
     // エントリーが SKK_CHAR 属性かどうか
     bool IsAttribute() const;
+
+    // エントリーが 属性リセット用かどうか
+    bool IsNot() const;
 
     // シンボルの取得
     int Symbol() const;
